@@ -72,10 +72,54 @@ This document provides a comprehensive audit of Shannon Muruli's existing digita
 - **Secondary:** The Untethered Weekly (newsletter)
 - Focus areas: Prospecting, relationship building, overcoming fear-based behaviors, mindset shifts
 
-#### Images Present
-1. Logo/header image (Mailchimp hosted)
-2. Professional photo of Shannon (likely)
-3. Additional branded image linking to homepage
+#### Website Structure (Complete Scrape - Apify CLI)
+**3 Pages Discovered:**
+1. **Main Page** (`/`) - Full about/sales page with complete story
+2. **Home Page** (`/home`) - Short landing page with core positioning
+3. **Join Newsletter** (`/join`) - Newsletter signup page
+
+**Page Content Analysis:**
+
+**Main Page (/) - "About" Page:**
+- Full sales narrative from parking lots to regional manager
+- Complete story: "Inside of an empty pool" sales presentation detail
+- Testimonial section with Winsome Alexander
+- All problem statements and fear-based behaviors
+- Complete "Courage Over Comfort" philosophy
+- "Serve More & Sell More" CTA
+- Newsletter signup section
+
+**Home Page (/home):**
+- Short form positioning: "MY NAME IS SHANNON MURULI. The Courage Coach To Women Who Sell."
+- One-sentence value prop: "I help women who sell game-changing products or services cultivate the courage to untether from their comfort zones, so they can serve more people and elevate their sales."
+- Minimal content, likely a landing page variant
+
+**Join Newsletter Page (/join):**
+- Title: "Join The Untethered Weekly"
+- Featured quote: "The Woman Who Cultivates The Courage To Untether From Her Comfort Zone Will Serve More and Sell More. -Shannon Muruli"
+- Newsletter signup form (Mailchimp integration)
+
+#### Images Downloaded & Cataloged
+**Website Images (saved to `assets/website_images/`):**
+1. **main-page-og-image.png** (7.2MB)
+   - URL: `https://mcusercontent.com/556353bd7923ec61e4fecbdde/images/d6f05412-8273-cc62-f375-0424499fd27d.png`
+   - OpenGraph image for main page
+   - High resolution brand imagery
+
+2. **home-page-og-image.png** (3.9MB)
+   - URL: `https://mcusercontent.com/556353bd7923ec61e4fecbdde/images/e061b7ba-2377-aef8-96ae-d1dc320ffc17.png`
+   - OpenGraph image for home page
+   - High resolution brand imagery
+
+3. **join-page-og-image.jpg** (86KB)
+   - URL: `https://mcusercontent.com/556353bd7923ec61e4fecbdde/images/1a89db47-3acf-d93a-34e1-8ce3aea8d5ae.jpg`
+   - OpenGraph image for join page
+   - Shannon professional photo
+
+**Additional Images Noted:**
+- Logo/header image (visible on pages but not in OG metadata)
+- Professional photo of Shannon embedded in pages
+- COC branded graphics (referenced in content)
 
 #### Color Scheme & Typography
 **Colors:**
@@ -91,26 +135,143 @@ This document provides a comprehensive audit of Shannon Muruli's existing digita
 - Body: DM Sans (sans-serif)
 - Base font size: 21px
 
-#### Integrations
-- Mailchimp (newsletter signup)
-- Cookie consent banner
-- Third-party tracking enabled
+#### Integrations & Technical Stack
+- **Platform:** Mailchimp landing pages / campaign archive (us9.campaign-archive.com)
+- **Newsletter:** Mailchimp integration (u=556353bd7923ec61e4fecbdde)
+- **Cookie Consent:** Present on all pages
+- **Third-party Tracking:** Enabled
+- **Hosting:** Mailchimp CDN with Akamai transformation
+- **Security:** HTTPS with strict transport security
+
+#### Complete Website Archive
+**Data Saved:**
+- `data/website_scrape/README.md` - Documentation
+- `assets/website_images/` - All 3 OG images downloaded
+- Full markdown + plain text extracts of all 3 pages
+- Complete metadata including HTTP headers
 
 ---
 
 ### 1.2 Social Media Presence
 
 #### Instagram: @shannonmuruli
-**Status:** Could not access without authentication
-**Note:** Requires Apify MCP with Instagram scraper actor for full access
+**Status:** ✅ SCRAPED (408 posts)
+**Profile:** Courage Coach & Self-Image Strategist To Women Sellers
+**Username:** @shannonmuruli
+**Owner ID:** 3548922390
 **URL:** https://www.instagram.com/shannonmuruli/
 
-#### Facebook: shannonmuruli
-**Status:** Blocked by platform
-**Note:** Requires Apify MCP with Facebook scraper actor for full access
-**URL:** https://www.facebook.com/shannonmuruli/
+**Content Mix:**
+- **Images:** 63 posts
+- **Videos:** 51 posts
+- **Carousels (Sidecar):** 10 posts
+- **Total Posts Analyzed:** 408
 
-**Action Item:** Use Apify MCP actors for comprehensive social media scraping in future implementation phases.
+**Top Hashtags (Usage Frequency):**
+1. `#womenwhosell` (39 uses)
+2. `#womeninsales` (38 uses)
+3. `#courageovercomfort` (31 uses)
+4. `#theuntetheredseller` (17 uses)
+5. `#womeninbusiness` (10 uses)
+6. `#salessuccess` (9 uses)
+7. `#fearofrejection` (9 uses)
+8. `#directselling` (6 uses)
+
+**Content Themes & Patterns:**
+
+**1. Core Brand Concepts:**
+- **"The Untethered Seller"** - Primary identity framework for target audience
+- **"Courage Over Comfort"** - Foundational philosophy (COC)
+- **"Self-Image That Sells"** - Program/offering name
+- **"The Sell More Soirée"** - Event for women who sell
+- **"The Untethered Weekly"** - Newsletter brand
+
+**2. Content Pillars:**
+- **Mindset & Identity:** Self-image work, limiting beliefs, internal authority
+- **Personal Storytelling:** NYFW experience, Cape Town mall encounters, networking events, Prince the server story
+- **Sales Psychology:** Fear of rejection, environmental-based shyness, prospecting anxiety
+- **Tactical Sales Advice:** Pipeline management, follow-up strategies, prospecting techniques
+- **Motivational Content:** Quote-based posts, affirmations, belief shifting
+
+**3. Language Patterns & Signature Phrases:**
+- **Opening Lines:** "Borrow This Belief", "Get over yourself", "Stay calm", "Can I remind you of something?"
+- **Signature CTA:** "✨sell yourself on that" (appears in majority of posts)
+- **Rhetorical Questions:** "Who are you being when...", "What if you...", "How do they feel in your presence?"
+- **Repetition for Emphasis:** "I could've been... Instead, I...", "The first step in... is getting over yourself"
+- **Short, Punchy Lines:** Sentence fragments for impact, strategic line breaks
+- **Direct Address:** Second-person ("You care...", "You're not a shy seller...")
+
+**4. Problem Statements Addressed (from captions):**
+- Fear of rejection and "doom feelings" before sales interactions
+- Environmental-based shyness (not inherent personality trait)
+- Canceling meetings/events due to anxiety
+- Waiting to feel confident before taking action
+- Conflating relief with alignment (comfort vs. courage)
+- Low pipeline causing emotional weight on each "no"
+- Old identity following sellers into new roles
+- Overthinking and rehearsing failure scenarios
+
+**5. Solution Frameworks:**
+- **Self-Image First:** "I don't start with strategy. I start with self-image."
+- **Presence Over Performance:** "People buy based on how they FEEL in your presence."
+- **Momentum Over Mindset:** "The doom never survived momentum."
+- **Mathematical, Not Emotional:** "It's often not emotional—it's mathematical. You just haven't met enough people."
+- **Internal Authority:** Operating from confidence rather than fear-based behaviors
+
+**6. Influencer References:**
+- John C. Maxwell (leadership principles)
+- Les Brown ("Most people aren't living their dreams because they are too busy living their fears")
+- Taylor Swift (expects self-doubt before performances)
+- Maya Angelou ("People will never forget how you made them feel")
+
+**7. Recent Post Examples (Jan 2026):**
+- "Borrow This Belief" (visual quote cards)
+- "Get over yourself" (personal video from NYE 2026)
+- "If you're not closing, it's rarely a closing issue. It's a conversation issue." (prospecting advice)
+- "Stay Calm" (handling quiet prospects)
+- "Untethered sellers don't linger. They keep moving." (pipeline management)
+
+**8. Engagement Style:**
+- Conversational, warm, direct
+- Vulnerable storytelling (personal fears and failures shared)
+- Educational without being preachy
+- Empowering rather than prescriptive
+- Strong emphasis on identity transformation over tactics
+
+---
+
+#### Facebook: shannonmuruli
+**Status:** ✅ SCRAPED
+**Page Name:** Shannon Muruli
+**Category:** Public Figure
+**Page ID:** 100057151129507
+**URL:** https://www.facebook.com/shannonmuruli/
+**Created:** June 23, 2014
+
+**Page Statistics:**
+- **Followers:** 7,415
+- **Likes:** 7,415
+- **Following:** 65
+- **Rating:** 92% recommend (15 reviews)
+- **People Talking About This:** 39
+
+**Page Information:**
+- **Intro:** "Courage Coach To Women Who Sell"
+- **Website:** http://theuntetheredweekly.com/
+- **Profile Picture:** Professional headshot
+- **Cover Photo:** Brand imagery
+
+**Ad Status:**
+- Currently NOT running ads
+- Ad Library ID: 772351972816673
+- Business Page Status: Inactive
+
+**Key Insights:**
+- Strong recommendation rate (92%) with social proof from 15 reviews
+- Moderate engagement (39 talking about this)
+- 10+ year presence on platform (established 2014)
+- Consistent branding across platforms (same tagline and website)
+- Strategic follower-to-following ratio (7,415:65 indicates audience-building focus)
 
 ---
 
@@ -122,6 +283,12 @@ This document provides a comprehensive audit of Shannon Muruli's existing digita
 3. **16.23.46.jpeg** (124KB) - Formal professional portrait, modern lobby, elegant attire
 4. **16.25.13.jpeg** (91KB) - Speaking engagement, at podium, professional attire
 5. **16.25.36.jpeg** (127KB) - Coaching/workshop session, engaging with group
+
+**Instagram Archive (./assets/photos/instagram/):**
+- **Total Images:** 104 high-resolution images downloaded
+- **Source:** @shannonmuruli Instagram
+- **Content:** Quotes, personal photos, speaking events, coaching sessions
+- **Status:** Available for use in website rebuild
 
 **Visual Brand Analysis:**
 - All photos are black & white (cohesive aesthetic)

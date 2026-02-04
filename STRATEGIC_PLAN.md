@@ -32,32 +32,46 @@ Transform theuntetheredweekly.com into a professional, conversion-optimized plat
 
 ## 2. Brand & Messaging Snapshot
 
-### Core Themes (Derived from Existing Content)
+### Core Themes (From Website + Social Media Analysis)
 
 **Primary Brand Pillars:**
-1. **Courage Over Comfort** - Central philosophy challenging fear-based selling behaviors
-2. **Connection Over Selling** - Authentic relationship-building approach to sales
-3. **Prospecting Courage** - Helping women overcome avoidance behaviors (procrastination, rejection fear, cold calling resistance)
-4. **Sales Expansion** - Proven methods to increase territory and revenue
-5. **Personal Transformation** - Shannon's journey from pre-paid legal services to regional management
+1. **"The Untethered Seller"** - Shannon's primary identity framework for women in sales; cultivating courage to untether from comfort zones to serve and sell more
+2. **Courage Over Comfort (COC)** - Foundational philosophy challenging fear-based selling behaviors
+3. **Self-Image First** - "I don't start with strategy. I start with self-image." Core coaching methodology
+4. **Connection Over Selling** - Authentic relationship-building approach: "People buy based on how they FEEL in your presence"
+5. **Momentum Over Mindset** - "The doom never survived momentum" - action-based transformation
+6. **Personal Transformation** - Shannon's journey from pre-paid legal services to regional management
+
+**Core Programs/Offerings (Verified from Social Media):**
+- **Self-Image That Sells** - Foundational program for women who sell
+- **The Sell More Soirée** - Event for women who sell
+- **The Untethered Weekly** - Newsletter delivering weekly sales courage
+- **Courage Over Comfort Coaching** - 1-on-1 coaching program
 
 **Target Audience (Explicitly Stated):**
 Women Who Sell who struggle with:
-- Fear of rejection
-- Cold calling resistance
-- Procrastination in prospecting
+- Fear of rejection and "doom feelings" before sales interactions
+- **Environmental-based shyness** (not inherent personality trait)
+- Canceling meetings/events due to anxiety
+- Waiting to feel confident before taking action
+- Conflating relief with alignment (comfort vs. courage)
+- Low pipeline causing emotional weight on each "no"
+- **Old identity following sellers into new roles**
+- Overthinking and rehearsing failure scenarios
+- Procrastination, cold calling resistance, networking hesitation
 - Limiting beliefs about their sales capacity
-- Desire to grow without compromising authenticity
 
 ### Voice and Tone Description
 
-**Current Voice (to be preserved):**
+**Current Voice (to be preserved and amplified):**
 - Direct and empowering
 - Professional yet personal
 - Results-oriented without hype
-- Vulnerable authenticity (shares own sales journey)
+- Vulnerable authenticity (shares personal fears, failures, and breakthroughs)
 - Coaching tone: encouraging, not prescriptive
 - Grounded in real sales experience
+- **Conversational and warm** - creates immediate connection
+- **Educational without being preachy** - empowering rather than prescriptive
 
 **Tone Attributes:**
 - Confident but not arrogant
@@ -65,26 +79,72 @@ Women Who Sell who struggle with:
 - Action-focused
 - Zero fluff
 - Quantifiable (uses specific percentages: 300% growth, 425% expansion)
+- **Short, punchy lines** - sentence fragments for impact
+- **Rhetorical questions** - engages reader directly
+- **Direct address** - second-person ("You care...", "You're not a shy seller...")
+
+**Signature Language Patterns (from 408 Instagram posts):**
+
+**Opening Lines:**
+- "Borrow This Belief"
+- "Get over yourself"
+- "Stay calm"
+- "Can I remind you of something?"
+- "What I know about you:"
+
+**Signature CTA:**
+- **"✨sell yourself on that"** (appears in majority of posts - PRIMARY CTA STYLE)
+
+**Rhetorical Question Patterns:**
+- "Who are you being when..."
+- "What if you..."
+- "How do they feel in your presence?"
+
+**Repetition for Emphasis:**
+- "I could've been... Instead, I..."
+- "The first step in [X] is getting over yourself"
+- "Untethered sellers don't... They..."
+
+**Solution Frameworks (to be woven into copy):**
+- **Self-Image First:** "I don't start with strategy. I start with self-image."
+- **Presence Over Performance:** "People buy based on how they FEEL in your presence."
+- **Momentum Over Mindset:** "The doom never survived momentum."
+- **Mathematical, Not Emotional:** "It's often not emotional—it's mathematical. You just haven't met enough people."
+- **Internal Authority:** Operating from confidence rather than fear-based behaviors
+
+**Influencer References (for credibility & relatability):**
+- John C. Maxwell (leadership principles)
+- Les Brown ("Most people aren't living their dreams because they are too busy living their fears")
+- Taylor Swift (expects self-doubt before performances)
+- Maya Angelou ("People will never forget how you made them feel")
 
 ### What Remains Unchanged vs. What Is Refined
 
 **Preserved Elements:**
-- "Courage Over Comfort" (COC) brand positioning
-- "Courage Coach to Women Who Sell" tagline
-- Core philosophy: connection over selling
+- **"The Untethered Seller"** identity framework (PRIMARY positioning)
+- **"Courage Over Comfort" (COC)** foundational philosophy
+- **"Courage Coach & Self-Image Strategist to Women Who Sell"** tagline (updated from social media)
+- **"✨sell yourself on that"** signature CTA style
+- Core philosophy: connection over selling, self-image first
 - Newsletter brand: "The Untethered Weekly"
+- Programs: "Self-Image That Sells", "The Sell More Soirée"
 - Existing testimonial from Winsome Alexander
 - Personal sales origin story (pre-paid legal → regional management)
-- Professional black/white photography (aesthetic can evolve beyond minimalism)
+- Personal storytelling style (NYFW, Cape Town, networking events, Prince story)
+- Professional black/white photography aesthetic
+- Signature language patterns and opening lines
+- Influencer references (Maxwell, Les Brown, Swift, Angelou)
 
 **Refined Elements:**
 - Information architecture (single-page → multi-page)
-- Content depth and variety
-- Service/offer clarity and presentation
-- Visual storytelling using professional photography
-- Trust-building mechanisms (multiple testimonials if available, credentials if public)
-- Conversion pathway diversity
+- Elevation of "The Untethered Seller" to primary brand framework
+- Content depth showcasing 408+ Instagram insights
+- Service/offer clarity: "Self-Image That Sells" as core program
+- Visual storytelling using existing photography + personal narratives
+- Trust-building: Facebook stats (7,415 followers, 92% rating, 10+ years)
+- Conversion pathway diversity with "✨sell yourself on that" CTA integration
 - SEO optimization and content discoverability
+- Solution frameworks integrated throughout copy
 
 ---
 
@@ -160,13 +220,20 @@ Women Who Sell who struggle with:
 **Objective:** Immediately communicate who Shannon helps and the transformation she delivers
 
 **Content Focus:**
-- Headline derived from existing messaging: "Sales Courage for Women Who Are Done Playing Small" (or similar, rooted in COC philosophy)
-- Subheadline: Briefly state the problem solved
-- Visual: Professional photo (16.23.46 - modern office setting OR 16.25.13 - speaking photo for authority)
+- **Primary Headline:** "Become An Untethered Seller" or "For Women Who Sell: Choose Courage Over Comfort"
+- **Subheadline:** "Courage Coach & Self-Image Strategist to Women Who Sell"
+- **Supporting Copy:** Brief statement rooted in "The Untethered Seller" framework and self-image first approach
+- **Visual:** Professional photo (16.23.46 - modern office setting OR 16.25.13 - speaking photo for authority)
 
 **CTA Type:**
-- Primary: "Book a Call" (high-intent)
-- Secondary: "Get Weekly Courage" (newsletter - low barrier)
+- Primary: "Start Your Transformation" or "Work With Me" (high-intent)
+- Secondary: "Get Weekly Courage" → The Untethered Weekly newsletter (low barrier)
+- **Signature Style:** Integrate "✨sell yourself on that" pattern where appropriate
+
+**Key Messaging Elements:**
+- Emphasize "The Untethered Seller" identity
+- Reference self-image transformation over tactics
+- Use direct, punchy language patterns from Instagram
 
 **Structural Inspiration:**
 Marie Forleo uses bold headline + subheadline + dual CTAs (high-intent course enrollment + low-barrier free resource)
@@ -193,12 +260,19 @@ Problem-aware copy section establishing "I understand you"
 **Objective:** Introduce Shannon's methodology without giving away proprietary content
 
 **Content Focus:**
-- "Courage Over Comfort" framework introduction
-- "Connection Over Selling" philosophy
+- **"The Untethered Seller"** framework introduction - primary identity transformation
+- **"Self-Image First"** approach: "I don't start with strategy. I start with self-image."
+- **"Courage Over Comfort" (COC)** foundational philosophy
+- **"Presence Over Performance"**: "People buy based on how they FEEL in your presence."
+- **"Momentum Over Mindset"**: "The doom never survived momentum."
+- **"Connection Over Selling"** philosophy
 - High-level transformation promise
+- Use influencer quotes (Maxwell, Les Brown, Angelou) for credibility
 - Non-specific, values-driven content (no fabricated methodology claims)
 
-**CTA Type:** "Learn How I Can Help" → Services page
+**CTA Type:**
+- Primary: "Discover Self-Image That Sells" → Services page
+- Alternative: "✨sell yourself on that" style CTA
 
 **Structural Inspiration:**
 Marie Forleo's "Everything is Figureoutable" philosophy section - establishes worldview
@@ -239,12 +313,18 @@ Marie Forleo uses testimonial carousel with quantifiable results
 **Objective:** Preview what working with Shannon looks like
 
 **Content Focus:**
-Based on existing content mentioning "Serve More & Sell More":
-- High-level service categories (1-on-1 coaching, group programs, workshops - only if verifiable)
-- Non-specific benefit-focused descriptions
-- Structure allows future addition of specific programs
+Feature verified programs from social media:
+- **Self-Image That Sells** - Foundational program for women who sell (primary offering)
+- **Courage Over Comfort Coaching** - 1-on-1 coaching program
+- **The Sell More Soirée** - Event for women who sell
+- **The Untethered Weekly** - Newsletter for ongoing support
+- Benefit-focused descriptions rooted in "Self-Image First" approach
+- Emphasize identity transformation over tactics
+- Structure allows future addition of programs
 
-**CTA Type:** "Explore Services" → Work With Me page
+**CTA Type:**
+- Primary: "Work With Me" → Services page
+- Alternative: "✨sell yourself on that" integrated naturally
 
 **Structural Inspiration:**
 3-column service overview with icons/imagery
@@ -271,12 +351,15 @@ Marie Forleo's free audio training section - high-value perception for email exc
 **Objective:** Clear next step before footer
 
 **Content Focus:**
-- Reinforce transformation promise
-- Urgency without false scarcity: "Your next sales breakthrough starts with a conversation"
+- Reinforce "Untethered Seller" identity transformation
+- Use signature language: "✨sell yourself on that" or similar pattern
+- Urgency without false scarcity: "Your next sales breakthrough starts with choosing courage over comfort"
+- Direct, punchy copy in Shannon's voice
 
 **CTA Type:**
-- Primary: "Book Your Call"
-- Fallback: "Join the Newsletter"
+- Primary: "Become An Untethered Seller" or "Start Your Transformation"
+- Fallback: "Get The Untethered Weekly"
+- **Style:** Integrate "✨sell yourself on that" aesthetic
 
 **Structural Inspiration:**
 Terminal CTA section before footer - last conversion opportunity
@@ -288,13 +371,29 @@ Terminal CTA section before footer - last conversion opportunity
 ### Content to Reuse As-Is
 
 **From theuntetheredweekly.com:**
-1. Core positioning statement: "Courage Coach to Women Who Sell"
+1. Core positioning statement: "Courage Coach & Self-Image Strategist to Women Who Sell"
 2. Testimonial: Winsome Alexander + results (300%, 425%)
 3. Personal sales journey (pre-paid legal origin story)
 4. "Courage Over Comfort" brand language
 5. "Connection Over Selling" philosophy statement
 6. Newsletter name: "The Untethered Weekly"
 7. Problem statements (procrastination, rejection fear, cold calling resistance)
+
+**From Instagram (408 posts analyzed):**
+1. **"The Untethered Seller"** identity framework - PRIMARY positioning
+2. **"✨sell yourself on that"** signature CTA (use throughout site)
+3. **Personal stories:** NYFW experience, Cape Town mall, Prince the server, networking events
+4. **Opening lines:** "Borrow This Belief", "Get over yourself", "Stay calm", "Can I remind you of something?"
+5. **Solution frameworks:** Self-Image First, Presence Over Performance, Momentum Over Mindset, Mathematical Not Emotional
+6. **Programs:** Self-Image That Sells, The Sell More Soirée
+7. **8 detailed problem statements** (environmental-based shyness, doom feelings, old identity following sellers, etc.)
+8. **Influencer quotes:** John C. Maxwell, Les Brown, Taylor Swift, Maya Angelou
+9. **Language patterns:** Rhetorical questions, short punchy lines, direct address, repetition for emphasis
+
+**From Facebook:**
+1. Social proof stats: 7,415 followers, 92% recommendation rate (15 reviews)
+2. 10+ year presence (established June 2014)
+3. "Public Figure" authority positioning
 
 **Verified Elements:**
 - Mailchimp integration (existing)
@@ -320,27 +419,49 @@ Terminal CTA section before footer - last conversion opportunity
 ### Content That Can Be Created as High-Level Marketing Copy
 
 **Permissible Non-Specific Content:**
-1. Benefit statements derived from existing themes:
+1. Benefit statements derived from existing themes and Instagram insights:
+   - "Become an untethered seller who operates from internal authority"
+   - "Transform your self-image first, sales strategy second"
    - "Build prospecting courage that lasts"
-   - "Transform fear into fuel for your sales career"
-   - "Sell with authenticity and exceed your targets"
+   - "Move from doom feelings to momentum"
+   - "Untether from comfort zones to serve and sell more"
+   - "Shift from environmental-based shyness to confident presence"
 
 2. Process/approach descriptions (non-proprietary):
-   - "A coaching approach that addresses mindset, strategy, and accountability"
-   - "Customized support for your unique sales challenges"
-   - "Proven frameworks for sustainable sales growth"
+   - "Self-Image First approach: I don't start with strategy. I start with self-image."
+   - "Presence Over Performance: People buy based on how they FEEL in your presence"
+   - "Momentum Over Mindset: The doom never survived momentum"
+   - "Mathematical, Not Emotional: It's often not emotional—it's mathematical. You just haven't met enough people."
+   - "A coaching approach that addresses mindset, identity, strategy, and accountability"
 
-3. Educational content themes (based on existing problem statements):
+3. Educational content themes (based on 408 Instagram posts):
    - "Why comfort is costing you commissions"
    - "The real reason you're avoiding prospecting"
    - "How to make rejection your competitive advantage"
+   - "Environmental-based shyness vs. inherent personality"
+   - "When old identity follows you into new sales roles"
+   - "From doom feelings to untethered seller mindset"
+   - "Pipeline as a math problem, not an emotional problem"
+
+4. **Signature CTA Integration:**
+   - Use **"✨sell yourself on that"** throughout site as Shannon's authentic voice
+   - Integrate opening lines: "Borrow This Belief", "Get over yourself", "Stay calm"
+   - Use rhetorical questions: "Who are you being when...", "What if you...", "How do they feel in your presence?"
+
+5. **Personal Storytelling (verified from Instagram):**
+   - NYFW experience and creative courage
+   - Cape Town mall prospecting encounter
+   - Prince the server story (presence and impact)
+   - Networking event observations
+   - Personal transformation narratives
 
 **Critical Rule:**
 All created content must be:
-- Thematically derived from existing Shannon Muruli content
+- Thematically derived from existing Shannon Muruli content (website + 408 Instagram posts + Facebook)
 - Generic enough to be non-fabricated
 - Free of specific claims, credentials, or methodologies not publicly stated
 - Clearly distinguished as marketing extrapolation (not quoted content)
+- **Maintain Shannon's authentic voice:** short punchy lines, direct address, signature phrases
 
 ---
 
@@ -400,28 +521,45 @@ All created content must be:
 
 ## 7. Trust & Credibility Elements
 
-### What Can Be Used Now (Based on Existing Content)
+### What Can Be Used Now (Based on Existing Content + Social Media Data)
 
 **Verified Trust Signals:**
-1. Testimonial with full attribution:
+1. **Testimonial with full attribution:**
    - Winsome Alexander (name provided)
    - Quantifiable results: 300% sales growth, 425% territory expansion
    - Service received: appears to be 1-on-1 coaching
 
-2. Personal sales background:
+2. **Personal sales background:**
    - Pre-paid legal services (industry experience)
    - Regional management achievement
    - Stated as factual career progression
 
-3. Brand assets:
+3. **Brand assets:**
    - "Courage Over Comfort" (COC) branded materials visible in photos
+   - **"The Untethered Seller"** identity framework
    - Established newsletter: "The Untethered Weekly"
+   - **Programs:** Self-Image That Sells, The Sell More Soirée
    - Professional speaking engagements (evidenced by photo 16.25.13)
 
-4. Social proof indicators:
-   - Instagram presence (linked)
-   - Facebook presence (linked)
+4. **Social proof indicators (VERIFIED from Facebook scrape):**
+   - **7,415 followers** on Facebook
+   - **92% recommendation rate** (15 reviews)
+   - **10+ year presence** (established June 23, 2014)
+   - **"Public Figure"** category on Facebook
+   - Instagram: 408+ posts analyzed showing consistent expertise
    - Professional photography across multiple contexts
+
+5. **Thought Leadership Indicators:**
+   - **408 Instagram posts** demonstrating consistent content creation
+   - References credible influencers: John C. Maxwell, Les Brown, Maya Angelou, Taylor Swift
+   - Personal storytelling: NYFW attendance, international travel (Cape Town), networking events
+   - Signature frameworks and methodology visible in public content
+
+6. **Authority Positioning:**
+   - **"Courage Coach & Self-Image Strategist to Women Sellers"** (verified from Instagram profile)
+   - Consistent messaging across 10+ years
+   - Event hosting: The Sell More Soirée
+   - Weekly newsletter publication: The Untethered Weekly
 
 ### What Is Intentionally Excluded (Lack of Verified Information)
 
@@ -618,8 +756,10 @@ interface ContactSubmission {
 
 ## 10. Next Steps
 
-### Phase 0: Data Gathering & Content Audit (FIRST)
+### Phase 0: Data Gathering & Content Audit ✅ COMPLETE
 **Objective:** Scrape all existing content and assets before any design work begins
+**Status:** ✅ **COMPLETED** on 2026-02-01
+**Deliverables:** Comprehensive CONTENT_AUDIT.md with full social media analysis
 
 1. **Use Apify** to comprehensively scrape:
    - **theuntetheredweekly.com:**
@@ -678,6 +818,61 @@ interface ContactSubmission {
 - Competitor analysis report (marieforleo.com + 2-3 others with structural patterns and best practices)
 - Content gap analysis
 - Recommended structural patterns based on competitive research
+
+**✅ PHASE 0 COMPLETED - Key Achievements:**
+
+1. **Website Scraping (Apify CLI - website-content-crawler):**
+   - **3 pages scraped** from theuntetheredweekly.com
+   - Main page: Full about/sales narrative with complete story
+   - Home page: Short landing page with core positioning
+   - Join newsletter page: Newsletter signup
+   - **3 website images downloaded** (11.2MB total)
+     - main-page-og-image.png (7.2MB)
+     - home-page-og-image.png (3.9MB)
+     - join-page-og-image.jpg (86KB)
+   - Complete markdown + plain text extracts
+   - Full metadata and HTTP headers captured
+   - Platform confirmed: Mailchimp landing pages
+   - Data saved to `data/website_scrape/` and `assets/website_images/`
+
+2. **Instagram Scraping (Apify CLI - instagram-scraper):**
+   - **408 posts analyzed** from @shannonmuruli
+   - Content mix: 63 images, 51 videos, 10 carousels
+   - Identified **"The Untethered Seller"** as primary brand framework
+   - Discovered signature CTA: **"✨sell yourself on that"**
+   - Extracted 8 detailed problem statements
+   - Documented 5 solution frameworks
+   - Cataloged signature language patterns and opening lines
+   - Identified verified programs: Self-Image That Sells, The Sell More Soirée
+   - Found influencer references for credibility (Maxwell, Les Brown, Swift, Angelou)
+   - Personal stories documented: NYFW, Cape Town, Prince, networking events
+
+3. **Facebook Scraping (Apify CLI - facebook-pages-scraper):**
+   - **7,415 followers** verified
+   - **92% recommendation rate** (15 reviews)
+   - **10+ year presence** (established June 23, 2014)
+   - "Public Figure" category confirmed
+   - Consistent branding across platforms
+
+4. **Data Archive Created:**
+   - `data/website_scrape/` - All website content + images
+   - `data/social_media/instagram_raw.json` (510KB - all 408 posts)
+   - `data/social_media/facebook_summary.json` (structured page data)
+   - `data/social_media/instagram_captions_sample.txt` (20 recent captions)
+   - `assets/website_images/` - 3 high-res website images
+   - Complete README documentation for all sources
+
+5. **CONTENT_AUDIT.md Updated:**
+   - Section 1.1 expanded with complete 3-page website scrape
+   - Section 1.2 completely rewritten with comprehensive social media insights
+   - Website images cataloged with URLs and file sizes
+   - 8 content themes documented
+   - Language patterns and signature phrases cataloged
+   - Solution frameworks extracted
+   - Engagement style analyzed
+   - Technical stack details added
+
+**Ready for Phase 1:** All necessary content, brand insights, and strategic direction now available to begin design and copy refinement.
 
 ---
 
