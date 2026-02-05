@@ -11,7 +11,7 @@ export default function WorkWithMePage() {
     <>
       {/* Hero */}
       <section className="section-padding bg-white text-center">
-        <div className="container-narrow">
+        <div className="container-narrow pt-2 md:pt-0">
           <h1 className="text-5xl md:text-6xl font-heading mb-6">
             Work With Me
           </h1>
@@ -111,7 +111,7 @@ export default function WorkWithMePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px]">
               <Image
-                src="/images/speaking.jpg"
+                src="/images/speaking-professional.jpg"
                 alt="Shannon Muruli speaking at event"
                 fill
                 className="object-cover shadow-lg"

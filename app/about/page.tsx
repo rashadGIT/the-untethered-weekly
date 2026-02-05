@@ -126,7 +126,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="relative h-80">
               <Image
-                src="/images/speaking.jpg"
+                src="/images/speaking-professional.jpg"
                 alt="Shannon Muruli speaking at event"
                 fill
                 className="object-cover"
@@ -142,7 +142,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-80">
               <Image
-                src="/images/casual-outdoor.jpg"
+                src="/images/lifestyle-outdoor.jpg"
                 alt="Shannon Muruli portrait"
                 fill
                 className="object-cover"

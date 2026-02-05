@@ -10,7 +10,7 @@ export default function ClientResultsPage() {
     <>
       {/* Hero */}
       <section className="section-padding bg-white text-center">
-        <div className="container-narrow">
+        <div className="container-narrow pt-2 md:pt-0">
           <h1 className="text-5xl md:text-6xl font-heading mb-6">
             Real Results From Real Women
           </h1>

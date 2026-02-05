@@ -3,12 +3,13 @@ import Button from "./components/Button";
 import FadeIn from "./components/FadeIn";
 import Counter from "./components/Counter";
 import HeroVideoModal from "./components/HeroVideoModal";
+import VideoPlayer from "./components/VideoPlayer";
 
 export default function Home() {
   return (
     <>
       {/* Section 1: Hero with Video Background */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -110,12 +111,12 @@ export default function Home() {
       </section>
 
       {/* Section 1.5: Visual Moment */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d3a]">
+      {/*<section className="py-16 md:py-20 bg-gradient-to-br from-[#1a1a2e] to-[#2d2d3a]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[450px] lg:h-[550px] rounded-2xl overflow-hidden shadow-2xl group">
               <Image
-                src="/images/lifestyle-chanel.jpg"
+                src="/images/shannon-lifestyle-1.jpg"
                 alt="Shannon Muruli"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -123,7 +124,7 @@ export default function Home() {
             </div>
             <div className="text-white">
               <blockquote className="text-[32px] md:text-[42px] lg:text-[52px] font-bold mb-8 leading-[1.15] tracking-tight">
-                "You will close deals in rooms that once intimidated you."
+                {"\"You will close deals in rooms that once intimidated you.\""}
               </blockquote>
               <p className="text-[19px] md:text-[22px] text-gray-300 font-light leading-[1.6]">
                 Borrow this belief until it becomes yours. The courage to untether from your comfort zone is already within you.
@@ -131,14 +132,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Section 1.6: Marie Forleo Hero */}
-      <section className="relative h-screen flex items-center bg-[#dfd2c4] overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full h-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
-            {/* Left: Text Content */}
-            <div className="max-w-xl">
+      <section className="relative min-h-screen lg:h-screen flex items-center bg-[#dfd2c4] overflow-hidden py-0 lg:py-0">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full lg:h-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:items-center lg:h-full">
+            {/* Text Content - First on mobile, Second on desktop */}
+            <div className="max-w-xl order-1 lg:order-2">
               <FadeIn delay={0.2}>
                 <p className="text-[11px] md:text-[12px] uppercase tracking-[0.3em] mb-8 font-bold text-gray-700">
                   HEYA!
@@ -166,12 +167,12 @@ export default function Home() {
               </FadeIn>
             </div>
 
-            {/* Right: Full Body Image */}
-            <FadeIn delay={0.4} direction="right" className="h-full">
+            {/* Full Body Image - Second on mobile, First on desktop */}
+            <FadeIn delay={0.4} direction="right" className="h-[70vh] lg:h-full -mx-6 md:mx-0 order-2 lg:order-1">
               <div className="relative h-full flex items-end justify-center lg:justify-end">
-                <div className="relative w-full h-full max-w-[600px]">
+                <div className="relative w-full h-full">
                   <Image
-                    src="/images/hero/shannon-fullbody-2.png"
+                    src="/images/hero/shannon-fullbody-3.png"
                     alt="Shannon Muruli - Courage Coach"
                     fill
                     className="object-contain object-bottom"
@@ -328,7 +329,7 @@ export default function Home() {
             </div>
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-xl group">
               <Image
-                src="/images/quote-progress.jpg"
+                src="/images/quote-2.jpg"
                 alt="Progress doesn't always feel successful"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -419,22 +420,7 @@ export default function Home() {
                   Discover Self-Image That Sells
                 </Button>
               </div>
-              <div className="relative h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-gray-900 flex items-center justify-center group cursor-pointer">
-                <Image
-                  src="/images/group-coaching.jpg"
-                  alt="Shannon Muruli coaching"
-                  fill
-                  className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-[#FF6B35] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              <VideoPlayer />
             </div>
           </div>
         </div>
@@ -446,7 +432,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl group lg:col-span-2">
               <Image
-                src="/images/no-lost-value.jpg"
+                src="/images/shannon-quote-1.jpg"
                 alt="Neither you nor what you sell lost value because a sale didn't close"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -454,8 +440,8 @@ export default function Home() {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="/images/stay-calm.jpg"
-                alt="Stay Calm"
+                src="/images/shannon-photo-1.jpg"
+                alt="Shannon Muruli"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -579,7 +565,7 @@ export default function Home() {
             <div className="group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="relative h-[280px] overflow-hidden">
                 <Image
-                  src="/images/selfie-professional.jpg"
+                  src="/images/shannon-selfie.jpg"
                   alt="Self-Image That Sells"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -604,7 +590,7 @@ export default function Home() {
             <div className="group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="relative h-[280px] overflow-hidden">
                 <Image
-                  src="/images/stay-calm.jpg"
+                  src="/images/shannon-photo-1.jpg"
                   alt="Courage Over Comfort Coaching"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -629,7 +615,7 @@ export default function Home() {
             <div className="group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="relative h-[280px] overflow-hidden">
                 <Image
-                  src="/images/event-soiree.jpg"
+                  src="/images/shannon-event.jpg"
                   alt="The Sell More Soirée"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -681,32 +667,32 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/quote-1.jpg"
-                  alt="You will close deals in rooms that once intimidated you"
+                  src="/images/instagram/image01.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/lifestyle-chanel.jpg"
-                  alt="Shannon Muruli lifestyle"
+                  src="/images/instagram/image02.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/no-lost-value.jpg"
-                  alt="Neither you nor what you sell lost value"
+                  src="/images/instagram/image03.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/networking-event.jpg"
-                  alt="Networking event"
+                  src="/images/instagram/image04.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -715,32 +701,32 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/quote-2.jpg"
-                  alt="Out Do The Old You"
+                  src="/images/instagram/image05.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/story-card.jpg"
-                  alt="Personal story"
+                  src="/images/instagram/image06.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/quote-dream.jpg"
-                  alt="I, too, Have A Dream"
+                  src="/images/instagram/image07.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer">
                 <Image
-                  src="/images/quote-progress.jpg"
-                  alt="Progress doesn't always feel successful"
+                  src="/images/instagram/image08.jpg"
+                  alt="Shannon Muruli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -762,7 +748,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative h-[450px] md:h-[550px] rounded-2xl overflow-hidden shadow-2xl group">
               <Image
-                src="/images/quote-stretch.jpg"
+                src="/images/shannon-quote-2.jpg"
                 alt="What stretched you this year also strengthened you"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -770,7 +756,7 @@ export default function Home() {
             </div>
             <div className="relative h-[450px] md:h-[550px] rounded-2xl overflow-hidden shadow-2xl group">
               <Image
-                src="/images/quote-version.jpg"
+                src="/images/shannon-quote-3.jpg"
                 alt="What version of yourself are you no longer willing to shrink back into"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -791,7 +777,7 @@ export default function Home() {
             <div className="lg:col-span-2">
               <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/selfie-professional.jpg"
+                  src="/images/shannon-selfie.jpg"
                   alt="Shannon Muruli"
                   fill
                   className="object-cover"

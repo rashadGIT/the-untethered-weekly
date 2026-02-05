@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "../components/Button";
 
 export const metadata = {
@@ -12,36 +13,42 @@ const merchItems = [
     price: "$68",
     category: "Apparel",
     badge: "Best Seller",
+    image: "/images/merch/hoodie.png",
   },
   {
     name: "COC Logo T-Shirt",
     description: "Breathable, everyday tee with a clean Courage Over Comfort mark.",
     price: "$34",
     category: "Apparel",
+    image: "/images/merch/tshirt.png",
   },
   {
     name: "Sales Courage Journal",
     description: "Guided prompts to reframe rejection and track daily courageous actions.",
     price: "$28",
     category: "Journals",
+    image: "/images/merch/journal.jpeg",
   },
   {
     name: "Prospecting Planner",
     description: "Weekly planner built to keep your pipeline brave and consistent.",
     price: "$32",
     category: "Tools",
+    image: "/images/merch/planner01.png",
   },
   {
     name: "Fearless Seller Tote Bag",
     description: "Carry your notes, scripts, and courage in a durable canvas tote.",
     price: "$24",
     category: "Accessories",
+    image: "/images/merch/tote1.png",
   },
   {
     name: "Daily Courage Affirmation Cards",
     description: "A daily deck of bold reminders to choose courage over comfort.",
     price: "$22",
     category: "Tools",
+    image: "/images/merch/cards1.png",
   },
 ];
 
@@ -53,7 +60,7 @@ export default function MerchPage() {
     <>
       {/* Hero */}
       <section className="section-padding bg-[#161317] text-white">
-        <div className="container-narrow text-center">
+        <div className="container-narrow pt-2 md:pt-0 text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-[#FF6B35] mb-4">Merch</p>
           <h1 className="text-5xl md:text-6xl font-heading mb-6">
             Courage You Can Wear
@@ -93,29 +100,44 @@ export default function MerchPage() {
             {merchItems.map((item) => (
               <div
                 key={item.name}
-                className="rounded-2xl border border-gray-200 bg-[#fafafa] p-6 flex flex-col"
+                className="rounded-2xl border border-gray-200 bg-[#fafafa] flex flex-col overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs uppercase tracking-wider text-gray-500">
-                    {item.category}
-                  </span>
-                  {item.badge ? (
-                    <span className="text-xs bg-[#FF6B35] text-white px-3 py-1 rounded-full">
-                      {item.badge}
-                    </span>
-                  ) : null}
+                {/* Product Image */}
+                <div className="relative h-64 w-full bg-gray-100 group overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {item.badge && (
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="text-xs bg-[#FF6B35] text-white px-3 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm">
+                        {item.badge}
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <h3 className="text-2xl font-heading mb-3">{item.name}</h3>
-                <p className="text-gray-600 mb-6">{item.description}</p>
-                <div className="mt-auto">
-                  <div className="text-lg font-semibold mb-4">{item.price}</div>
-                  <Button
-                    href={orderLink(item.name)}
-                    variant="secondary"
-                    className="w-full !py-3 !text-xs"
-                  >
-                    Buy Now
-                  </Button>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs uppercase tracking-wider text-gray-500">
+                      {item.category}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-heading mb-3 leading-tight">{item.name}</h3>
+                  <p className="text-gray-600 mb-6 text-sm leading-relaxed">{item.description}</p>
+                  <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
+                    <div className="text-xl font-bold">{item.price}</div>
+                    <Button
+                      href={orderLink(item.name)}
+                      variant="secondary"
+                      className="!py-2 !px-6 !text-xs whitespace-nowrap"
+                    >
+                      Buy Now
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}
