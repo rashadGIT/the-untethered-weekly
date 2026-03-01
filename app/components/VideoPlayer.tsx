@@ -56,7 +56,7 @@ export default function VideoPlayer() {
             onClick={togglePlay}
           >
             <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8 text-[#FF6B35] ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-[#a08216] ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </div>
@@ -69,7 +69,7 @@ export default function VideoPlayer() {
         <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 bg-black/50 px-4 py-2 rounded-lg">
           <button
             onClick={togglePlay}
-            className="text-white hover:text-[#FF6B35] transition-colors"
+            className="text-white hover:text-[#a08216] transition-colors"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>

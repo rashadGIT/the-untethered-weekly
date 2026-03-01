@@ -14,7 +14,7 @@ export default function Navigation() {
     { href: '/about', label: 'About' },
     { href: '/work-with-me', label: 'Work With Me' },
     { href: '/client-results', label: 'Results' },
-    { href: '/merch', label: 'Merch' },
+    // { href: '/merch', label: 'Merch' },
     { href: '/resources', label: 'Resources' },
   ];
 
@@ -26,7 +26,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="font-serif text-2xl tracking-tight font-bold text-[#161317]">
-            SHANNON <span className="text-[#FF6B35]">MURULI</span>
+            SHANNON <span className="text-[#161317]">MURULI</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,8 +35,8 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#FF6B35] ${
-                  isActive(link.href) ? 'text-[#FF6B35]' : 'text-[#161317]'
+                className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#a08216] ${
+                  isActive(link.href) ? 'text-[#a08216]' : 'text-[#161317]'
                 }`}
               >
                 {link.label}
@@ -44,7 +44,7 @@ export default function Navigation() {
             ))}
             <Link 
               href="/#newsletter" 
-              className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#FF6B35] hover:text-[#e85a2a] transition-colors"
+              className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#a08216] hover:text-[#7d6611] transition-colors"
             >
               Join The Weekly
             </Link>
@@ -71,8 +71,8 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-bold uppercase tracking-[0.15em] py-2 transition-colors hover:text-[#FF6B35] ${
-                    isActive(link.href) ? 'text-[#FF6B35]' : 'text-[#161317]'
+                  className={`text-sm font-bold uppercase tracking-[0.15em] py-2 transition-colors hover:text-[#a08216] ${
+                    isActive(link.href) ? 'text-[#a08216]' : 'text-[#161317]'
                   }`}
                 >
                   {link.label}
@@ -81,7 +81,7 @@ export default function Navigation() {
               <Link 
                 href="/#newsletter"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-bold uppercase tracking-[0.15em] text-[#FF6B35] py-2 hover:text-[#e85a2a] transition-colors"
+                className="text-sm font-bold uppercase tracking-[0.15em] text-[#a08216] py-2 hover:text-[#7d6611] transition-colors"
               >
                 Join The Weekly
               </Link>

@@ -12,7 +12,7 @@ export default function WorkWithMePage() {
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">
-          <h1 className="text-5xl md:text-6xl font-heading mb-6">
+          <h1 className="text-5xl md:text-6xl font-heading mb-6 text-[#a08216]">
             Work With Me
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">

@@ -27,17 +27,17 @@ export default function HeroVideoModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="group inline-flex items-center gap-4 text-white hover:text-[#FF6B35] transition-colors duration-300 mt-8 focus:outline-none"
+        className="group inline-flex items-center gap-4 text-white hover:text-[#a08216] transition-colors duration-300 mt-8 focus:outline-none"
         aria-label="Watch the video"
       >
-        <div className="w-14 h-14 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:border-[#FF6B35] group-hover:bg-[#FF6B35] group-hover:text-white transition-all duration-300 backdrop-blur-sm relative">
+        <div className="w-14 h-14 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:border-[#a08216] group-hover:bg-[#a08216] group-hover:text-white transition-all duration-300 backdrop-blur-sm relative">
              {/* Pulse effect */}
-            <div className="absolute inset-0 rounded-full border border-white/30 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-50 group-hover:border-[#FF6B35]"></div>
+            <div className="absolute inset-0 rounded-full border border-white/30 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-50 group-hover:border-[#a08216]"></div>
           <svg className="w-5 h-5 fill-current ml-1" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>
-        <span className="text-[13px] font-bold uppercase tracking-[0.2em] underline decoration-transparent group-hover:decoration-[#FF6B35] underline-offset-4 transition-all">Watch The Video</span>
+        <span className="text-[13px] font-bold uppercase tracking-[0.2em] underline decoration-transparent group-hover:decoration-[#a08216] underline-offset-4 transition-all">Watch The Video</span>
       </button>
 
       {mounted && isOpen && createPortal(
