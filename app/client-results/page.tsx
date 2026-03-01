@@ -27,27 +27,30 @@ export default function ClientResultsPage() {
             <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4 text-center">Featured Success Story</div>
             <h2 className="text-3xl font-heading text-center mb-8">Winsome Alexander</h2>
 
-            <blockquote className="text-2xl font-heading italic text-center mb-8 text-gray-800">
+            <blockquote className="text-2xl font-heading italic text-center mb-4 text-gray-800">
               &ldquo;Do whatever it takes to join Shannon&apos;s one-on-one Courage Over Comfort Coaching&rdquo;
+              <footer className="mt-3 text-base font-sans not-italic text-gray-600">
+                <cite>— Winsome Alexander</cite>
+              </footer>
             </blockquote>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <dl className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-[#f9f9f9] p-6 text-center">
-                <div className="text-5xl font-heading font-bold mb-2 text-[#a08216]">300%</div>
-                <div className="text-sm text-gray-600">Sales Growth</div>
+                <dd className="text-5xl font-heading font-bold mb-2 text-[#a08216]">300%</dd>
+                <dt className="text-sm text-gray-600">Sales Growth</dt>
                 <div className="text-xs text-gray-500 mt-2">In less than 6 months</div>
               </div>
               <div className="bg-[#f9f9f9] p-6 text-center">
-                <div className="text-5xl font-heading font-bold mb-2 text-[#a08216]">425%</div>
-                <div className="text-sm text-gray-600">Territory Expansion</div>
+                <dd className="text-5xl font-heading font-bold mb-2 text-[#a08216]">425%</dd>
+                <dt className="text-sm text-gray-600">Territory Expansion</dt>
                 <div className="text-xs text-gray-500 mt-2">In under 6 months</div>
               </div>
               <div className="bg-[#f9f9f9] p-6 text-center">
-                <div className="text-5xl font-heading font-bold mb-2 text-[#a08216]">125%</div>
-                <div className="text-sm text-gray-600">Commission Increase</div>
+                <dd className="text-5xl font-heading font-bold mb-2 text-[#a08216]">125%</dd>
+                <dt className="text-sm text-gray-600">Commission Increase</dt>
                 <div className="text-xs text-gray-500 mt-2">Career shift success</div>
               </div>
-            </div>
+            </dl>
 
             <div className="prose prose-lg max-w-none">
               <h3 className="font-heading text-2xl mb-4">The Challenge</h3>
@@ -124,20 +127,20 @@ export default function ClientResultsPage() {
       <section className="section-padding bg-[#f9f9f9]">
         <div className="container text-center">
           <h2 className="text-4xl font-heading mb-12">Why Women Trust Shannon</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <dl className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div>
-              <div className="text-5xl font-heading font-bold mb-2 text-[#a08216]">10+</div>
-              <div className="text-sm text-gray-600">Years coaching women who sell (since 2014)</div>
+              <dd className="text-5xl font-heading font-bold mb-2 text-[#a08216]">10+</dd>
+              <dt className="text-sm text-gray-600">Years coaching women who sell (since 2014)</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2 text-[#a08216]">92%</div>
-              <div className="text-sm text-gray-600">Recommendation rate from 15 client reviews</div>
+              <dd className="text-5xl font-heading font-bold mb-2 text-[#a08216]">92%</dd>
+              <dt className="text-sm text-gray-600">Recommendation rate from 15 client reviews</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2 text-[#a08216]">7,415</div>
-              <div className="text-sm text-gray-600">Women follow Shannon&apos;s work on Facebook</div>
+              <dd className="text-5xl font-heading font-bold mb-2 text-[#a08216]">7,415</dd>
+              <dt className="text-sm text-gray-600">Women follow Shannon&apos;s work on Facebook</dt>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 

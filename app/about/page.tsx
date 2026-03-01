@@ -11,10 +11,10 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-[#161317] text-white">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
           <Image
             src="/images/professional-portrait.jpg"
-            alt="Shannon Muruli professional portrait"
+            alt=""
             fill
             className="object-cover opacity-30"
           />
@@ -98,24 +98,24 @@ export default function AboutPage() {
       <section className="section-padding bg-[#f9f9f9]">
         <div className="container text-center">
           <h2 className="text-4xl font-heading mb-12">By The Numbers</h2>
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <dl className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">10+</div>
-              <div className="text-sm text-gray-600">Years coaching women who sell (since 2014)</div>
+              <dd className="text-5xl font-heading font-bold mb-2">10+</dd>
+              <dt className="text-sm text-gray-600">Years coaching women who sell (since 2014)</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">7,415</div>
-              <div className="text-sm text-gray-600">Women follow Shannon's work on Facebook</div>
+              <dd className="text-5xl font-heading font-bold mb-2">7,415</dd>
+              <dt className="text-sm text-gray-600">Women follow Shannon&apos;s work on Facebook</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">92%</div>
-              <div className="text-sm text-gray-600">Recommendation rate (15 client reviews)</div>
+              <dd className="text-5xl font-heading font-bold mb-2">92%</dd>
+              <dt className="text-sm text-gray-600">Recommendation rate (15 client reviews)</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">408+</div>
-              <div className="text-sm text-gray-600">Instagram posts sharing sales courage insights</div>
+              <dd className="text-5xl font-heading font-bold mb-2">408+</dd>
+              <dt className="text-sm text-gray-600">Instagram posts sharing sales courage insights</dt>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 

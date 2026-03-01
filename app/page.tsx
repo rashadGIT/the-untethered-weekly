@@ -17,10 +17,10 @@ export default function Home() {
             muted
             loop
             playsInline
+            aria-hidden="true"
             className="w-full h-full object-cover"
           >
             <source src="/videos/hero-background-0.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/40"></div>
@@ -146,10 +146,10 @@ export default function Home() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
-                <h1 className="text-[56px] md:text-[90px] lg:text-[110px] font-normal mb-8 leading-[0.95] tracking-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
+                <h2 className="text-[56px] md:text-[90px] lg:text-[110px] font-normal mb-8 leading-[0.95] tracking-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
                   I&apos;M<br />
                   SHANNON.
-                </h1>
+                </h2>
               </FadeIn>
               <FadeIn delay={0.6}>
                 <p className="text-[18px] md:text-[20px] mb-10 leading-[1.7] text-gray-800 font-light">
@@ -579,9 +579,9 @@ export default function Home() {
                 <p className="text-gray-700 mb-6 leading-relaxed text-[15px]">
                   My most foundational work for women who sell. We start with self-image—not strategy. Because when you see yourself differently, you show up differently.
                 </p>
-                <a href="/work-with-me" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
+                <a href="/work-with-me" aria-label="Learn more about Self-Image That Sells" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
                   Learn More
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -604,9 +604,9 @@ export default function Home() {
                 <p className="text-gray-700 mb-6 leading-relaxed text-[15px]">
                   One-on-one coaching for women who sell. We disrupt narratives that keep you tethered to your comfort zone and cultivate the courage to serve more and sell more.
                 </p>
-                <a href="/work-with-me" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
+                <a href="/work-with-me" aria-label="Learn more about Courage Over Comfort Coaching" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
                   Learn More
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -629,9 +629,9 @@ export default function Home() {
                 <p className="text-gray-700 mb-6 leading-relaxed text-[15px]">
                   An event for women who sell who are ready to untether from comfort and step into their full sales potential. Connection. Courage. Community.
                 </p>
-                <a href="/work-with-me" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
+                <a href="/work-with-me" aria-label="Learn more about The Sell More Soirée" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
                   Learn More
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -793,13 +793,18 @@ export default function Home() {
                 Weekly sales courage delivered to your inbox. For women who sell who are ready to choose courage over comfort.
               </p>
               <form className="max-w-lg mx-auto mb-6">
+                <label htmlFor="newsletter-email" className="sr-only">Email address</label>
                 <input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Enter your email address"
                   className="w-full px-6 py-5 mb-4 border-2 border-gray-300 rounded-full text-base focus:outline-none focus:border-[#a08216] transition-colors"
                   required
+                  aria-required="true"
                 />
+                <label htmlFor="newsletter-name" className="sr-only">First name (optional)</label>
                 <input
+                  id="newsletter-name"
                   type="text"
                   placeholder="First Name (optional)"
                   className="w-full px-6 py-5 mb-6 border-2 border-gray-300 rounded-full text-base focus:outline-none focus:border-[#a08216] transition-colors"
