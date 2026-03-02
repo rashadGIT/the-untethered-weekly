@@ -48,7 +48,7 @@ export default function ContactPage() {
         <div className="container-narrow">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Form */}
-            <div className="bg-white p-8 shadow-lg">
+            <div className="bg-white p-5 sm:p-8 shadow-lg">
               <h2 className="text-3xl font-heading mb-6">Get In Touch</h2>
 
               {status === 'success' ? (

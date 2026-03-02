@@ -49,8 +49,8 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? 'page' : undefined}
-                className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#a08216] ${
-                  isActive(link.href) ? 'text-[#a08216]' : 'text-[#161317]'
+                className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#7a6212] ${
+                  isActive(link.href) ? 'text-[#7a6212]' : 'text-[#161317]'
                 }`}
               >
                 {link.label}
@@ -58,7 +58,7 @@ export default function Navigation() {
             ))}
             <Link
               href="/#newsletter"
-              className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#a08216] hover:text-[#7d6611] transition-colors"
+              className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#7a6212] hover:text-[#5e4c0e] transition-colors"
             >
               Join The Weekly
             </Link>
@@ -89,8 +89,8 @@ export default function Navigation() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive(link.href) ? 'page' : undefined}
-                  className={`text-sm font-bold uppercase tracking-[0.15em] py-2 transition-colors hover:text-[#a08216] ${
-                    isActive(link.href) ? 'text-[#a08216]' : 'text-[#161317]'
+                  className={`text-sm font-bold uppercase tracking-[0.15em] py-2 transition-colors hover:text-[#7a6212] ${
+                    isActive(link.href) ? 'text-[#7a6212]' : 'text-[#161317]'
                   }`}
                 >
                   {link.label}
@@ -99,7 +99,7 @@ export default function Navigation() {
               <Link
                 href="/#newsletter"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-bold uppercase tracking-[0.15em] text-[#a08216] py-2 hover:text-[#7d6611] transition-colors"
+                className="text-sm font-bold uppercase tracking-[0.15em] text-[#7a6212] py-2 hover:text-[#5e4c0e] transition-colors"
               >
                 Join The Weekly
               </Link>

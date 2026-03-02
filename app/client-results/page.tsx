@@ -23,7 +23,7 @@ export default function ClientResultsPage() {
       {/* Featured Testimonial: Winsome Alexander */}
       <section className="section-padding bg-[#f9f9f9]">
         <div className="container-narrow">
-          <div className="bg-white p-12 shadow-lg">
+          <div className="bg-white p-6 sm:p-12 shadow-lg">
             <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4 text-center">Featured Success Story</div>
             <h2 className="text-3xl font-heading text-center mb-8">Winsome Alexander</h2>
 
@@ -80,9 +80,9 @@ export default function ClientResultsPage() {
                 Within 6 months:
               </p>
               <ul className="text-gray-700">
-                <li><strong className="text-[#a08216]">300% sales growth</strong> compared to her first 6 months</li>
-                <li><strong className="text-[#a08216]">425% territory and commission expansion</strong></li>
-                <li><strong className="text-[#a08216]">125% commission increase</strong> overall</li>
+                <li><strong className="text-[#7a6212]">300% sales growth</strong> compared to her first 6 months</li>
+                <li><strong className="text-[#7a6212]">425% territory and commission expansion</strong></li>
+                <li><strong className="text-[#7a6212]">125% commission increase</strong> overall</li>
                 <li>Career transformation from furniture to healthcare sales</li>
               </ul>
             </div>

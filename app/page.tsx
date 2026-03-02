@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Section 1: Hero with Video Background */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-28 md:pt-20">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -29,12 +29,12 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center text-white">
           <FadeIn delay={0.2} direction="down">
-            <p className="text-[13px] md:text-[15px] uppercase tracking-[0.3em] mb-6 font-bold text-[#a08216]">
+            <p className="text-[13px] md:text-[15px] uppercase tracking-[0.3em] mb-3 md:mb-6 font-bold text-[#a08216]">
               For Women Who Sell
             </p>
           </FadeIn>
           <FadeIn delay={0.4} direction="up">
-            <h1 className="text-[48px] md:text-[72px] lg:text-[90px] font-extrabold mb-8 leading-[1.1] tracking-tight">
+            <h1 className="text-[34px] sm:text-[44px] md:text-[72px] lg:text-[90px] font-extrabold mb-5 md:mb-8 leading-[1.1] tracking-tight">
               Become An<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a08216] to-[#c4a030]">
                 Untethered
@@ -42,8 +42,8 @@ export default function Home() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.6} direction="up">
-            <p className="text-[20px] md:text-[24px] mb-12 max-w-3xl mx-auto font-light leading-[1.6] text-gray-100">
-              I don't start with strategy. I start with <em className="font-semibold not-italic text-white">self-image</em>. Because the women who cultivate the courage to untether from their comfort zones will serve more and sell more.
+            <p className="text-[16px] md:text-[24px] mb-8 md:mb-12 max-w-3xl mx-auto font-light leading-[1.6] text-gray-100">
+              I don&apos;t start with strategy. I start with <em className="font-semibold not-italic text-white">self-image</em>. Because the women who cultivate the courage to untether from their comfort zones will serve more and sell more.
             </p>
           </FadeIn>
           <FadeIn delay={0.8} direction="up">
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
           </FadeIn>
           <FadeIn delay={1} direction="up">
-            <p className="mt-12 text-[14px] font-medium tracking-wide uppercase opacity-80">
+            <p className="mt-6 md:mt-12 text-[14px] font-medium tracking-wide uppercase opacity-80">
               Courage Coach & Self-Image Strategist
             </p>
           </FadeIn>
@@ -135,24 +135,24 @@ export default function Home() {
       </section>*/}
 
       {/* Section 1.6: Marie Forleo Hero */}
-      <section className="relative min-h-screen lg:h-screen flex items-center bg-white overflow-hidden py-0 lg:py-0">
+      <section className="relative min-h-screen lg:h-screen flex items-start lg:items-center bg-white overflow-hidden py-12 lg:py-0">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full lg:h-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:items-center lg:h-full">
             {/* Text Content - First on mobile, Second on desktop */}
             <div className="max-w-xl order-1 lg:order-2">
               <FadeIn delay={0.2}>
-                <p className="text-[11px] md:text-[12px] uppercase tracking-[0.3em] mb-8 font-bold text-gray-700">
+                <p className="text-[11px] md:text-[12px] uppercase tracking-[0.3em] mb-4 md:mb-8 font-bold text-gray-700">
                   HEYA!
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
-                <h2 className="text-[56px] md:text-[90px] lg:text-[110px] font-normal mb-8 leading-[0.95] tracking-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
+                <h2 className="text-[36px] sm:text-[48px] md:text-[70px] lg:text-[90px] xl:text-[110px] font-normal mb-6 md:mb-8 leading-[0.95] tracking-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
                   I&apos;M<br />
                   SHANNON.
                 </h2>
               </FadeIn>
               <FadeIn delay={0.6}>
-                <p className="text-[18px] md:text-[20px] mb-10 leading-[1.7] text-gray-800 font-light">
+                <p className="text-[15px] md:text-[18px] mb-6 md:mb-10 leading-[1.7] text-gray-800 font-light">
                   My hunch is someone you trust mentioned my name, or you stumbled upon one of my videos, quotes or articles online. Whatever path you took, I&apos;m really glad you&apos;re here. This site is full of incredible resources and ideas that can help you change your life (not kidding!). Here&apos;s a quick lay of the land so you can find what you&apos;re looking for and we can start something beautiful together.
                 </p>
               </FadeIn>
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
 
             {/* Full Body Image - Second on mobile, First on desktop */}
-            <FadeIn delay={0.4} direction="right" className="h-[70vh] lg:h-full -mx-6 md:mx-0 order-2 lg:order-1">
+            <FadeIn delay={0.4} direction="right" className="h-[45vh] sm:h-[55vh] lg:h-full -mx-6 md:mx-0 order-2 lg:order-1">
               <div className="relative h-full flex items-end justify-center lg:justify-end">
                 <div className="relative w-full h-full">
                   <Image
@@ -282,7 +282,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-center text-[19px] text-gray-600 mb-16 max-w-2xl mx-auto leading-[1.6]">
-              Most women who sell aren't struggling because they lack skill. They're tethered to comfort.
+              Most women who sell aren&apos;t struggling because they lack skill. They&apos;re tethered to comfort.
             </p>
           </FadeIn>
 
@@ -302,14 +302,14 @@ export default function Home() {
                 <div className="text-[#a08216] text-[32px] font-bold mb-5 leading-none">02</div>
                 <h3 className="text-[19px] font-bold mb-4 leading-[1.3]">Your Past Self-Image Is Following You</h3>
                 <p className="text-[15px] text-gray-700 leading-[1.7]">
-                  Your role changed. But your self-image didn't. You sell now—but sparingly. Because a part of you still sees sales as something you're not.
+                  Your role changed. But your self-image didn&apos;t. You sell now—but sparingly. Because a part of you still sees sales as something you&apos;re not.
                 </p>
               </div>
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="bg-white p-8 rounded-lg shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300">
                 <div className="text-[#a08216] text-[32px] font-bold mb-5 leading-none">03</div>
-                <h3 className="text-[19px] font-bold mb-4 leading-[1.3]">You're Confusing Relief With Alignment</h3>
+                <h3 className="text-[19px] font-bold mb-4 leading-[1.3]">You&apos;re Confusing Relief With Alignment</h3>
                 <p className="text-[15px] text-gray-700 leading-[1.7]">
                   Comfort feels like relief. Courage feels like resistance. So you mistake relief for alignment—and stay tethered to what feels safe.
                 </p>
@@ -338,8 +338,8 @@ export default function Home() {
           </div>
 
           <p className="text-center text-[24px] md:text-[28px] italic text-gray-800 font-light leading-[1.4]">
-            You're not a shy seller.<br />
-            <span className="font-semibold not-italic">You're in environments that activate your shyness.</span>
+            You&apos;re not a shy seller.<br />
+            <span className="font-semibold not-italic">You&apos;re in environments that activate your shyness.</span>
           </p>
         </div>
       </section>
@@ -371,7 +371,7 @@ export default function Home() {
               <div className="border-l-[3px] border-[#a08216] pl-6 py-1">
                 <h3 className="text-[19px] font-bold mb-2 text-gray-900 leading-[1.3]">Self-Image First</h3>
                 <p className="text-[15px] text-gray-700 leading-[1.7]">
-                  I don't start with strategy. I start with self-image. Because when your identity shifts, your behavior follows.
+                  I don&apos;t start with strategy. I start with self-image. Because when your identity shifts, your behavior follows.
                 </p>
               </div>
               <div className="border-l-[3px] border-[#a08216] pl-6 py-1">
@@ -389,13 +389,13 @@ export default function Home() {
               <div className="border-l-[3px] border-[#a08216] pl-6 py-1">
                 <h3 className="text-[19px] font-bold mb-2 text-gray-900 leading-[1.3]">Mathematical, Not Emotional</h3>
                 <p className="text-[15px] text-gray-700 leading-[1.7]">
-                  Low pipeline makes every "no" feel heavier than it is. It's often not emotional—it's mathematical. You just haven't met enough people.
+                  Low pipeline makes every &ldquo;no&rdquo; feel heavier than it is. It&apos;s often not emotional—it&apos;s mathematical. You just haven&apos;t met enough people.
                 </p>
               </div>
               <div className="border-l-[3px] border-[#a08216] pl-6 py-1">
                 <h3 className="text-[19px] font-bold mb-2 text-gray-900 leading-[1.3]">Internal Authority</h3>
                 <p className="text-[15px] text-gray-700 leading-[1.7]">
-                  Untethered sellers operate from confidence rather than fear. They don't wait for permission. They choose courage.
+                  Untethered sellers operate from confidence rather than fear. They don&apos;t wait for permission. They choose courage.
                 </p>
               </div>
             </div>
@@ -411,7 +411,7 @@ export default function Home() {
               <div>
                 <p className="text-[11px] uppercase tracking-[0.25em] text-[#a08216] font-bold mb-6">Featured Content</p>
                 <blockquote className="text-[28px] md:text-[36px] font-bold italic text-white mb-6 leading-[1.3]">
-                  "I don't start with strategy.<br />I start with self-image."
+                  &ldquo;I don&apos;t start with strategy.<br />I start with self-image.&rdquo;
                 </blockquote>
                 <p className="text-[17px] text-gray-300 mb-10 font-light leading-[1.7]">
                   Watch how transforming your self-image creates lasting change in your sales results. This is where the real work begins.
@@ -465,16 +465,16 @@ export default function Home() {
               </div>
             </div>
             <div className="md:col-span-3">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-4">My Story</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-4">My Story</p>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 From Parking Lots<br />To Regional Manager
               </h2>
               <div className="space-y-4 text-gray-700 mb-8 leading-relaxed">
                 <p className="text-lg">I started out selling pre-paid legal services in parking lots.</p>
                 <p>After meeting a prospect in a Walmart parking lot, following up, and taking them through my sales process, I found myself a week later delivering an award-worthy sales presentation to about a dozen of their construction workers—<em>inside of an empty pool.</em></p>
-                <p>In less than a year, I transitioned from an individual contributor role to Regional Sales Manager. I inherited an underperforming region, initially ranked last among five, and elevated it to the <strong className="text-[#a08216]">#1 position</strong>.</p>
+                <p>In less than a year, I transitioned from an individual contributor role to Regional Sales Manager. I inherited an underperforming region, initially ranked last among five, and elevated it to the <strong className="text-[#7a6212]">#1 position</strong>.</p>
                 <p>How? I taught them how to do one thing better than any other region: <strong>PROSPECT.</strong></p>
-                <p>I've excelled in various sales roles by choosing courage over comfort. In one corporate role, I elevated my territory by <strong className="text-[#a08216]">900%</strong> in less than 90 days. While in direct sales, I built a team of 200 within 12 months.</p>
+                <p>I&apos;ve excelled in various sales roles by choosing courage over comfort. In one corporate role, I elevated my territory by <strong className="text-[#7a6212]">900%</strong> in less than 90 days. While in direct sales, I built a team of 200 within 12 months.</p>
                 <p className="text-xl font-semibold text-gray-900 pt-4">Now, I help women who sell untether from their comfort zones so they can serve more and sell more.</p>
               </div>
               <Button href="/about" variant="secondary">
@@ -489,7 +489,7 @@ export default function Home() {
       <section className="section-padding bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-4">Success Stories</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-4">Success Stories</p>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Real Results From<br />Real Women
             </h2>
@@ -506,12 +506,12 @@ export default function Home() {
               />
             </div>
             <div className="bg-gradient-to-br from-[#f8f9fa] to-white p-12 rounded-2xl shadow-lg order-1 lg:order-2">
-              <div className="text-[#a08216] text-6xl mb-6">"</div>
+              <div className="text-[#a08216] text-6xl mb-6">&ldquo;</div>
               <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800 mb-8 leading-relaxed">
-                Do whatever it takes to join Shannon's one-on-one Courage Over Comfort Coaching
+                Do whatever it takes to join Shannon&apos;s one-on-one Courage Over Comfort Coaching
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-[#a08216] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                <div className="w-16 h-16 flex-shrink-0 bg-[#a08216] rounded-full flex items-center justify-center text-white font-bold text-xl">
                   WA
                 </div>
                 <div>
@@ -553,12 +553,12 @@ export default function Home() {
       <section className="section-padding bg-[#f8f9fa]">
         <div className="container">
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-4">Ways to Work Together</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-4">Ways to Work Together</p>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Choose Your Path
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-              Whether you need foundational training, personalized coaching, or community connection—there's a path for you.
+              Whether you need foundational training, personalized coaching, or community connection—there&apos;s a path for you.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -574,12 +574,12 @@ export default function Home() {
                 <div className="absolute top-6 right-6 text-4xl font-bold text-white/40 group-hover:text-[#a08216] transition-colors">01</div>
               </div>
               <div className="bg-white p-8">
-                <div className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-3">Foundational</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-3">Foundational</div>
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-[#a08216] transition-colors">Self-Image That Sells</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed text-[15px]">
                   My most foundational work for women who sell. We start with self-image—not strategy. Because when you see yourself differently, you show up differently.
                 </p>
-                <a href="/work-with-me" aria-label="Learn more about Self-Image That Sells" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
+                <a href="/work-with-me" aria-label="Learn more about Self-Image That Sells" className="inline-flex items-center text-[#7a6212] font-semibold hover:text-[#c4a030] transition-colors group">
                   Learn More
                   <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -599,12 +599,12 @@ export default function Home() {
                 <div className="absolute top-6 right-6 text-4xl font-bold text-white/40 group-hover:text-[#a08216] transition-colors">02</div>
               </div>
               <div className="bg-white p-8">
-                <div className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-3">1-on-1 Coaching</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-3">1-on-1 Coaching</div>
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-[#a08216] transition-colors">Courage Over Comfort Coaching</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed text-[15px]">
                   One-on-one coaching for women who sell. We disrupt narratives that keep you tethered to your comfort zone and cultivate the courage to serve more and sell more.
                 </p>
-                <a href="/work-with-me" aria-label="Learn more about Courage Over Comfort Coaching" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
+                <a href="/work-with-me" aria-label="Learn more about Courage Over Comfort Coaching" className="inline-flex items-center text-[#7a6212] font-semibold hover:text-[#c4a030] transition-colors group">
                   Learn More
                   <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -624,12 +624,12 @@ export default function Home() {
                 <div className="absolute top-6 right-6 text-4xl font-bold text-white/40 group-hover:text-[#a08216] transition-colors">03</div>
               </div>
               <div className="bg-white p-8">
-                <div className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-3">Live Event</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-3">Live Event</div>
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-[#a08216] transition-colors">The Sell More Soirée</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed text-[15px]">
                   An event for women who sell who are ready to untether from comfort and step into their full sales potential. Connection. Courage. Community.
                 </p>
-                <a href="/work-with-me" aria-label="Learn more about The Sell More Soirée" className="inline-flex items-center text-[#a08216] font-semibold hover:text-[#c4a030] transition-colors group">
+                <a href="/work-with-me" aria-label="Learn more about The Sell More Soirée" className="inline-flex items-center text-[#7a6212] font-semibold hover:text-[#c4a030] transition-colors group">
                   Learn More
                   <svg aria-hidden="true" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -648,7 +648,7 @@ export default function Home() {
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-[#a08216] font-bold mb-4">Follow Along</p>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-[#7a6212] font-bold mb-4">Follow Along</p>
             <h2 className="text-[38px] md:text-[48px] font-bold mb-5 leading-[1.2]">
               Latest from Instagram
             </h2>
@@ -785,7 +785,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-3 bg-white p-12 md:p-16 rounded-3xl shadow-2xl text-center">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#a08216] font-bold mb-4">Weekly Inspiration</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-4">Weekly Inspiration</p>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Get The Untethered Weekly
               </h2>
@@ -851,7 +851,7 @@ export default function Home() {
             Starts With <span className="text-[#a08216]">Choosing Courage</span>
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-            Become an untethered seller who operates from internal authority. One who doesn't wait for confidence—but shows up anyway.
+            Become an untethered seller who operates from internal authority. One who doesn&apos;t wait for confidence—but shows up anyway.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button href="/work-with-me" variant="primary" className="!px-12 !py-5">

@@ -24,8 +24,8 @@ export default function WorkWithMePage() {
       {/* Self-Image That Sells - PRIMARY */}
       <section aria-label="Self-Image That Sells program" className="section-padding bg-[#f9f9f9]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px]">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+            <div className="relative h-64 sm:h-80 md:h-[400px]">
               <Image
                 src="/images/coaching-session.jpg"
                 alt="Shannon Muruli coaching session"
@@ -66,7 +66,7 @@ export default function WorkWithMePage() {
       {/* Courage Over Comfort Coaching */}
       <section aria-label="Courage Over Comfort Coaching program" className="section-padding bg-white">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4">1-on-1 Coaching</div>
               <h2 className="text-4xl font-heading mb-6">Courage Over Comfort Coaching</h2>
@@ -93,7 +93,7 @@ export default function WorkWithMePage() {
               </div>
               <Button href="/contact" aria-label="Apply for Courage Over Comfort Coaching">Apply for Coaching</Button>
             </div>
-            <div className="relative h-[400px] order-1 md:order-2">
+            <div className="relative h-64 sm:h-80 md:h-[400px] order-1 md:order-2">
               <Image
                 src="/images/coc-branding.jpg"
                 alt="Courage Over Comfort coaching"
@@ -108,8 +108,8 @@ export default function WorkWithMePage() {
       {/* The Sell More Soirée */}
       <section aria-label="The Sell More Soirée live event" className="section-padding bg-[#f9f9f9]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px]">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+            <div className="relative h-64 sm:h-80 md:h-[400px]">
               <Image
                 src="/images/speaking-professional.jpg"
                 alt="Shannon Muruli speaking at event"
