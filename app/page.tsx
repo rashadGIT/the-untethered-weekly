@@ -4,6 +4,7 @@ import FadeIn from "./components/FadeIn";
 import Counter from "./components/Counter";
 import HeroVideoModal from "./components/HeroVideoModal";
 import VideoPlayer from "./components/VideoPlayer";
+import NewsletterForm from "./components/NewsletterForm";
 
 export default function Home() {
   return (
@@ -172,7 +173,7 @@ export default function Home() {
               <div className="relative h-full flex items-end justify-center lg:justify-end">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/assets/images/hero/shannon-fullbody-3-crop.png"
+                    src="/assets/images/hero/shannon-fullbody-3.png"
                     alt="Shannon Muruli - Courage Coach"
                     fill
                     className="object-contain object-bottom"
@@ -429,7 +430,7 @@ export default function Home() {
       </section>
 
       {/* Section 4.5: Quote Moment */}
-      <section className="py-20 md:py-24 bg-white">
+      {/* <section className="py-20 md:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl group">
@@ -450,7 +451,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section 5: About/Credibility */}
       <section className="section-padding bg-gradient-to-br from-[#f8f9fa] to-white">
@@ -775,18 +776,8 @@ export default function Home() {
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#c4a030] rounded-full blur-3xl"></div>
         </div>
         <div className="container-narrow relative z-10">
-          <div className="grid lg:grid-cols-5 gap-12 items-center mb-16">
-            <div className="lg:col-span-2">
-              <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/assets/images/home/insta_08.jpg"
-                  alt="Shannon Muruli"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="lg:col-span-3 bg-white p-12 md:p-16 rounded-3xl shadow-2xl text-center">
+          <div className="mb-16 max-w-2xl mx-auto">
+            <div className="bg-white p-12 md:p-16 rounded-3xl shadow-2xl text-center">
               <p className="text-xs uppercase tracking-[0.2em] text-[#7a6212] font-bold mb-4">Weekly Inspiration</p>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Get The Untethered Weekly
@@ -794,27 +785,7 @@ export default function Home() {
               <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Weekly sales courage delivered to your inbox. For women who sell who are ready to choose courage over comfort.
               </p>
-              <form className="max-w-lg mx-auto mb-6">
-                <label htmlFor="newsletter-email" className="sr-only">Email address</label>
-                <input
-                  id="newsletter-email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="w-full px-6 py-5 mb-4 border-2 border-gray-300 rounded-full text-base focus:outline-none focus:border-[#a08216] transition-colors"
-                  required
-                  aria-required="true"
-                />
-                <label htmlFor="newsletter-name" className="sr-only">First name (optional)</label>
-                <input
-                  id="newsletter-name"
-                  type="text"
-                  placeholder="First Name (optional)"
-                  className="w-full px-6 py-5 mb-6 border-2 border-gray-300 rounded-full text-base focus:outline-none focus:border-[#a08216] transition-colors"
-                />
-                <Button type="submit" variant="primary" className="w-full !py-5 !text-base">
-                  Get Weekly Courage
-                </Button>
-              </form>
+              <NewsletterForm />
               <div className="flex items-center justify-center gap-8 text-sm text-gray-500 flex-wrap">
                 <span className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-[#a08216]" fill="currentColor" viewBox="0 0 20 20">
