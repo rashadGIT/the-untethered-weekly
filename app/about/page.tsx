@@ -11,16 +11,16 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center justify-center bg-[#161317] text-white">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
           <Image
             src="/images/professional-portrait.jpg"
-            alt="Shannon Muruli professional portrait"
+            alt=""
             fill
             className="object-cover opacity-30"
           />
         </div>
         <div className="relative z-10 container text-center px-6">
-          <h1 className="text-5xl md:text-7xl font-heading mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading mb-6">
             From Parking Lots To Regional Manager
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
@@ -98,24 +98,24 @@ export default function AboutPage() {
       <section className="section-padding bg-[#f9f9f9]">
         <div className="container text-center">
           <h2 className="text-4xl font-heading mb-12">By The Numbers</h2>
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">10+</div>
-              <div className="text-sm text-gray-600">Years coaching women who sell (since 2014)</div>
+              <dd className="text-3xl sm:text-5xl font-heading font-bold mb-2">10+</dd>
+              <dt className="text-sm text-gray-600">Years coaching women who sell (since 2014)</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">7,415</div>
-              <div className="text-sm text-gray-600">Women follow Shannon's work on Facebook</div>
+              <dd className="text-3xl sm:text-5xl font-heading font-bold mb-2">7,415</dd>
+              <dt className="text-sm text-gray-600">Women follow Shannon&apos;s work on Facebook</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">92%</div>
-              <div className="text-sm text-gray-600">Recommendation rate (15 client reviews)</div>
+              <dd className="text-3xl sm:text-5xl font-heading font-bold mb-2">92%</dd>
+              <dt className="text-sm text-gray-600">Recommendation rate (15 client reviews)</dt>
             </div>
             <div>
-              <div className="text-5xl font-heading font-bold mb-2">408+</div>
-              <div className="text-sm text-gray-600">Instagram posts sharing sales courage insights</div>
+              <dd className="text-3xl sm:text-5xl font-heading font-bold mb-2">408+</dd>
+              <dt className="text-sm text-gray-600">Instagram posts sharing sales courage insights</dt>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
         <div className="container">
           <h2 className="text-4xl font-heading text-center mb-12">Moments That Matter</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="relative h-80">
+            <div className="relative h-52 sm:h-64 md:h-80">
               <Image
                 src="/images/speaking-professional.jpg"
                 alt="Shannon Muruli speaking at event"
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative h-80">
+            <div className="relative h-52 sm:h-64 md:h-80">
               <Image
                 src="/images/coaching-session.jpg"
                 alt="Shannon Muruli coaching session"
@@ -140,7 +140,7 @@ export default function AboutPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative h-80">
+            <div className="relative h-52 sm:h-64 md:h-80">
               <Image
                 src="/images/lifestyle-outdoor.jpg"
                 alt="Shannon Muruli portrait"

@@ -61,7 +61,7 @@ export default function MerchPage() {
       {/* Hero */}
       <section className="section-padding bg-[#161317] text-white">
         <div className="container-narrow pt-2 md:pt-0 text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#FF6B35] mb-4">Merch</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#a08216] mb-4">Merch</p>
           <h1 className="text-5xl md:text-6xl font-heading mb-6">
             Courage You Can Wear
           </h1>
@@ -112,7 +112,7 @@ export default function MerchPage() {
                   />
                   {item.badge && (
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="text-xs bg-[#FF6B35] text-white px-3 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm">
+                      <span className="text-xs bg-[#a08216] text-white px-3 py-1 rounded-full font-bold uppercase tracking-wider shadow-sm">
                         {item.badge}
                       </span>
                     </div>

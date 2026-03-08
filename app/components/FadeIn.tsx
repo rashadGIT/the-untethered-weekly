@@ -10,17 +10,26 @@ interface FadeInProps {
   className?: string;
 }
 
-export default function FadeIn({ 
-  children, 
-  delay = 0, 
-  duration = 0.8, 
+export default function FadeIn({
+  children,
+  delay = 0,
+  duration = 0.8,
   direction = "up",
-  className = "" 
+  className = ""
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = typeof window !== "undefined"
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
+  const [isVisible, setIsVisible] = useState(prefersReducedMotion);
 
   useEffect(() => {
+    // If user prefers reduced motion, show content immediately without animation
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -65,7 +74,9 @@ export default function FadeIn({
       style={{
         opacity: isVisible ? 1 : 0,
         transform: getTransform(),
-        transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s`
+        transition: prefersReducedMotion
+          ? "none"
+          : `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s`
       }}
     >
       {children}

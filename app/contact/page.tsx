@@ -48,14 +48,14 @@ export default function ContactPage() {
         <div className="container-narrow">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Form */}
-            <div className="bg-white p-8 shadow-lg">
+            <div className="bg-white p-5 sm:p-8 shadow-lg">
               <h2 className="text-3xl font-heading mb-6">Get In Touch</h2>
 
               {status === 'success' ? (
-                <div className="bg-green-50 border border-green-200 p-6 rounded">
+                <div role="alert" className="bg-green-50 border border-green-200 p-6 rounded">
                   <h3 className="text-xl font-heading mb-2 text-green-800">Message Sent!</h3>
                   <p className="text-green-700">
-                    Thank you for reaching out. I'll get back to you within 48 hours.
+                    Thank you for reaching out. I&apos;ll get back to you within 48 hours.
                   </p>
                 </div>
               ) : (
@@ -71,6 +71,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       className="w-full px-4 py-3 border border-gray-300 focus:border-[#161317] focus:outline-none"
                     />
                   </div>
@@ -86,6 +87,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       className="w-full px-4 py-3 border border-gray-300 focus:border-[#161317] focus:outline-none"
                     />
                   </div>
@@ -114,6 +116,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      aria-required="true"
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 focus:border-[#161317] focus:outline-none resize-none"
                       placeholder="Tell me about what you're looking for..."
@@ -221,11 +224,14 @@ export default function ContactPage() {
             Join The Untethered Weekly and get weekly sales courage delivered to your inbox.
           </p>
           <form className="max-w-md mx-auto mb-6">
+            <label htmlFor="contact-newsletter-email" className="sr-only">Email address</label>
             <input
+              id="contact-newsletter-email"
               type="email"
               placeholder="your@email.com"
               className="w-full px-6 py-4 mb-4 border border-gray-600 bg-transparent text-white placeholder-gray-400"
               required
+              aria-required="true"
             />
             <button
               type="submit"

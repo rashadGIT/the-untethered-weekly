@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a2e] text-white py-16">
+    <footer className="bg-[#161317] text-white py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
@@ -21,12 +21,12 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-lg mb-4">Navigate</h4>
             <ul className="space-y-3">
-              <li><Link href="/" className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors">About</Link></li>
-              <li><Link href="/work-with-me" className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors">Work With Me</Link></li>
-              <li><Link href="/client-results" className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors">Client Results</Link></li>
-              <li><Link href="/merch" className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors">Merch</Link></li>
-              <li><Link href="/contact" className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors">Contact</Link></li>
+              <li><Link href="/" className="text-gray-300 text-sm hover:text-[#a08216] transition-colors">Home</Link></li>
+              <li><Link href="/about" className="text-gray-300 text-sm hover:text-[#a08216] transition-colors">About</Link></li>
+              <li><Link href="/work-with-me" className="text-gray-300 text-sm hover:text-[#a08216] transition-colors">Work With Me</Link></li>
+              <li><Link href="/client-results" className="text-gray-300 text-sm hover:text-[#a08216] transition-colors">Client Results</Link></li>
+              {/* <li><Link href="/merch" className="text-gray-300 text-sm hover:text-[#a08216] transition-colors">Merch</Link></li> */}
+              <li><Link href="/contact" className="text-gray-300 text-sm hover:text-[#a08216] transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
                   href="https://www.instagram.com/shannonmuruli/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                  className="text-gray-300 text-sm hover:text-[#a08216] transition-colors"
                 >
                   Instagram
                 </a>
@@ -49,7 +49,7 @@ export default function Footer() {
                   href="https://www.facebook.com/shannonmuruli/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                  className="text-gray-300 text-sm hover:text-[#a08216] transition-colors"
                 >
                   Facebook
                 </a>
@@ -59,7 +59,7 @@ export default function Footer() {
                   href="https://www.theuntetheredweekly.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                  className="text-gray-300 text-sm hover:text-[#a08216] transition-colors"
                 >
                   Newsletter
                 </a>

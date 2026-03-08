@@ -12,7 +12,7 @@ export default function ResourcesPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 bg-white text-center">
         <div className="max-w-[800px] mx-auto px-6">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-[#161317] mb-6">
+          <h1 className="text-5xl md:text-6xl font-heading mb-6 text-[#a08216]">
             Resources
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
@@ -25,7 +25,7 @@ export default function ResourcesPage() {
       <section className="py-20 bg-[#f9f9f9]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] md:h-[500px]">
+            <div className="relative h-[250px] sm:h-[350px] md:h-[500px]">
               <Image
                 src="/images/lead-magnet-mockup copy - white  with Shannon.png"
                 alt="Free Untethered Seller Audio Training"
@@ -34,7 +34,7 @@ export default function ResourcesPage() {
               />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] font-bold text-[#FF6B35] mb-4">Free Training</div>
+              <div className="text-xs uppercase tracking-[0.2em] font-bold text-[#7a6212] mb-4">Free Training</div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#161317] mb-6">
                 The Untethered Seller Audio Training
               </h2>
@@ -47,15 +47,15 @@ export default function ResourcesPage() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <span className="text-[#FF6B35] mt-1">✓</span>
+                    <span className="text-[#7a6212] mt-1">✓</span>
                     <span>How to identify the "tethers" holding you back</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-[#FF6B35] mt-1">✓</span>
+                    <span className="text-[#7a6212] mt-1">✓</span>
                     <span>The shift from performance to presence</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-[#FF6B35] mt-1">✓</span>
+                    <span className="text-[#7a6212] mt-1">✓</span>
                     <span>Practical steps to choose courage over comfort today</span>
                   </li>
                 </ul>
@@ -80,15 +80,18 @@ export default function ResourcesPage() {
           </p>
           
           <form className="max-w-md mx-auto flex flex-col gap-4">
+            <label htmlFor="resources-email" className="sr-only">Email address</label>
             <input
+              id="resources-email"
               type="email"
               placeholder="Enter your email address"
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-none focus:outline-none focus:border-[#FF6B35] transition-colors text-center"
+              className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-none focus:outline-none focus:border-[#a08216] transition-colors text-center"
               required
+              aria-required="true"
             />
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-[#161317] text-white font-bold uppercase tracking-[0.15em] hover:bg-[#FF6B35] transition-colors"
+              className="w-full px-8 py-4 bg-[#161317] text-white font-bold uppercase tracking-[0.15em] hover:bg-[#a08216] transition-colors"
             >
               Get Weekly Courage
             </button>
@@ -106,33 +109,33 @@ export default function ResourcesPage() {
             More Ways To Untether
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/5 p-8 border border-white/10 hover:border-[#FF6B35] transition-colors group cursor-pointer">
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF6B35] transition-colors">Recommended Reading</h3>
+            <div className="bg-white/5 p-8 border border-white/10 hover:border-[#a08216] transition-colors group" aria-disabled="true">
+              <h3 className="text-xl font-bold mb-4 group-hover:text-[#a08216] transition-colors">Recommended Reading</h3>
               <p className="text-gray-400 mb-6">
                 Books that have shaped the Untethered Seller philosophy and courage mindset.
               </p>
-              <span className="text-sm font-bold uppercase tracking-widest text-[#FF6B35]">Coming Soon</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[#a08216]" aria-label="Recommended Reading — Coming Soon">Coming Soon</span>
             </div>
-            <div className="bg-white/5 p-8 border border-white/10 hover:border-[#FF6B35] transition-colors group cursor-pointer">
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF6B35] transition-colors">Sales Scripts</h3>
+            <div className="bg-white/5 p-8 border border-white/10 hover:border-[#a08216] transition-colors group" aria-disabled="true">
+              <h3 className="text-xl font-bold mb-4 group-hover:text-[#a08216] transition-colors">Sales Scripts</h3>
               <p className="text-gray-400 mb-6">
                 Not rigid scripts, but frameworks for courageous conversations.
               </p>
-              <span className="text-sm font-bold uppercase tracking-widest text-[#FF6B35]">Coming Soon</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[#a08216]" aria-label="Sales Scripts — Coming Soon">Coming Soon</span>
             </div>
-            <div className="bg-white/5 p-8 border border-white/10 hover:border-[#FF6B35] transition-colors group cursor-pointer">
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF6B35] transition-colors">Community</h3>
+            <div className="bg-white/5 p-8 border border-white/10 hover:border-[#a08216] transition-colors group" aria-disabled="true">
+              <h3 className="text-xl font-bold mb-4 group-hover:text-[#a08216] transition-colors">Community</h3>
               <p className="text-gray-400 mb-6">
                 Connect with other women who are choosing courage over comfort.
               </p>
-              <span className="text-sm font-bold uppercase tracking-widest text-[#FF6B35]">Coming Soon</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[#a08216]" aria-label="Community — Coming Soon">Coming Soon</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#FF6B35] text-white text-center">
+      <section className="py-20 bg-[#a08216] text-white text-center">
         <div className="max-w-[800px] mx-auto px-6">
           <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white">
             Ready To Go Deeper?
@@ -141,7 +144,7 @@ export default function ResourcesPage() {
             Resources are great, but implementation is better. Let's work together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/work-with-me" variant="secondary" className="!bg-white !text-[#FF6B35] hover:!bg-gray-100">
+            <Button href="/work-with-me" variant="secondary" className="!bg-white !text-[#a08216] hover:!bg-gray-100">
               View Programs
             </Button>
           </div>

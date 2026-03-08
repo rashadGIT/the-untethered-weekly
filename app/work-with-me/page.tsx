@@ -12,7 +12,7 @@ export default function WorkWithMePage() {
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">
-          <h1 className="text-5xl md:text-6xl font-heading mb-6">
+          <h1 className="text-5xl md:text-6xl font-heading mb-6 text-[#a08216]">
             Work With Me
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
@@ -22,10 +22,10 @@ export default function WorkWithMePage() {
       </section>
 
       {/* Self-Image That Sells - PRIMARY */}
-      <section className="section-padding bg-[#f9f9f9]">
+      <section aria-label="Self-Image That Sells program" className="section-padding bg-[#f9f9f9]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px]">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+            <div className="relative h-64 sm:h-80 md:h-[400px]">
               <Image
                 src="/images/coaching-session.jpg"
                 alt="Shannon Muruli coaching session"
@@ -57,16 +57,16 @@ export default function WorkWithMePage() {
                   <li>• Momentum strategies: showing up before you feel ready</li>
                 </ul>
               </div>
-              <Button href="/contact">Get Started</Button>
+              <Button href="/contact" aria-label="Get started with Self-Image That Sells">Get Started</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Courage Over Comfort Coaching */}
-      <section className="section-padding bg-white">
+      <section aria-label="Courage Over Comfort Coaching program" className="section-padding bg-white">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4">1-on-1 Coaching</div>
               <h2 className="text-4xl font-heading mb-6">Courage Over Comfort Coaching</h2>
@@ -91,9 +91,9 @@ export default function WorkWithMePage() {
                   <li>• You want personalized accountability and support</li>
                 </ul>
               </div>
-              <Button href="/contact">Apply for Coaching</Button>
+              <Button href="/contact" aria-label="Apply for Courage Over Comfort Coaching">Apply for Coaching</Button>
             </div>
-            <div className="relative h-[400px] order-1 md:order-2">
+            <div className="relative h-64 sm:h-80 md:h-[400px] order-1 md:order-2">
               <Image
                 src="/images/coc-branding.jpg"
                 alt="Courage Over Comfort coaching"
@@ -106,10 +106,10 @@ export default function WorkWithMePage() {
       </section>
 
       {/* The Sell More Soirée */}
-      <section className="section-padding bg-[#f9f9f9]">
+      <section aria-label="The Sell More Soirée live event" className="section-padding bg-[#f9f9f9]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px]">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+            <div className="relative h-64 sm:h-80 md:h-[400px]">
               <Image
                 src="/images/speaking-professional.jpg"
                 alt="Shannon Muruli speaking at event"
@@ -134,7 +134,7 @@ export default function WorkWithMePage() {
                   <strong>Details and dates to be announced.</strong> Join The Untethered Weekly newsletter to be the first to know when registration opens.
                 </p>
               </div>
-              <Button href="#newsletter">Join The Waitlist</Button>
+              <Button href="#newsletter" aria-label="Join the waitlist for The Sell More Soirée">Join The Waitlist</Button>
             </div>
           </div>
         </div>

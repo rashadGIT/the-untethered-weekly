@@ -50,17 +50,19 @@ export default function VideoPlayer() {
       {/* Overlay and play button - only show when not playing */}
       {!isPlaying && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-          <div
-            className="absolute inset-0 flex items-center justify-center cursor-pointer"
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+          <button
+            type="button"
+            aria-label="Play video"
             onClick={togglePlay}
+            className="absolute inset-0 flex items-center justify-center w-full cursor-pointer bg-transparent border-0 p-0"
           >
             <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8 text-[#FF6B35] ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <svg aria-hidden="true" className="w-8 h-8 text-[#a08216] ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </div>
-          </div>
+          </button>
         </>
       )}
 
@@ -68,10 +70,12 @@ export default function VideoPlayer() {
       {isPlaying && (
         <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 bg-black/50 px-4 py-2 rounded-lg">
           <button
+            type="button"
             onClick={togglePlay}
-            className="text-white hover:text-[#FF6B35] transition-colors"
+            aria-label="Pause video"
+            className="text-white hover:text-[#a08216] transition-colors"
           >
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
             </svg>
           </button>
