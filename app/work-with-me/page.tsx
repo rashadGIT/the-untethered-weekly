@@ -27,7 +27,7 @@ export default function WorkWithMePage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="relative h-64 sm:h-80 md:h-[400px]">
               <Image
-                src="/images/coaching-session.jpg"
+                src="/assets/images/work-with-me/coaching-session-crop.jpg"
                 alt="Shannon Muruli coaching session"
                 fill
                 className="object-cover shadow-lg"
@@ -95,10 +95,10 @@ export default function WorkWithMePage() {
             </div>
             <div className="relative h-64 sm:h-80 md:h-[400px] order-1 md:order-2">
               <Image
-                src="/images/coc-branding.jpg"
+                src="/assets/images/unused/coc-branding.jpg"
                 alt="Courage Over Comfort coaching"
                 fill
-                className="object-cover shadow-lg"
+                className="object-cover shadow-lg grayscale"
               />
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function WorkWithMePage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="relative h-64 sm:h-80 md:h-[400px]">
               <Image
-                src="/images/speaking-professional.jpg"
+                src="/assets/images/work-with-me/speaking-professional-crop.jpg"
                 alt="Shannon Muruli speaking at event"
                 fill
                 className="object-cover shadow-lg"

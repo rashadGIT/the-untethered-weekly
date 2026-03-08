@@ -10,28 +10,21 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-[#161317] text-white">
-        <div className="absolute inset-0 z-0" aria-hidden="true">
-          <Image
-            src="/images/professional-portrait.jpg"
-            alt=""
-            fill
-            className="object-cover opacity-30"
-          />
-        </div>
-        <div className="relative z-10 container text-center px-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading mb-6">
+      <section className="section-padding bg-white text-center">
+        <div className="container-narrow pt-2 md:pt-0">
+          <h1 className="text-5xl md:text-6xl font-heading mb-6 text-[#a08216]">
             From Parking Lots To Regional Manager
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             My journey from selling pre-paid legal services in parking lots to helping women who sell become untethered sellers.
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#f9f9f9]">
         <div className="container-narrow">
+          <div className="bg-white p-6 sm:p-12 shadow-lg">
           <div className="prose prose-lg max-w-none">
             <h2 className="font-heading text-4xl mb-6">The Empty Pool Story</h2>
             <p>
@@ -91,11 +84,12 @@ export default function AboutPage() {
               And that's when the sales come.
             </p>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Stats & Social Proof */}
-      <section className="section-padding bg-[#f9f9f9]">
+      <section className="section-padding bg-white">
         <div className="container text-center">
           <h2 className="text-4xl font-heading mb-12">By The Numbers</h2>
           <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
@@ -120,32 +114,32 @@ export default function AboutPage() {
       </section>
 
       {/* Personal Photos Grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#f9f9f9]">
         <div className="container">
           <h2 className="text-4xl font-heading text-center mb-12">Moments That Matter</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="relative h-52 sm:h-64 md:h-80">
               <Image
-                src="/images/speaking-professional.jpg"
+                src="/assets/images/about/insta_022.jpg"
                 alt="Shannon Muruli speaking at event"
                 fill
-                className="object-cover"
+                className="object-cover grayscale rounded-2xl shadow-2xl"
               />
             </div>
             <div className="relative h-52 sm:h-64 md:h-80">
               <Image
-                src="/images/coaching-session.jpg"
+                src="/assets/images/about/insta_082.jpg"
                 alt="Shannon Muruli coaching session"
                 fill
-                className="object-cover"
+                className="object-cover grayscale rounded-2xl shadow-2xl"
               />
             </div>
             <div className="relative h-52 sm:h-64 md:h-80">
               <Image
-                src="/images/lifestyle-outdoor.jpg"
+                src="/assets/images/about/insta_099.jpg"
                 alt="Shannon Muruli portrait"
                 fill
-                className="object-cover"
+                className="object-cover grayscale rounded-2xl shadow-2xl"
               />
             </div>
           </div>

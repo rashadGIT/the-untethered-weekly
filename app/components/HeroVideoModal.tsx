@@ -109,7 +109,7 @@ export default function HeroVideoModal() {
             onClick={(e) => e.stopPropagation()}
           >
             <video
-              src="/videos/hero-background-0.mp4"
+              src="/assets/videos/home/hero-background-0.mp4"
               className="w-full h-full"
               controls
               autoPlay
