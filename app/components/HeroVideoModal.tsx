@@ -3,7 +3,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 
-export default function HeroVideoModal() {
+interface HeroVideoModalProps {
+  videoSrc?: string;
+}
+
+export default function HeroVideoModal({ videoSrc = "/assets/videos/home/hero-background-0.mp4" }: HeroVideoModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -109,7 +113,7 @@ export default function HeroVideoModal() {
             onClick={(e) => e.stopPropagation()}
           >
             <video
-              src="/videos/hero-background-0.mp4"
+              src={videoSrc}
               className="w-full h-full"
               controls
               autoPlay

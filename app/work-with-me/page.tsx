@@ -12,10 +12,10 @@ export default function WorkWithMePage() {
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">
-          <h1 className="text-5xl md:text-6xl font-heading mb-6 text-[#a08216]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading mb-6 text-[#a08216]">
             Work With Me
           </h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
             Three ways to cultivate courage, untether from your comfort zone, and become the seller you're capable of being.
           </p>
         </div>
@@ -24,10 +24,10 @@ export default function WorkWithMePage() {
       {/* Self-Image That Sells - PRIMARY */}
       <section aria-label="Self-Image That Sells program" className="section-padding bg-[#f9f9f9]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="relative h-64 sm:h-80 md:h-[400px]">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-12 items-center">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-[400px]">
               <Image
-                src="/images/coaching-session.jpg"
+                src="/assets/images/work-with-me/coaching-session-crop.jpg"
                 alt="Shannon Muruli coaching session"
                 fill
                 className="object-cover shadow-lg"
@@ -35,8 +35,8 @@ export default function WorkWithMePage() {
             </div>
             <div>
               <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4">Foundational Program</div>
-              <h2 className="text-4xl font-heading mb-6">Self-Image That Sells</h2>
-              <p className="text-xl text-gray-700 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading mb-6">Self-Image That Sells</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6">
                 My most foundational work for women who sell. We start with self-image—not strategy.
               </p>
               <div className="space-y-4 text-gray-700 mb-8">
@@ -66,11 +66,11 @@ export default function WorkWithMePage() {
       {/* Courage Over Comfort Coaching */}
       <section aria-label="Courage Over Comfort Coaching program" className="section-padding bg-white">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-12 items-center">
             <div className="order-2 md:order-1">
               <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4">1-on-1 Coaching</div>
-              <h2 className="text-4xl font-heading mb-6">Courage Over Comfort Coaching</h2>
-              <p className="text-xl text-gray-700 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading mb-6">Courage Over Comfort Coaching</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6">
                 One-on-one coaching for women who sell who are ready for personalized support.
               </p>
               <div className="space-y-4 text-gray-700 mb-8">
@@ -93,12 +93,12 @@ export default function WorkWithMePage() {
               </div>
               <Button href="/contact" aria-label="Apply for Courage Over Comfort Coaching">Apply for Coaching</Button>
             </div>
-            <div className="relative h-64 sm:h-80 md:h-[400px] order-1 md:order-2">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-[400px] order-1 md:order-2">
               <Image
-                src="/images/coc-branding.jpg"
+                src="/assets/images/work-with-me/coc-branding.jpg"
                 alt="Courage Over Comfort coaching"
                 fill
-                className="object-cover shadow-lg"
+                className="object-cover shadow-lg grayscale"
               />
             </div>
           </div>
@@ -108,10 +108,10 @@ export default function WorkWithMePage() {
       {/* The Sell More Soirée */}
       <section aria-label="The Sell More Soirée live event" className="section-padding bg-[#f9f9f9]">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="relative h-64 sm:h-80 md:h-[400px]">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-12 items-center">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-[400px]">
               <Image
-                src="/images/speaking-professional.jpg"
+                src="/assets/images/work-with-me/speaking-professional-crop.jpg"
                 alt="Shannon Muruli speaking at event"
                 fill
                 className="object-cover shadow-lg"
@@ -119,8 +119,8 @@ export default function WorkWithMePage() {
             </div>
             <div>
               <div className="text-xs uppercase tracking-wider text-[#3e3641] mb-4">Live Event</div>
-              <h2 className="text-4xl font-heading mb-6">The Sell More Soirée</h2>
-              <p className="text-xl text-gray-700 mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading mb-6">The Sell More Soirée</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6">
                 An event for women who sell who are ready to untether from comfort and step into their full sales potential.
               </p>
               <div className="space-y-4 text-gray-700 mb-8">
@@ -143,28 +143,28 @@ export default function WorkWithMePage() {
       {/* FAQ */}
       <section className="section-padding bg-white">
         <div className="container-narrow">
-          <h2 className="text-4xl font-heading text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-heading mb-3">How is this different from traditional sales training?</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-heading mb-3">How is this different from traditional sales training?</h3>
               <p className="text-gray-700">
                 I don't start with strategy. I start with self-image. Most sales training teaches tactics without addressing the internal narratives that keep you from executing those tactics. We fix the root cause: your self-image as a seller.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-heading mb-3">What if I'm naturally shy or introverted?</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-heading mb-3">What if I&apos;m naturally shy or introverted?</h3>
               <p className="text-gray-700">
                 You're not a shy seller. You're in environments that activate your shyness. I teach you how to differentiate between environmental-based shyness and inherent personality—and how to operate from courage regardless.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-heading mb-3">How long does coaching take?</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-heading mb-3">How long does coaching take?</h3>
               <p className="text-gray-700">
                 That depends on your goals and commitment level. Some clients see shifts in weeks. Others work with me for months. We'll discuss your specific timeline during our initial conversation.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-heading mb-3">Do you offer payment plans?</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-heading mb-3">Do you offer payment plans?</h3>
               <p className="text-gray-700">
                 Let's talk about your situation during our initial consultation. I'm committed to making this work accessible to women who are serious about growth.
               </p>
@@ -176,10 +176,10 @@ export default function WorkWithMePage() {
       {/* CTA */}
       <section className="section-padding bg-[#161317] text-white text-center">
         <div className="container-narrow">
-          <h2 className="text-4xl md:text-5xl font-heading mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading mb-6 text-white">
             Ready To Choose Courage Over Comfort?
           </h2>
-          <p className="text-xl mb-8 text-gray-200">
+          <p className="text-base sm:text-lg md:text-xl mb-8 text-gray-200">
             Let's talk about which option is right for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

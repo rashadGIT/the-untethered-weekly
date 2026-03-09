@@ -10,9 +10,10 @@ interface ButtonProps {
   onClick?: () => void;
   "aria-label"?: string;
   disabled?: boolean;
+  target?: string;
 }
 
-export default function Button({ href, type = "button", variant = "primary", className = "", children, onClick, "aria-label": ariaLabel, disabled }: ButtonProps) {
+export default function Button({ href, type = "button", variant = "primary", className = "", children, onClick, "aria-label": ariaLabel, disabled, target }: ButtonProps) {
   const baseStyles = "inline-flex items-center justify-center font-bold uppercase tracking-[0.15em] transition-all duration-300 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a08216]";
 
   const variants = {
@@ -27,7 +28,7 @@ export default function Button({ href, type = "button", variant = "primary", cla
 
   if (href) {
     return (
-      <Link href={href} className={defaultClasses} aria-label={ariaLabel} aria-disabled={disabled}>
+      <Link href={href} className={defaultClasses} aria-label={ariaLabel} aria-disabled={disabled} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined}>
         {children}
       </Link>
     );

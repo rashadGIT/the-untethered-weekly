@@ -27,7 +27,7 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[250px] sm:h-[350px] md:h-[500px]">
               <Image
-                src="/images/lead-magnet-mockup copy - white  with Shannon.png"
+                src="/assets/images/home/lead-magnet-mockup copy - white  with Shannon.png"
                 alt="Free Untethered Seller Audio Training"
                 fill
                 className="object-contain"

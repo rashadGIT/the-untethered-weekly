@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 
-export default function VideoPlayer() {
+export default function VideoPlayer({source}: {source: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -33,17 +33,17 @@ export default function VideoPlayer() {
   };
 
   return (
-    <div className="relative h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group cursor-pointer">
+    <div className="relative w-[220px] sm:w-[260px] lg:w-[300px] mx-auto rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group cursor-pointer aspect-[9/16]">
       <video
         ref={videoRef}
-        className="w-full h-full object-cover"
-        poster="/images/group-coaching.jpg"
+        className="w-full h-full object-contain"
+
         onClick={handleVideoClick}
         onEnded={handleVideoEnded}
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
       >
-        <source src="/videos/hero-background-1.mp4" type="video/mp4" />
+        <source src={source} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
