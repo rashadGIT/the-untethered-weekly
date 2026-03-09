@@ -95,7 +95,7 @@ export default function WorkWithMePage() {
             </div>
             <div className="relative h-48 sm:h-64 md:h-80 lg:h-[400px] order-1 md:order-2">
               <Image
-                src="/assets/images/unused/coc-branding.jpg"
+                src="/assets/images/work-with-me/coc-branding.jpg"
                 alt="Courage Over Comfort coaching"
                 fill
                 className="object-cover shadow-lg grayscale"
