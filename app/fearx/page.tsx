@@ -44,7 +44,7 @@ export default function FearXPage() {
           <FadeIn delay={0.35} direction="up">
             <div className="flex justify-center mb-6">
               <Image
-                src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 12.50.42.jpeg"
+                src="/assets/images/fearX/FearX_logo.png"
                 alt="FEARX"
                 width={120}
                 height={120}
@@ -103,8 +103,8 @@ export default function FearXPage() {
             <FadeIn direction="up">
               <div className="relative h-[400px] sm:h-[500px] md:h-[580px] overflow-hidden rounded-sm">
                 <Image
-                  src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 10.58.31 (1).jpeg"
-                  alt="Shannon Muruli on stage at FEARX"
+                  src="/assets/images/fearX/8.png"
+                  alt="Shannon Muruli hosting FEARX"
                   fill
                   className="object-cover object-top"
                 />
@@ -189,8 +189,8 @@ export default function FearXPage() {
             <FadeIn delay={0.2} direction="up">
               <div className="relative h-[400px] sm:h-[500px] md:h-[580px] overflow-hidden rounded-sm">
                 <Image
-                  src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 10.58.31 (2).jpeg"
-                  alt="Shannon Muruli with a speaker on the Courage Carpet"
+                  src="/assets/images/fearX/3.png"
+                  alt="Speaker on the FEARX Courage Carpet"
                   fill
                   className="object-cover object-top"
                 />
@@ -215,7 +215,7 @@ export default function FearXPage() {
           {/* FEARX watermark */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
             <Image
-              src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 12.50.42.jpeg"
+              src="/assets/images/fearX/FearX_logo.png"
               alt=""
               width={80}
               height={80}
@@ -401,7 +401,7 @@ export default function FearXPage() {
       <section id="apply-speaker" className="bg-[#161317] py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Text */}
+            {/* Text + Image */}
             <FadeIn direction="up">
               <div className="text-white">
                 <p className="text-[12px] uppercase tracking-[0.3em] font-bold text-[#a08216] mb-4">
@@ -410,7 +410,7 @@ export default function FearXPage() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-6 leading-[1.15]">
                   Your Story Could Be the One That Sets Another Woman Free.
                 </h2>
-                <div className="space-y-5 text-gray-300 text-[17px] leading-[1.8]">
+                <div className="space-y-5 text-gray-300 text-[17px] leading-[1.8] mb-8">
                   <p>
                     If you have a story about the moment you faced fear in sales and chose
                     courage anyway&hellip;
@@ -463,14 +463,6 @@ export default function FearXPage() {
                     <li>Self-image shifts as women grow into leadership</li>
                     <li>Navigating fear at higher levels of responsibility</li>
                   </ul>
-                </div>
-                <div className="relative h-[340px] overflow-hidden rounded-sm">
-                  <Image
-                    src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 10.58.31 (3).jpeg"
-                    alt="FEARX Panelists on stage"
-                    fill
-                    className="object-cover object-top"
-                  />
                 </div>
               </div>
             </FadeIn>

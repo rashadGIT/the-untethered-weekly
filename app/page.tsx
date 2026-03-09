@@ -652,7 +652,7 @@ export default function Home() {
         {/* Background image with dark overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 10.58.31 (1).jpeg"
+            src="/assets/images/fearX/4.png"
             alt=""
             fill
             className="object-cover object-top opacity-25"
