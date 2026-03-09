@@ -647,6 +647,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FEARX Promo */}
+      <section className="relative bg-[#161317] py-20 md:py-28 overflow-hidden">
+        {/* Background image with dark overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 10.58.31 (1).jpeg"
+            alt=""
+            fill
+            className="object-cover object-top opacity-25"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-[#161317]/70" />
+        </div>
+
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+            {/* Left: Text */}
+            <FadeIn direction="up">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <Image
+                    src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 12.50.42.jpeg"
+                    alt="FEARX"
+                    width={64}
+                    height={64}
+                    className="rounded-full"
+                  />
+                  <p className="text-[12px] uppercase tracking-[0.35em] font-bold text-[#a08216]">
+                    Introducing
+                  </p>
+                </div>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white mb-6 leading-[1.1]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#a08216] to-[#c4a030]">FEARX</span>
+                </h2>
+                <p className="text-[17px] md:text-[20px] text-gray-300 leading-[1.8] mb-8 max-w-xl">
+                  A storytelling platform where women who sell step onto the Courage Carpet to share the moment they faced fear, chose courage over comfort, and changed their sales forever.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    href="/fearx#apply-speaker"
+                    variant="primary"
+                    className="!px-8 !py-4 !text-[13px]"
+                  >
+                    Apply to Speak
+                  </Button>
+                  <Button
+                    href="/fearx"
+                    variant="outline"
+                    className="!border-white !text-white hover:!bg-white hover:!text-[#161317] !px-8 !py-4 !text-[13px]"
+                  >
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Right: Image */}
+            <FadeIn delay={0.2} direction="up">
+              <div className="relative h-[380px] md:h-[480px] overflow-hidden rounded-sm">
+                <Image
+                  src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 10.58.31.jpeg"
+                  alt="Shannon Muruli on the FEARX Courage Carpet"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Section 8: Instagram Feed */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">

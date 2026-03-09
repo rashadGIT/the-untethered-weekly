@@ -17,6 +17,7 @@ export default function Navigation() {
     { href: '/client-results', label: 'Results' },
     // { href: '/merch', label: 'Merch' },
     { href: '/resources', label: 'Resources' },
+    { href: '/fearx', label: 'FEARX' },
   ];
 
   const isActive = (href: string) => pathname === href;
