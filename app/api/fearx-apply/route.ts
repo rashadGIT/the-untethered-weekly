@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Wire up a new N8N webhook URL here when the workflow is created
-const N8N_FEARX_WEBHOOK_URL = "";
+const N8N_FEARX_WEBHOOK_URL = "https://rashadbarnett.app.n8n.cloud/webhook/f0cfeac5-e6c7-43d5-9a76-ab72d46a19a5";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -22,7 +21,7 @@ export async function POST(request: NextRequest) {
   const response = await fetch(N8N_FEARX_WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ type, firstName, email, role, yearsInSales, story }),
+    body: JSON.stringify({ type, name: firstName, email, role, yearsInSales, story }),
   });
 
   if (!response.ok) {

@@ -668,7 +668,7 @@ export default function Home() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <Image
-                    src="/assets/images/fearX/WhatsApp Image 2026-03-07 at 12.50.42.jpeg"
+                    src="/assets/images/fearX/fearX_logo.png"
                     alt="FEARX"
                     width={64}
                     height={64}

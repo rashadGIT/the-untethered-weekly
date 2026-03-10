@@ -7,6 +7,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -14,6 +16,8 @@ body {
   background: var(--background);
   font-family: var(--font-dm-sans), sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Keyboard focus ring — only appears when navigating via keyboard, never on mouse click */
