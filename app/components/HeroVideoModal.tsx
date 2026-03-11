@@ -14,7 +14,7 @@ export default function HeroVideoModal({ videoSrc = "/assets/videos/home/hero-ba
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    setMounted(true);
+    setMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
   }, []);
 
   // Prevent scrolling when modal is open; move focus to close button on open

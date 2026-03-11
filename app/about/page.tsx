@@ -34,7 +34,7 @@ export default function AboutPage() {
               After meeting a prospect in a Walmart parking lot, following up, and taking them through my sales process, I found myself a week later delivering an award-worthy sales presentation to about a dozen of their construction workers—<em>inside of an empty pool.</em>
             </p>
             <p>
-              That moment? That was when I realized: <strong>most people won't show up.</strong> Most people will let the strangeness of the situation talk them out of the opportunity. But the ones who choose courage over comfort? They show up. And they sell.
+              That moment? That was when I realized: <strong>most people won&apos;t show up.</strong> Most people will let the strangeness of the situation talk them out of the opportunity. But the ones who choose courage over comfort? They show up. And they sell.
             </p>
 
             <h2 className="font-heading text-4xl mt-12 mb-6">From Individual Contributor to Regional Manager</h2>
@@ -45,7 +45,7 @@ export default function AboutPage() {
               How? I taught them how to do one thing better than any other region: <strong>PROSPECT.</strong>
             </p>
             <p>
-              Not with scripts. Not with tactics. With <em>courage.</em> I taught them how to untether from the narratives that kept them from picking up the phone, from walking into the networking event, from following up with the prospect who seemed "out of their league."
+              Not with scripts. Not with tactics. With <em>courage.</em> I taught them how to untether from the narratives that kept them from picking up the phone, from walking into the networking event, from following up with the prospect who seemed &quot;out of their league.&quot;
             </p>
 
             <h2 className="font-heading text-4xl mt-12 mb-6">The 900% Territory Elevation</h2>
@@ -53,26 +53,26 @@ export default function AboutPage() {
               In one corporate role, I elevated my territory by <strong>900% in less than 90 days.</strong> While in direct sales, I built a team of 200 within 12 months.
             </p>
             <p>
-              Those results didn't come from a proprietary sales system. They came from a mindset shift. From choosing <strong>Courage Over Comfort</strong> in every high-stakes moment.
+              Those results didn&apos;t come from a proprietary sales system. They came from a mindset shift. From choosing <strong>Courage Over Comfort</strong> in every high-stakes moment.
             </p>
 
             <h2 className="font-heading text-4xl mt-12 mb-6">Why I Coach Women Who Sell</h2>
             <p>
-              Over my 10+ years of coaching (since 2014), I've noticed a pattern: Women who sell are brilliant, strategic, and capable. But they're often tethered to comfort zones that don't serve them.
+              Over my 10+ years of coaching (since 2014), I&apos;ve noticed a pattern: Women who sell are brilliant, strategic, and capable. But they&apos;re often tethered to comfort zones that don&apos;t serve them.
             </p>
             <p>
-              They procrastinate on prospecting. They avoid networking events. They let fear of rejection dictate their pipeline. And they wonder why they're not hitting their goals.
+              They procrastinate on prospecting. They avoid networking events. They let fear of rejection dictate their pipeline. And they wonder why they&apos;re not hitting their goals.
             </p>
             <p>
               <strong>I help women who sell untether from those comfort zones so they can serve more and sell more.</strong>
             </p>
             <p>
-              Because here's what I know: Your prospects need what you sell. But they want you to <em>connect</em> with them, not sell them. And you can't connect with prospects if you're avoiding them.
+              Because here&apos;s what I know: Your prospects need what you sell. But they want you to <em>connect</em> with them, not sell them. And you can&apos;t connect with prospects if you&apos;re avoiding them.
             </p>
 
             <h2 className="font-heading text-4xl mt-12 mb-6">The Untethered Seller Philosophy</h2>
             <p>
-              I don't start with strategy. I start with <strong>self-image.</strong>
+              I don&apos;t start with strategy. I start with <strong>self-image.</strong>
             </p>
             <p>
               Because when your identity shifts, your behavior follows. When you see yourself as an <em>untethered seller</em>—someone who operates from courage rather than comfort—everything changes.
@@ -81,7 +81,7 @@ export default function AboutPage() {
               You stop waiting for confidence. You start showing up anyway. You stop conflating relief with alignment. You start choosing courage.
             </p>
             <p>
-              And that's when the sales come.
+              And that&apos;s when the sales come.
             </p>
           </div>
           </div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
             Ready To Become An Untethered Seller?
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-8 text-gray-200">
-            Let's work together to untether you from your comfort zone so you can serve more and sell more.
+            Let&apos;s work together to untether you from your comfort zone so you can serve more and sell more.
           </p>
           <Button href="/work-with-me" variant="primary">
             Explore Coaching Options

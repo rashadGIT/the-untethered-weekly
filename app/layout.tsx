@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Marcellus, DM_Sans } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 import Navigation from "./components/Navigation";
 
 const marcellus = Marcellus({ 
@@ -47,9 +48,9 @@ export default function RootLayout({
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="grid md:grid-cols-4 gap-12 mb-16">
               <div className="col-span-1 md:col-span-2">
-                <a href="/" className="font-serif text-2xl tracking-tight font-bold block mb-6">
+                <Link href="/" className="font-serif text-2xl tracking-tight font-bold block mb-6">
                   SHANNON <span className="text-white">MURULI</span>
-                </a>
+                </Link>
                 <p className="text-gray-400 max-w-sm mb-6 font-light leading-relaxed">
                   Helping women who sell untether from their comfort zones to serve more and sell more.
                 </p>

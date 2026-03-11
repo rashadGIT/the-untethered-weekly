@@ -39,16 +39,16 @@ export default function ResourcesPage() {
                 The Untethered Seller Audio Training
               </h2>
               <p className="text-xl text-gray-700 mb-6">
-                Listen to this FREE audio from Shannon and learn the 3 steps that'll change your sales life, fast.
+                Listen to this FREE audio from Shannon and learn the 3 steps that&apos;ll change your sales life, fast.
               </p>
               <div className="space-y-4 text-gray-700 mb-8">
                 <p>
-                  Stop waiting for confidence. Start operating from internal authority. In this audio training, you'll discover:
+                  Stop waiting for confidence. Start operating from internal authority. In this audio training, you&apos;ll discover:
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-[#7a6212] mt-1">✓</span>
-                    <span>How to identify the "tethers" holding you back</span>
+                    <span>How to identify the &quot;tethers&quot; holding you back</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#7a6212] mt-1">✓</span>
@@ -141,7 +141,7 @@ export default function ResourcesPage() {
             Ready To Go Deeper?
           </h2>
           <p className="text-xl mb-10 text-white/90 font-medium">
-            Resources are great, but implementation is better. Let's work together.
+            Resources are great, but implementation is better. Let&apos;s work together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/work-with-me" variant="secondary" className="!bg-white !text-[#a08216] hover:!bg-gray-100">
