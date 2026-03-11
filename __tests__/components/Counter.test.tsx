@@ -28,7 +28,7 @@ function triggerIntersection(element: ObservableElement, isIntersecting: boolean
   const cb = element.__intersectionCallback;
   if (cb) {
     act(() => {
-      cb([{ isIntersecting, target: element }]);
+      cb([{ isIntersecting, target: element } as IntersectionObserverEntry], {} as IntersectionObserver);
     });
   }
 }
