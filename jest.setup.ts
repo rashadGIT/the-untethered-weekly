@@ -18,16 +18,20 @@ if (isJsdom) {
   // -------------------------------------------------------------------------
   // IntersectionObserver mock
   // -------------------------------------------------------------------------
-  const mockIntersectionObserver = jest.fn().mockImplementation((callback) => ({
-    observe: jest.fn((el: Element) => {
+  interface ObservableElement extends Element {
+    __intersectionCallback?: IntersectionObserverCallback;
+  }
+
+  const mockIntersectionObserver = jest.fn().mockImplementation((callback: IntersectionObserverCallback) => ({
+    observe: jest.fn((el: ObservableElement) => {
       // Store callback so individual tests can trigger it manually
-      (el as any).__intersectionCallback = callback;
+      el.__intersectionCallback = callback;
     }),
     unobserve: jest.fn(),
     disconnect: jest.fn(),
     takeRecords: jest.fn(() => []),
   }));
-  global.IntersectionObserver = mockIntersectionObserver as any;
+  global.IntersectionObserver = mockIntersectionObserver as unknown as typeof IntersectionObserver;
 
   // -------------------------------------------------------------------------
   // window.matchMedia mock  (default: no reduced-motion preference)
@@ -59,12 +63,12 @@ if (isJsdom) {
   // causing the loop to stop after one iteration.
   // -------------------------------------------------------------------------
   let rafTimestamp = 0;
-  global.requestAnimationFrame = jest.fn((cb) => {
+  global.requestAnimationFrame = jest.fn((cb: FrameRequestCallback) => {
     rafTimestamp += 9999;
     // Run the callback asynchronously so React state updates can flush
     setTimeout(() => cb(rafTimestamp), 0);
     return rafTimestamp;
-  }) as any;
+  }) as unknown as typeof requestAnimationFrame;
 
   // -------------------------------------------------------------------------
   // createPortal – render children inline so React Testing Library finds them

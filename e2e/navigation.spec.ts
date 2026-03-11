@@ -21,7 +21,7 @@ test.describe("Desktop navigation", () => {
     await page.goto("/");
   });
 
-  for (const { label, href, headingPattern } of NAV_LINKS) {
+  for (const { label, href } of NAV_LINKS) {
     test(`clicking '${label}' navigates to ${href}`, async ({ page }) => {
       // Use the first matching link (there may be desktop + mobile)
       const link = page.getByRole("link", { name: label }).first();

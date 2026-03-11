@@ -7,8 +7,6 @@ import { test, expect } from "@playwright/test";
  * of the external n8n webhook.
  */
 
-const SPEAKER_FORM_SELECTOR = "#speaker-form, section:has(#speaker-firstName)";
-const PANELIST_FORM_SELECTOR = "#panelist-form, section:has(#panelist-firstName)";
 
 test.describe("FEARX speaker application", () => {
   test.beforeEach(async ({ page }) => {

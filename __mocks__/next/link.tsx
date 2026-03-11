@@ -6,7 +6,7 @@ interface LinkProps {
   className?: string;
   "aria-label"?: string;
   "aria-disabled"?: boolean;
-  "aria-current"?: string | boolean;
+  "aria-current"?: React.AriaAttributes["aria-current"];
   target?: string;
   rel?: string;
   onClick?: () => void;

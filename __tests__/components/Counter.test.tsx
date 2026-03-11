@@ -19,9 +19,13 @@ function setReducedMotion(prefersReduced: boolean) {
   });
 }
 
+interface ObservableElement extends Element {
+  __intersectionCallback?: IntersectionObserverCallback;
+}
+
 // Helper: trigger IntersectionObserver callback for an element
-function triggerIntersection(element: Element, isIntersecting: boolean) {
-  const cb = (element as any).__intersectionCallback;
+function triggerIntersection(element: ObservableElement, isIntersecting: boolean) {
+  const cb = element.__intersectionCallback;
   if (cb) {
     act(() => {
       cb([{ isIntersecting, target: element }]);
