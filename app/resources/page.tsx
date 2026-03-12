@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../components/Button";
+import NewsletterForm from "../components/NewsletterForm";
 
 export const metadata = {
   title: "Resources | Shannon Muruli",
@@ -79,26 +80,7 @@ export default function ResourcesPage() {
             Weekly sales courage delivered to your inbox. For women who sell who are ready to choose courage over comfort, untether from their comfort zones, and serve more people.
           </p>
           
-          <form className="max-w-md mx-auto flex flex-col gap-4">
-            <label htmlFor="resources-email" className="sr-only">Email address</label>
-            <input
-              id="resources-email"
-              type="email"
-              placeholder="Enter your email address"
-              className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-none focus:outline-none focus:border-[#a08216] transition-colors text-center"
-              required
-              aria-required="true"
-            />
-            <button
-              type="submit"
-              className="w-full px-8 py-4 bg-[#161317] text-white font-bold uppercase tracking-[0.15em] hover:bg-[#a08216] transition-colors"
-            >
-              Get Weekly Courage
-            </button>
-            <p className="text-xs text-gray-400 mt-2">
-              No spam. Unsubscribe anytime. Just courage.
-            </p>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
 
