@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import NewsletterForm from '../components/NewsletterForm';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,11 +16,19 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('submitting');
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 1000);
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -123,6 +132,12 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {status === 'error' && (
+                    <p role="alert" className="text-red-600 text-sm">
+                      Something went wrong. Please try again or email me directly.
+                    </p>
+                  )}
+
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
@@ -223,26 +238,7 @@ export default function ContactPage() {
           <p className="text-xl mb-8 text-gray-200">
             Join The Untethered Weekly and get weekly sales courage delivered to your inbox.
           </p>
-          <form className="max-w-md mx-auto mb-6">
-            <label htmlFor="contact-newsletter-email" className="sr-only">Email address</label>
-            <input
-              id="contact-newsletter-email"
-              type="email"
-              placeholder="your@email.com"
-              className="w-full px-6 py-4 mb-4 border border-gray-600 bg-transparent text-white placeholder-gray-400"
-              required
-              aria-required="true"
-            />
-            <button
-              type="submit"
-              className="w-full bg-white text-[#161317] px-6 py-4 text-lg font-medium hover:bg-gray-200 transition-colors"
-            >
-              Get Weekly Courage
-            </button>
-          </form>
-          <p className="text-sm text-gray-400">
-            No spam. Unsubscribe anytime. Just courage.
-          </p>
+          <NewsletterForm />
         </div>
       </section>
     </>
