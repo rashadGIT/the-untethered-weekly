@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import NewsletterForm from '../components/NewsletterForm';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,11 +16,19 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('submitting');
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 1000);
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,10 +44,10 @@ export default function ContactPage() {
       <section className="section-padding bg-white text-center">
         <div className="container-narrow">
           <h1 className="text-5xl md:text-6xl font-heading mb-6">
-            Let's Talk
+            Let&apos;s Talk
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Ready to choose courage over comfort? Fill out the form below and I'll get back to you within 48 hours.
+            Ready to choose courage over comfort? Fill out the form below and I&apos;ll get back to you within 48 hours.
           </p>
         </div>
       </section>
@@ -123,6 +132,12 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {status === 'error' && (
+                    <p role="alert" className="text-red-600 text-sm">
+                      Something went wrong. Please try again or email me directly.
+                    </p>
+                  )}
+
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
@@ -143,9 +158,9 @@ export default function ContactPage() {
                     1
                   </div>
                   <div>
-                    <h3 className="text-xl font-heading mb-2">I'll Review Your Message</h3>
+                    <h3 className="text-xl font-heading mb-2">I&apos;ll Review Your Message</h3>
                     <p className="text-gray-700">
-                      I read every message personally. I'll review what you shared and think about how I can best support you.
+                      I read every message personally. I&apos;ll review what you shared and think about how I can best support you.
                     </p>
                   </div>
                 </div>
@@ -155,9 +170,9 @@ export default function ContactPage() {
                     2
                   </div>
                   <div>
-                    <h3 className="text-xl font-heading mb-2">We'll Schedule A Call</h3>
+                    <h3 className="text-xl font-heading mb-2">We&apos;ll Schedule A Call</h3>
                     <p className="text-gray-700">
-                      If it seems like a good fit, I'll send you a link to schedule an initial conversation. No pressure, no sales pitch—just a real conversation.
+                      If it seems like a good fit, I&apos;ll send you a link to schedule an initial conversation. No pressure, no sales pitch—just a real conversation.
                     </p>
                   </div>
                 </div>
@@ -167,9 +182,9 @@ export default function ContactPage() {
                     3
                   </div>
                   <div>
-                    <h3 className="text-xl font-heading mb-2">We'll Figure Out Next Steps</h3>
+                    <h3 className="text-xl font-heading mb-2">We&apos;ll Figure Out Next Steps</h3>
                     <p className="text-gray-700">
-                      Together, we'll determine which coaching option makes sense for you and what your path forward looks like.
+                      Together, we&apos;ll determine which coaching option makes sense for you and what your path forward looks like.
                     </p>
                   </div>
                 </div>
@@ -223,26 +238,7 @@ export default function ContactPage() {
           <p className="text-xl mb-8 text-gray-200">
             Join The Untethered Weekly and get weekly sales courage delivered to your inbox.
           </p>
-          <form className="max-w-md mx-auto mb-6">
-            <label htmlFor="contact-newsletter-email" className="sr-only">Email address</label>
-            <input
-              id="contact-newsletter-email"
-              type="email"
-              placeholder="your@email.com"
-              className="w-full px-6 py-4 mb-4 border border-gray-600 bg-transparent text-white placeholder-gray-400"
-              required
-              aria-required="true"
-            />
-            <button
-              type="submit"
-              className="w-full bg-white text-[#161317] px-6 py-4 text-lg font-medium hover:bg-gray-200 transition-colors"
-            >
-              Get Weekly Courage
-            </button>
-          </form>
-          <p className="text-sm text-gray-400">
-            No spam. Unsubscribe anytime. Just courage.
-          </p>
+          <NewsletterForm />
         </div>
       </section>
     </>

@@ -26,7 +26,7 @@ export default function FadeIn({
   useEffect(() => {
     // If user prefers reduced motion, show content immediately without animation
     if (prefersReducedMotion) {
-      setIsVisible(true);
+      setIsVisible(true); // eslint-disable-line react-hooks/set-state-in-effect
       return;
     }
 
@@ -43,16 +43,16 @@ export default function FadeIn({
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const el = ref.current;
+    if (el) {
+      observer.observe(el);
     }
-
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (el) {
+        observer.unobserve(el);
       }
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
   const getTransform = () => {
     if (!isVisible) {

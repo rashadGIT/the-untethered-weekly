@@ -19,7 +19,7 @@ export default function Counter({ value, duration = 2000, suffix = "" }: Counter
   useEffect(() => {
     // If user prefers reduced motion, show final value immediately
     if (prefersReducedMotion) {
-      setCount(value);
+      setCount(value); // eslint-disable-line react-hooks/set-state-in-effect
       return;
     }
 
@@ -49,16 +49,17 @@ export default function Counter({ value, duration = 2000, suffix = "" }: Counter
       { threshold: 0.5 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const el = ref.current;
+    if (el) {
+      observer.observe(el);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (el) {
+        observer.unobserve(el);
       }
     };
-  }, [value, duration, hasAnimated]);
+  }, [value, duration, hasAnimated, prefersReducedMotion]);
 
   return (
     <span ref={ref}>
