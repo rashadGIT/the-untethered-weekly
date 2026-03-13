@@ -1,41 +1,5 @@
 version: 2
 updates:
-  # NPM dependencies → main
-  - package-ecosystem: "npm"
-    directory: "/"
-    target-branch: "main"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 5
-    groups:
-      type-definitions:
-        patterns:
-          - "@types/*"
-        update-types:
-          - "minor"
-          - "patch"
-      dev-tooling:
-        patterns:
-          - "eslint*"
-          - "typescript"
-          - "tailwindcss"
-          - "@tailwindcss/*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "next"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react-dom"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "framer-motion"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "eslint"
-        update-types: ["version-update:semver-major"]
-
   # NPM dependencies → test
   - package-ecosystem: "npm"
     directory: "/"
@@ -71,14 +35,6 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "eslint"
         update-types: ["version-update:semver-major"]
-
-  # GitHub Actions versions → main
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    target-branch: "main"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 3
 
   # GitHub Actions versions → test
   - package-ecosystem: "github-actions"
