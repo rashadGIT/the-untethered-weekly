@@ -148,5 +148,16 @@ describe("Navigation component", () => {
       await user.keyboard("{Escape}");
       expect(document.getElementById("mobile-menu")).not.toBeInTheDocument();
     });
+
+    it("closes the mobile menu when 'Join The Weekly' is clicked", async () => {
+      const user = userEvent.setup();
+      render(<Navigation />);
+      await user.click(screen.getByRole("button", { name: /open menu/i }));
+      expect(document.getElementById("mobile-menu")).toBeInTheDocument();
+      const mobileMenu = document.getElementById("mobile-menu")!;
+      const weeklyLink = within(mobileMenu).getByRole("link", { name: /join the weekly/i });
+      await user.click(weeklyLink);
+      expect(document.getElementById("mobile-menu")).not.toBeInTheDocument();
+    });
   });
 });

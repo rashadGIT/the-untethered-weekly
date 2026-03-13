@@ -175,5 +175,28 @@ describe("FadeIn component", () => {
       triggerIntersection(wrapper, false);
       expect(wrapper).toHaveStyle("opacity: 0");
     });
+
+    it("applies 'none' transform when direction is 'none' before intersection", () => {
+      render(
+        <FadeIn direction="none">
+          <span>No direction</span>
+        </FadeIn>
+      );
+      const wrapper = screen.getByText("No direction").parentElement!;
+      // direction="none" hits the default switch case — transform is "none"
+      expect(wrapper).toHaveStyle("transform: none");
+    });
+
+    it("includes custom duration in the transition style", () => {
+      render(<FadeIn duration={1.5}><span>dur</span></FadeIn>);
+      const wrapper = screen.getByText("dur").parentElement!;
+      expect(wrapper.style.transition).toContain("1.5s");
+    });
+
+    it("includes custom delay in the transition style", () => {
+      render(<FadeIn delay={0.5}><span>del</span></FadeIn>);
+      const wrapper = screen.getByText("del").parentElement!;
+      expect(wrapper.style.transition).toContain("0.5s");
+    });
   });
 });
