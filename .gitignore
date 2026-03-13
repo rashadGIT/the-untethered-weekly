@@ -12,3 +12,4 @@ dist/
 .instructions/
 *.md
 public/assets/images/unused/
+coverage/
