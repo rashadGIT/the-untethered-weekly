@@ -651,13 +651,13 @@ export default function Home() {
       <section className="relative bg-[#161317] py-20 md:py-28 overflow-hidden">
         {/* Background image with dark overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          {/* <Image
             src="/assets/images/fearX/4.png"
             alt=""
             fill
             className="object-cover object-top opacity-25"
             aria-hidden="true"
-          />
+          /> */}
           <div className="absolute inset-0 bg-[#161317]/70" />
         </div>
 

@@ -152,4 +152,70 @@ describe("HeroVideoModal component", () => {
       expect(screen.getByRole("dialog", { name: /video player/i })).toBeInTheDocument();
     });
   });
+
+  // -----------------------------------------------------------------------
+  // Focus trap (Tab key)
+  // -----------------------------------------------------------------------
+  describe("focus trap", () => {
+    it("does not close the modal when Tab is pressed", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      await user.keyboard("{Tab}");
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
+
+    it("does not close the modal when Shift+Tab is pressed", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      await user.keyboard("{Shift>}{Tab}{/Shift}");
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Video container click does not close modal (stopPropagation)
+  // -----------------------------------------------------------------------
+  describe("video container click", () => {
+    it("does not close the modal when clicking the video container", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+
+      // Click the video container (the div wrapping the video element)
+      const video = document.querySelector("video")!;
+      const container = video.parentElement!;
+      await user.click(container);
+
+      // Modal should still be open (stopPropagation prevents backdrop close)
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Body scroll lock
+  // -----------------------------------------------------------------------
+  describe("body scroll lock", () => {
+    it("sets body overflow to hidden when modal opens", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      expect(document.body.style.overflow).toBe("hidden");
+    });
+
+    it("restores body overflow when modal closes", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+      await user.click(screen.getByRole("button", { name: /close video/i }));
+      await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
+      expect(document.body.style.overflow).toBe("unset");
+    });
+  });
 });

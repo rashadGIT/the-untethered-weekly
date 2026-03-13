@@ -148,4 +148,48 @@ describe("POST /api/newsletter", () => {
       expect(body.error).toBeTruthy();
     });
   });
+
+  // -----------------------------------------------------------------------
+  // Chaos scenarios
+  // -----------------------------------------------------------------------
+  describe("chaos scenarios", () => {
+    it("falls back to null message when n8n response.json() throws", async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        json: async () => { throw new Error("invalid json"); },
+      } as unknown as Response);
+      const req = buildRequest({ email: "test@example.com", firstName: "Jane" });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      const body = await res.json();
+      expect(body.success).toBe(true);
+      expect(body.message).toBeNull();
+    });
+
+    it("handles network-level fetch rejection", async () => {
+      global.fetch = jest.fn().mockRejectedValue(new Error("Network error"));
+      const req = buildRequest({ email: "test@example.com" });
+      await expect(POST(req)).rejects.toThrow("Network error");
+    });
+
+    it("handles extremely long email addresses", async () => {
+      mockN8nSuccess();
+      const req = buildRequest({ email: "a".repeat(200) + "@example.com" });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+
+    it("handles special characters in firstName", async () => {
+      mockN8nSuccess();
+      const req = buildRequest({ email: "test@example.com", firstName: "José <script>" });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+
+    it("handles completely empty body fields", async () => {
+      const req = buildRequest({});
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+    });
+  });
 });

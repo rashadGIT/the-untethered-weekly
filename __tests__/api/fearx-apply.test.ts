@@ -174,4 +174,67 @@ describe("POST /api/fearx-apply", () => {
       expect(body.error).toBeTruthy();
     });
   });
+
+  // -----------------------------------------------------------------------
+  // Chaos scenarios
+  // -----------------------------------------------------------------------
+  describe("chaos scenarios", () => {
+    it("handles network-level fetch rejection", async () => {
+      global.fetch = jest.fn().mockRejectedValue(new Error("Network error"));
+      const req = buildRequest(VALID_PAYLOAD);
+      await expect(POST(req)).rejects.toThrow("Network error");
+    });
+
+    it("handles all three required fields missing simultaneously", async () => {
+      const req = buildRequest({ type: "speaker" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+    });
+
+    it("handles special characters and unicode in story field", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({
+        ...VALID_PAYLOAD,
+        story: "こんにちは 🎉 <script>alert('xss')</script> & courage",
+      });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+
+    it("handles extremely long story values", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, story: "A".repeat(10_000) });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+
+    it("accepts type='panelist' with all required fields", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, type: "panelist" });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      const body = await res.json();
+      expect(body.success).toBe(true);
+    });
+
+    it("forwards type to the webhook payload", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, type: "panelist" });
+      await POST(req);
+      const [, options] = (global.fetch as jest.Mock).mock.calls[0];
+      const forwarded = JSON.parse(options.body);
+      expect(forwarded.type).toBe("panelist");
+    });
+
+    it("handles webhook returning unexpected 2xx status (201)", async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        status: 201,
+        json: async () => ({}),
+      } as Response);
+      const req = buildRequest(VALID_PAYLOAD);
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+  });
 });
