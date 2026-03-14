@@ -139,7 +139,7 @@ export default function AboutPage() {
                 src="/assets/images/about/insta_099.jpg"
                 alt="Shannon Muruli portrait"
                 fill
-                className="object-cover object-top grayscale rounded-2xl shadow-2xl"
+                className="object-cover object-center grayscale rounded-2xl shadow-2xl"
               />
             </div>
           </div>

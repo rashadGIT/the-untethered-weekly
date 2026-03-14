@@ -26,7 +26,7 @@ export default function ResourcesPage() {
       <section className="py-20 bg-[#f9f9f9]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[250px] sm:h-[350px] md:h-[500px]">
+            <div className="relative h-[480px] sm:h-[350px] md:h-[500px]">
               <Image
                 src="/assets/images/home/lead-magnet-mockup copy - white  with Shannon.png"
                 alt="Free Untethered Seller Audio Training"
