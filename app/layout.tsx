@@ -3,6 +3,7 @@ import { Marcellus, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Navigation from "./components/Navigation";
+import FooterAttribution from "./components/FooterAttribution";
 
 const marcellus = Marcellus({ 
   weight: "400",
@@ -88,9 +89,7 @@ export default function RootLayout({
               </div>
             </div>
             
-            <div className="pt-8 border-t border-white/10 text-center text-gray-500 text-sm">
-              <p>&copy; {new Date().getFullYear()} Shannon Muruli. All rights reserved.</p>
-            </div>
+            <FooterAttribution />
           </div>
         </footer>
       </body>
