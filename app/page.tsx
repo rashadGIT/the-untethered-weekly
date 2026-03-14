@@ -98,7 +98,7 @@ export default function Home() {
 
             {/* Right: Lead Magnet Image with Shannon in Phone */}
             <div className="relative">
-              <div className="relative h-[250px] lg:h-[350px]">
+              <div className="relative h-[480px] lg:h-[350px]">
                 <Image
                   src="/assets/images/home/lead-magnet-mockup copy - white  with Shannon.png"
                   alt="Free Untethered Seller Audio Training"
@@ -571,7 +571,7 @@ export default function Home() {
                   src="/assets/images/work-with-me/coaching-session-crop.jpg"
                   alt="Self-Image That Sells"
                   fill
-                  className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-[right_100%] grayscale group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 <div className="absolute top-6 right-6 text-4xl font-bold text-white/40 group-hover:text-[#a08216] transition-colors">01</div>

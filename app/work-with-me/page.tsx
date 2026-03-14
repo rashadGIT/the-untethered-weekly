@@ -98,7 +98,7 @@ export default function WorkWithMePage() {
                 src="/assets/images/work-with-me/coc-branding.jpg"
                 alt="Courage Over Comfort coaching"
                 fill
-                className="object-cover shadow-lg grayscale"
+                className="object-cover object-[center_10%] shadow-lg grayscale"
               />
             </div>
           </div>
