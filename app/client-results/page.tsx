@@ -1,8 +1,14 @@
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "Client Results | Shannon Muruli Coaching",
-  description: "Real results from women who sell. See how Courage Over Comfort Coaching transforms sales careers.",
+  title: 'Client Results | Shannon Muruli Coaching',
+  description: 'Real results from women who sell. See how Courage Over Comfort Coaching transforms sales careers.',
+  alternates: { canonical: 'https://shannonmuruli.com/client-results' },
+  openGraph: {
+    title: 'Client Results | Shannon Muruli Coaching',
+    description: 'Real results from women who sell. See how Courage Over Comfort Coaching transforms sales careers.',
+    url: 'https://shannonmuruli.com/client-results',
+  },
 };
 
 export default function ClientResultsPage() {

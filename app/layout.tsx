@@ -19,8 +19,22 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Shannon Muruli | Courage Coach to Women Who Sell",
-  description: "Untether from your comfort zone. Serve more. Sell more. Join the Untethered Weekly for sales courage.",
+  metadataBase: new URL('https://shannonmuruli.com'),
+  title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+  description: 'Untether from your comfort zone. Serve more. Sell more. Join the Untethered Weekly for sales courage.',
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    siteName: 'Shannon Muruli',
+    title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+    description: 'Untether from your comfort zone. Serve more. Sell more.',
+    url: 'https://shannonmuruli.com',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+    description: 'Untether from your comfort zone. Serve more. Sell more.',
+  },
 };
 
 export default function RootLayout({

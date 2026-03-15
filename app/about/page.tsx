@@ -2,8 +2,14 @@ import Image from "next/image";
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "About Shannon Muruli | Courage Coach to Women Who Sell",
-  description: "From parking lot sales to regional manager. Learn how Shannon Muruli helps women in sales cultivate courage and untether from their comfort zones.",
+  title: 'About Shannon Muruli | Courage Coach to Women Who Sell',
+  description: 'From parking lot sales to regional manager. Learn how Shannon Muruli helps women in sales cultivate courage and untether from their comfort zones.',
+  alternates: { canonical: 'https://shannonmuruli.com/about' },
+  openGraph: {
+    title: 'About Shannon Muruli | Courage Coach to Women Who Sell',
+    description: 'From parking lot sales to regional manager. Learn how Shannon Muruli helps women in sales cultivate courage.',
+    url: 'https://shannonmuruli.com/about',
+  },
 };
 
 export default function AboutPage() {

@@ -3,8 +3,14 @@ import Button from "../components/Button";
 import NewsletterForm from "../components/NewsletterForm";
 
 export const metadata = {
-  title: "Resources | Shannon Muruli",
-  description: "Free resources, tools, and insights to help you untether from your comfort zone and sell more.",
+  title: 'Resources | Shannon Muruli',
+  description: 'Free resources, tools, and insights to help you untether from your comfort zone and sell more.',
+  alternates: { canonical: 'https://shannonmuruli.com/resources' },
+  openGraph: {
+    title: 'Resources | Shannon Muruli',
+    description: 'Free resources, tools, and insights to help you untether from your comfort zone and sell more.',
+    url: 'https://shannonmuruli.com/resources',
+  },
 };
 
 export default function ResourcesPage() {
