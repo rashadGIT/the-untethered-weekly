@@ -6,9 +6,49 @@ import HeroVideoModal from "./components/HeroVideoModal";
 import VideoPlayer from "./components/VideoPlayer";
 import NewsletterForm from "./components/NewsletterForm";
 
+export const metadata = {
+  title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+  description: 'Shannon Muruli helps women in sales untether from fear and sell from courage. Free training, coaching programs, and the Untethered Weekly newsletter.',
+  alternates: { canonical: 'https://shannonmuruli.com' },
+  openGraph: {
+    title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+    description: 'Shannon Muruli helps women in sales untether from fear and sell from courage.',
+    url: 'https://shannonmuruli.com',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Shannon Muruli',
+      url: 'https://shannonmuruli.com',
+      sameAs: [
+        'https://www.instagram.com/shannonmuruli/',
+        'https://www.facebook.com/shannonmuruli/',
+      ],
+    },
+    {
+      '@type': 'Person',
+      name: 'Shannon Muruli',
+      jobTitle: 'Courage Coach',
+      url: 'https://shannonmuruli.com/about',
+      sameAs: [
+        'https://www.instagram.com/shannonmuruli/',
+        'https://www.facebook.com/shannonmuruli/',
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Section 1: Hero with Video Background */}
       <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-28 md:pt-20">
         {/* Video Background */}

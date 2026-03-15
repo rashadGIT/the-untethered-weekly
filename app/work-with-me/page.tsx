@@ -2,8 +2,14 @@ import Image from "next/image";
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "Work With Me | Shannon Muruli Coaching",
-  description: "Explore coaching programs for women who sell: Self-Image That Sells, Courage Over Comfort Coaching, and The Sell More Soirée.",
+  title: 'Work With Me | Shannon Muruli Coaching',
+  description: 'Explore coaching programs for women who sell: Self-Image That Sells, Courage Over Comfort Coaching, and The Sell More Soirée.',
+  alternates: { canonical: 'https://shannonmuruli.com/work-with-me' },
+  openGraph: {
+    title: 'Work With Me | Shannon Muruli Coaching',
+    description: 'Explore coaching programs for women who sell: Self-Image That Sells, Courage Over Comfort Coaching, and The Sell More Soirée.',
+    url: 'https://shannonmuruli.com/work-with-me',
+  },
 };
 
 export default function WorkWithMePage() {
