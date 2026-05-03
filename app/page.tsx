@@ -103,6 +103,7 @@ export default function Home() {
                   src="/assets/images/home/lead-magnet-mockup copy - white  with Shannon.png"
                   alt="Free Untethered Seller Audio Training"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain"
                 />
               </div>
@@ -176,6 +177,7 @@ export default function Home() {
                     src="/assets/images/hero/shannon-fullbody-3.png"
                     alt="Shannon Muruli - Courage Coach"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-contain object-bottom"
                     priority
                   />

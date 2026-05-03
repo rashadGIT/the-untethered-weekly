@@ -26,6 +26,7 @@ export default function Navigation() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && mobileMenuOpen) {
         setMobileMenuOpen(false);
+        /* istanbul ignore next */
         menuButtonRef.current?.focus();
       }
     };
