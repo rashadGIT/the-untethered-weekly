@@ -5,8 +5,10 @@ import Counter from "./components/Counter";
 import HeroVideoModal from "./components/HeroVideoModal";
 import VideoPlayer from "./components/VideoPlayer";
 import NewsletterForm from "./components/NewsletterForm";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  return redirect("/coming-soon");
   return (
     <>
       {/* Section 1: Hero with Video Background */}
