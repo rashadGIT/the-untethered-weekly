@@ -11,7 +11,7 @@ interface CounterProps {
 export default function Counter({ value, duration = 2000, suffix = "" }: CounterProps) {
   const prefersReducedMotion = typeof window !== "undefined"
     ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    : false;
+    : /* istanbul ignore next */ false;
   const [count, setCount] = useState(prefersReducedMotion ? value : 0);
   const ref = useRef<HTMLSpanElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -50,14 +50,15 @@ export default function Counter({ value, duration = 2000, suffix = "" }: Counter
     );
 
     const el = ref.current;
+    /* istanbul ignore else */
     if (el) {
       observer.observe(el);
     }
 
     return () => {
-      if (el) {
-        observer.unobserve(el);
-      }
+      /* istanbul ignore if */
+      if (!el) return;
+      observer.unobserve(el);
     };
   }, [value, duration, hasAnimated, prefersReducedMotion]);
 

@@ -165,6 +165,28 @@ describe("NewsletterForm component", () => {
       expect(screen.getByRole("alert")).toHaveTextContent(/network error/i);
     });
 
+    it("uses fallback error text when API returns non-ok with no error field", async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: false,
+        status: 500,
+        json: async () => ({}),
+      } as Response);
+      const user = userEvent.setup();
+      render(<NewsletterForm />);
+      await fillAndSubmit(user);
+      await waitFor(() => expect(screen.getByRole("alert")).toBeInTheDocument());
+      expect(screen.getByRole("alert")).toHaveTextContent(/something went wrong/i);
+    });
+
+    it("shows fallback error text when a non-Error value is thrown", async () => {
+      global.fetch = jest.fn().mockRejectedValue("plain string error");
+      const user = userEvent.setup();
+      render(<NewsletterForm />);
+      await fillAndSubmit(user);
+      await waitFor(() => expect(screen.getByRole("alert")).toBeInTheDocument());
+      expect(screen.getByRole("alert")).toHaveTextContent(/something went wrong/i);
+    });
+
     it("keeps the form visible after an error so the user can retry", async () => {
       mockFetchError("Something went wrong.");
       const user = userEvent.setup();
