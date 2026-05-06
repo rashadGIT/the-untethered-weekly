@@ -1,10 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone', // Optimizes for AWS Amplify
+  output: 'standalone',
   images: {
-    domains: ['shannonmuruli.com'],
-    // Add other image domains as needed (e.g., Cloudinary, Instagram)
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'shannonmuruli.com',
+      },
+    ],
+  },
+  turbopack: {
+    root: __dirname,
   },
 };
 

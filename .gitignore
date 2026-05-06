@@ -13,3 +13,4 @@ dist/
 *.md
 public/assets/images/unused/
 coverage/
+*.tsbuildinfo

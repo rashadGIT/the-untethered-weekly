@@ -20,6 +20,7 @@ export default function Navigation() {
   ];
 
   const isActive = (href: string) => pathname === href;
+  const isComingSoon = pathname === '/coming-soon';
 
   // Close mobile menu on Escape key
   useEffect(() => {
@@ -43,40 +44,44 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          {!isComingSoon && (
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                  className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#7a6212] ${
+                    isActive(link.href) ? 'text-[#7a6212]' : 'text-[#161317]'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive(link.href) ? 'page' : undefined}
-                className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#7a6212] ${
-                  isActive(link.href) ? 'text-[#7a6212]' : 'text-[#161317]'
-                }`}
+                href="/#newsletter"
+                className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#7a6212] hover:text-[#5e4c0e] transition-colors"
               >
-                {link.label}
+                Join The Weekly
               </Link>
-            ))}
-            <Link
-              href="/#newsletter"
-              className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#7a6212] hover:text-[#5e4c0e] transition-colors"
-            >
-              Join The Weekly
-            </Link>
-          </div>
+            </div>
+          )}
 
           {/* Mobile Menu Button */}
-          <button
-            ref={menuButtonRef}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            className="md:hidden flex flex-col gap-1.5 p-2.5 border-2 border-[#161317] rounded-lg hover:bg-gray-50 transition-colors"
-          >
-            <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-          </button>
+          {!isComingSoon && (
+            <button
+              ref={menuButtonRef}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              className="md:hidden flex flex-col gap-1.5 p-2.5 border-2 border-[#161317] rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu */}
