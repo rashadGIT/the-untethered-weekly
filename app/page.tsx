@@ -8,7 +8,7 @@ import NewsletterForm from "./components/NewsletterForm";
 import { redirect } from "next/navigation";
 
 export default function Home() {
-  return redirect("/coming-soon");
+  // return redirect("/coming-soon");
   return (
     <>
       {/* Section 1: Hero with Video Background */}
