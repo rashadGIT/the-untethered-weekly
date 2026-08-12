@@ -21,6 +21,7 @@ export default function Navigation() {
 
   const isActive = (href: string) => pathname === href;
   const isComingSoon = pathname === '/coming-soon';
+  const isHome = pathname === '/';
 
   // Close mobile menu on Escape key
   useEffect(() => {
@@ -35,12 +36,14 @@ export default function Navigation() {
   }, [mobileMenuOpen]);
 
   return (
-    <nav aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+    <nav aria-label="Main navigation" className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isHome ? 'bg-transparent border-transparent' : 'bg-white/95 backdrop-blur-sm border-b border-gray-100'
+    }`}>
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="font-serif text-2xl tracking-tight font-bold text-[#161317]">
-            SHANNON <span className="text-[#161317]">MURULI</span>
+          <Link href="/" className={`font-serif text-2xl tracking-tight font-bold ${isHome ? 'text-white' : 'text-[#161317]'}`}>
+            SHANNON <span className={isHome ? 'text-white' : 'text-[#161317]'}>MURULI</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,8 +54,10 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive(link.href) ? 'page' : undefined}
-                  className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#7a6212] ${
-                    isActive(link.href) ? 'text-[#7a6212]' : 'text-[#161317]'
+                  className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors hover:text-[#c4a030] ${
+                    isHome
+                      ? (isActive(link.href) ? 'text-[#c4a030]' : 'text-white')
+                      : (isActive(link.href) ? 'text-[#7a6212]' : 'text-[#161317]')
                   }`}
                 >
                   {link.label}
@@ -60,7 +65,9 @@ export default function Navigation() {
               ))}
               <Link
                 href="/#newsletter"
-                className="text-[13px] font-bold uppercase tracking-[0.15em] text-[#7a6212] hover:text-[#5e4c0e] transition-colors"
+                className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors ${
+                  isHome ? 'text-[#c4a030] hover:text-white' : 'text-[#7a6212] hover:text-[#5e4c0e]'
+                }`}
               >
                 Join The Weekly
               </Link>
@@ -75,11 +82,13 @@ export default function Navigation() {
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              className="md:hidden flex flex-col gap-1.5 p-2.5 border-2 border-[#161317] rounded-lg hover:bg-gray-50 transition-colors"
+              className={`md:hidden flex flex-col gap-1.5 p-2.5 border-2 rounded-lg transition-colors ${
+                isHome ? 'border-white hover:bg-white/10' : 'border-[#161317] hover:bg-gray-50'
+              }`}
             >
-              <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-[#161317] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <span className={`w-5 h-0.5 transition-all duration-300 ${isHome ? 'bg-white' : 'bg-[#161317]'} ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`w-5 h-0.5 transition-all duration-300 ${isHome ? 'bg-white' : 'bg-[#161317]'} ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-5 h-0.5 transition-all duration-300 ${isHome ? 'bg-white' : 'bg-[#161317]'} ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
           )}
         </div>

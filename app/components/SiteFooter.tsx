@@ -7,7 +7,7 @@ import FooterAttribution from './FooterAttribution';
 export default function SiteFooter() {
   const pathname = usePathname();
 
-  if (pathname === '/coming-soon') return null;
+  if (pathname === '/coming-soon' || pathname === '/') return null;
 
   return (
     <footer className="bg-[#161317] text-white pt-20 pb-10">
