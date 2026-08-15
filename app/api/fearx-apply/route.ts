@@ -13,11 +13,6 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // If no webhook is configured yet, return success so the UI works during development
-  if (!N8N_FEARX_WEBHOOK_URL) {
-    return NextResponse.json({ success: true });
-  }
-
   const response = await fetch(N8N_FEARX_WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
