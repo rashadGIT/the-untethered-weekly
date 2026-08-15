@@ -1,13 +1,49 @@
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "Client Results | Shannon Muruli Coaching",
-  description: "Real results from women who sell. See how Courage Over Comfort Coaching transforms sales careers.",
+  title: 'Client Results | Shannon Muruli Coaching',
+  description: 'Real results from women who sell. See how Courage Over Comfort Coaching transforms sales careers.',
+  alternates: { canonical: 'https://shannonmuruli.com/client-results' },
+  openGraph: {
+    title: 'Client Results | Shannon Muruli Coaching',
+    description: 'Real results from women who sell. See how Courage Over Comfort Coaching transforms sales careers.',
+    url: 'https://shannonmuruli.com/client-results',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Sales Coaching',
+  provider: { '@type': 'Person', name: 'Shannon Muruli' },
+  name: 'Courage Over Comfort Coaching',
+  url: 'https://shannonmuruli.com/client-results',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: 92,
+    bestRating: 100,
+    worstRating: 0,
+    ratingCount: 15,
+    description: 'Recommendation rate from client reviews',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Winsome Alexander' },
+      reviewBody: "Do whatever it takes to join Shannon's one-on-one Courage Over Comfort Coaching",
+      itemReviewed: { '@type': 'Service', name: 'Courage Over Comfort Coaching' },
+    },
+  ],
 };
 
 export default function ClientResultsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">

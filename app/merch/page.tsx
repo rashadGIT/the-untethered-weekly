@@ -4,6 +4,12 @@ import Button from "../components/Button";
 export const metadata = {
   title: "Merch | Shannon Muruli",
   description: "Shop Courage Over Comfort merch and tools designed for women who sell.",
+  alternates: { canonical: 'https://shannonmuruli.com/merch' },
+  openGraph: {
+    title: "Merch | Shannon Muruli",
+    description: "Shop Courage Over Comfort merch and tools designed for women who sell.",
+    url: 'https://shannonmuruli.com/merch',
+  },
 };
 
 const merchItems = [

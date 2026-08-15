@@ -1,3 +1,9 @@
+export const metadata = {
+  title: 'Terms of Service | Shannon Muruli',
+  description: 'Terms of service for shannonmuruli.com.',
+  robots: { index: false, follow: false },
+};
+
 export default function TermsPage() {
   return (
     <section className="section-padding bg-white">

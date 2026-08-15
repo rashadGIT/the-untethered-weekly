@@ -4,10 +4,51 @@ import StartSellingModal from "./components/StartSellingModal";
 // Full previous homepage preserved here; swap the import below to restore it.
 // import LegacyHomePage from "./components/LegacyHomePage";
 
+export const metadata = {
+  title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+  description: 'Shannon Muruli helps women in sales untether from fear and sell from courage. Free training, coaching programs, and the Untethered Weekly newsletter.',
+  alternates: { canonical: 'https://shannonmuruli.com' },
+  openGraph: {
+    title: 'Shannon Muruli | Courage Coach to Women Who Sell',
+    description: 'Shannon Muruli helps women in sales untether from fear and sell from courage.',
+    url: 'https://shannonmuruli.com',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Shannon Muruli',
+      url: 'https://shannonmuruli.com',
+      sameAs: [
+        'https://www.instagram.com/shannonmuruli/',
+        'https://www.facebook.com/shannonmuruli/',
+      ],
+    },
+    {
+      '@type': 'Person',
+      name: 'Shannon Muruli',
+      jobTitle: 'Courage Coach',
+      url: 'https://shannonmuruli.com/about',
+      sameAs: [
+        'https://www.instagram.com/shannonmuruli/',
+        'https://www.facebook.com/shannonmuruli/',
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   // return <LegacyHomePage />;
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero: Full-bleed photo + dark text panel, Stacey Boehman-style minimal homepage */}
       <section className="relative min-h-screen flex flex-col lg:flex-row">
         {/* Photo */}
