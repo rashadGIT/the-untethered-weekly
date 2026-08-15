@@ -44,6 +44,11 @@ export default function Home() {
   // return <LegacyHomePage />;
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero: Full-bleed photo + dark text panel, Stacey Boehman-style minimal homepage */}
       <section className="relative min-h-screen flex flex-col lg:flex-row">
         {/* Photo */}

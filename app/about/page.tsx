@@ -12,9 +12,27 @@ export const metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Shannon Muruli',
+  jobTitle: 'Courage Coach',
+  description: 'Courage Coach to Women Who Sell. Helps women in sales cultivate courage and untether from their comfort zones.',
+  url: 'https://shannonmuruli.com/about',
+  sameAs: [
+    'https://www.instagram.com/shannonmuruli/',
+    'https://www.facebook.com/shannonmuruli/',
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">

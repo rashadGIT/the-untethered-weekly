@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Marcellus, DM_Sans, Playfair_Display, Caveat } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
@@ -32,6 +32,10 @@ const caveat = Caveat({
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  themeColor: '#a08216',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://shannonmuruli.com'),
   title: 'Shannon Muruli | Courage Coach to Women Who Sell',
@@ -43,11 +47,20 @@ export const metadata: Metadata = {
     title: 'Shannon Muruli | Courage Coach to Women Who Sell',
     description: 'Untether from your comfort zone. Serve more. Sell more.',
     url: 'https://shannonmuruli.com',
+    images: [
+      {
+        url: '/assets/images/og/og-default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Shannon Muruli | Courage Coach to Women Who Sell',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shannon Muruli | Courage Coach to Women Who Sell',
     description: 'Untether from your comfort zone. Serve more. Sell more.',
+    images: ['/assets/images/og/og-default.jpg'],
   },
 };
 
