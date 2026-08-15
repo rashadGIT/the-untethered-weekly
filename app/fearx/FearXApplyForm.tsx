@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "../components/Button";
+import { trackEvent } from "../lib/analytics";
 
 interface FearXApplyFormProps {
   type: "speaker" | "panelist";
@@ -33,6 +34,7 @@ export default function FearXApplyForm({ type }: FearXApplyFormProps) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setStatus("success");
+      trackEvent("fearx_apply", { type });
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
       setStatus("error");
