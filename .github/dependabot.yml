@@ -1,85 +1,56 @@
 version: 2
 updates:
-  # NPM dependencies → main
-  - package-ecosystem: "npm"
-    directory: "/"
-    target-branch: "main"
+  - package-ecosystem: npm
+    directory: /
+    target-branch: test
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: weekly
+      day: monday
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+      include: scope
+    ignore:
+      - dependency-name: next
+        update-types: [version-update:semver-major]
+      - dependency-name: react
+        update-types: [version-update:semver-major]
+      - dependency-name: react-dom
+        update-types: [version-update:semver-major]
+      - dependency-name: framer-motion
+        update-types: [version-update:semver-major]
+      - dependency-name: eslint
+        update-types: [version-update:semver-major]
+      - dependency-name: jest
+        update-types: [version-update:semver-major]
+      - dependency-name: jest-environment-jsdom
+        update-types: [version-update:semver-major]
+      - dependency-name: "@testing-library/*"
+        update-types: [version-update:semver-major]
+      - dependency-name: "@playwright/test"
+        update-types: [version-update:semver-major]
     groups:
-      type-definitions:
-        patterns:
-          - "@types/*"
-        update-types:
-          - "minor"
-          - "patch"
       dev-tooling:
         patterns:
           - "eslint*"
           - "typescript"
           - "tailwindcss"
           - "@tailwindcss/*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "next"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react-dom"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "framer-motion"
-        update-types: ["version-update:semver-major"]
-
-  # NPM dependencies → test
-  - package-ecosystem: "npm"
-    directory: "/"
-    target-branch: "test"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 5
-    groups:
-      type-definitions:
+      types:
         patterns:
           - "@types/*"
-        update-types:
-          - "minor"
-          - "patch"
-      dev-tooling:
+      test-tooling:
         patterns:
-          - "eslint*"
-          - "typescript"
-          - "tailwindcss"
-          - "@tailwindcss/*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "next"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react-dom"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "framer-motion"
-        update-types: ["version-update:semver-major"]
+          - "jest*"
+          - "@testing-library/*"
+          - "@playwright/*"
 
-  # GitHub Actions versions → main
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    target-branch: "main"
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: test
     schedule:
-      interval: "monthly"
+      interval: monthly
     open-pull-requests-limit: 3
-
-  # GitHub Actions versions → test
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    target-branch: "test"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(ci)"
