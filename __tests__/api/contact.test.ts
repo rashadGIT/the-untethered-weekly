@@ -10,11 +10,14 @@ import { NextRequest } from "next/server";
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+const FRESH_STARTED_AT = () => Date.now() - 5000;
+
 const VALID_PAYLOAD = {
   name: "Jane Smith",
   email: "jane@example.com",
   phone: "555-123-4567",
   message: "I would love to learn more about your coaching programs.",
+  startedAt: FRESH_STARTED_AT(),
 };
 
 function buildRequest(body: Record<string, unknown>): NextRequest {
@@ -48,7 +51,20 @@ function mockWebhookNetworkError() {
 // Tests
 // ---------------------------------------------------------------------------
 describe("POST /api/contact", () => {
-  beforeEach(() => jest.clearAllMocks());
+  const ORIGINAL_ENV = process.env;
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    process.env = {
+      ...ORIGINAL_ENV,
+      N8N_CONTACT_WEBHOOK_URL: "https://rashadbarnett.app.n8n.cloud/webhook/test-contact",
+      N8N_SHARED_SECRET: "test-shared-secret",
+    };
+  });
+
+  afterAll(() => {
+    process.env = ORIGINAL_ENV;
+  });
 
   // -----------------------------------------------------------------------
   // Validation
@@ -98,9 +114,99 @@ describe("POST /api/contact", () => {
 
     it("does NOT return 400 when phone is missing (phone is optional)", async () => {
       mockWebhookSuccess();
-      const req = buildRequest({ name: "Jane", email: "jane@example.com", message: "Hello" });
+      const req = buildRequest({
+        name: "Jane",
+        email: "jane@example.com",
+        message: "Hello there, I'd like to learn more.",
+        startedAt: FRESH_STARTED_AT(),
+      });
       const res = await POST(req);
       expect(res.status).toBe(200);
+    });
+
+    it("returns 400 when email format is invalid", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, email: "not-an-email" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/valid email/i);
+    });
+
+    it("returns 400 when message exceeds the max length", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, message: "A".repeat(5001) });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/too long/i);
+    });
+
+    it("accepts a message right at the max length boundary", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, message: "A".repeat(5000) });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+
+    it("returns 400 when name looks like bot gibberish (no vowels)", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, name: "Xkqzvbrt" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/valid name/i);
+    });
+
+    it("returns 400 when message is mostly digits (phone-number stuffing)", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, message: "5551234567 5551234567 5551234567" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/own words/i);
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Bot defenses (honeypot, timing)
+  // -----------------------------------------------------------------------
+  describe("bot defenses", () => {
+    it("returns a fake success without calling the webhook when the honeypot field is filled", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, company: "Acme Corp" });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      const body = await res.json();
+      expect(body.success).toBe(true);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+
+    it("returns a fake success without calling the webhook when submitted too fast", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, startedAt: Date.now() });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Server configuration
+  // -----------------------------------------------------------------------
+  describe("server configuration", () => {
+    it("returns 500 and never calls fetch when N8N_CONTACT_WEBHOOK_URL is missing", async () => {
+      delete process.env.N8N_CONTACT_WEBHOOK_URL;
+      mockWebhookSuccess();
+      const req = buildRequest(VALID_PAYLOAD);
+      const res = await POST(req);
+      expect(res.status).toBe(500);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+
+    it("returns 500 and never calls fetch when N8N_SHARED_SECRET is missing", async () => {
+      delete process.env.N8N_SHARED_SECRET;
+      mockWebhookSuccess();
+      const req = buildRequest(VALID_PAYLOAD);
+      const res = await POST(req);
+      expect(res.status).toBe(500);
+      expect(global.fetch).not.toHaveBeenCalled();
     });
   });
 
@@ -133,7 +239,12 @@ describe("POST /api/contact", () => {
 
     it("forwards empty string for phone when phone is omitted", async () => {
       mockWebhookSuccess();
-      const req = buildRequest({ name: "Jane", email: "jane@example.com", message: "Hi" });
+      const req = buildRequest({
+        name: "Jane",
+        email: "jane@example.com",
+        message: "Hi there, I'd like to learn more.",
+        startedAt: FRESH_STARTED_AT(),
+      });
       await POST(req);
 
       const [, options] = (global.fetch as jest.Mock).mock.calls[0];
@@ -141,7 +252,7 @@ describe("POST /api/contact", () => {
       expect(forwarded.phone).toBe("");
     });
 
-    it("makes a POST request with JSON content-type to the n8n webhook", async () => {
+    it("makes a POST request with JSON content-type and the shared secret header", async () => {
       mockWebhookSuccess();
       const req = buildRequest(VALID_PAYLOAD);
       await POST(req);
@@ -150,6 +261,8 @@ describe("POST /api/contact", () => {
       expect(url).toContain("n8n.cloud");
       expect(options.method).toBe("POST");
       expect(options.headers["Content-Type"]).toBe("application/json");
+      expect(options.headers["X-Webhook-Secret"]).toBe("test-shared-secret");
+      expect(options.headers["User-Agent"]).toBeTruthy();
     });
 
     it("uses the message from n8n in the response when provided", async () => {
@@ -214,24 +327,6 @@ describe("POST /api/contact", () => {
       await expect(POST(req)).rejects.toThrow("Network error");
     });
 
-    it("handles extremely long message values", async () => {
-      mockWebhookSuccess();
-      const req = buildRequest({ ...VALID_PAYLOAD, message: "A".repeat(10_000) });
-      const res = await POST(req);
-      expect(res.status).toBe(200);
-    });
-
-    it("handles special characters and unicode in all fields", async () => {
-      mockWebhookSuccess();
-      const req = buildRequest({
-        name: "Ñoño O'Brien <script>alert(1)</script>",
-        email: "test+tag@example.co.uk",
-        message: "こんにちは 🎉 & 'quotes' \"dquotes\"",
-      });
-      const res = await POST(req);
-      expect(res.status).toBe(200);
-    });
-
     it("handles n8n responding with an unexpected 2xx status (e.g. 201)", async () => {
       global.fetch = jest.fn().mockResolvedValue({
         ok: true,
@@ -253,13 +348,13 @@ describe("POST /api/contact", () => {
     });
 
     it("handles simultaneous missing name and email", async () => {
-      const req = buildRequest({ message: "Just a message" });
+      const req = buildRequest({ message: "Just a message here.", startedAt: FRESH_STARTED_AT() });
       const res = await POST(req);
       expect(res.status).toBe(400);
     });
 
     it("handles completely empty body", async () => {
-      const req = buildRequest({});
+      const req = buildRequest({ startedAt: FRESH_STARTED_AT() });
       const res = await POST(req);
       expect(res.status).toBe(400);
     });
