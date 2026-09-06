@@ -216,7 +216,8 @@ describe("NewsletterForm component", () => {
       expect(options.method).toBe("POST");
 
       const body = JSON.parse(options.body);
-      expect(body).toEqual({ email: "shannon@example.com", firstName: "Shannon" });
+      expect(body).toMatchObject({ email: "shannon@example.com", firstName: "Shannon", company: "" });
+      expect(typeof body.startedAt).toBe("number");
     });
 
     it("POSTs with empty firstName when name field is left blank", async () => {

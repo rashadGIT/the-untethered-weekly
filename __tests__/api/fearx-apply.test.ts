@@ -17,6 +17,8 @@ import { NextRequest } from "next/server";
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+const FRESH_STARTED_AT = () => Date.now() - 5000;
+
 const VALID_PAYLOAD = {
   type: "speaker",
   firstName: "Jane",
@@ -24,6 +26,7 @@ const VALID_PAYLOAD = {
   role: "Sales Director",
   yearsInSales: "5-10",
   story: "This is a long enough courage story about overcoming fear in sales.",
+  startedAt: FRESH_STARTED_AT(),
 };
 
 function buildRequest(body: Record<string, unknown>): NextRequest {
@@ -53,8 +56,19 @@ function mockWebhookFailure() {
 // Tests
 // ---------------------------------------------------------------------------
 describe("POST /api/fearx-apply", () => {
+  const ORIGINAL_ENV = process.env;
+
   beforeEach(() => {
     jest.clearAllMocks();
+    process.env = {
+      ...ORIGINAL_ENV,
+      N8N_FEARX_WEBHOOK_URL: "https://rashadbarnett.app.n8n.cloud/webhook/test-fearx",
+      N8N_SHARED_SECRET: "test-shared-secret",
+    };
+  });
+
+  afterAll(() => {
+    process.env = ORIGINAL_ENV;
   });
 
   // -----------------------------------------------------------------------
@@ -102,6 +116,109 @@ describe("POST /api/fearx-apply", () => {
       const res = await POST(req);
       expect(res.status).toBe(400);
     });
+
+    it("returns 400 when email format is invalid", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, email: "not-an-email" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/valid email/i);
+    });
+
+    it("returns 400 when firstName exceeds the max length", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, firstName: "A".repeat(101) });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/too long/i);
+    });
+
+    it("returns 400 when story exceeds the max length", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, story: "A".repeat(5001) });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/too long/i);
+    });
+
+    it("accepts a story right at the max length boundary", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, story: "A".repeat(5000) });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+    });
+
+    it("returns 400 when firstName looks like bot gibberish (no vowels)", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, firstName: "Xkqzvbrt" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/valid name/i);
+    });
+
+    it("returns 400 when story is mostly digits (phone-number stuffing)", async () => {
+      const req = buildRequest({ ...VALID_PAYLOAD, story: "5551234567 5551234567 5551234567" });
+      const res = await POST(req);
+      expect(res.status).toBe(400);
+      const body = await res.json();
+      expect(body.error).toMatch(/own words/i);
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Bot defenses (honeypot, timing)
+  // -----------------------------------------------------------------------
+  describe("bot defenses", () => {
+    it("returns a fake success without calling the webhook when the honeypot field is filled", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, company: "Acme Corp" });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      const body = await res.json();
+      expect(body.success).toBe(true);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+
+    it("returns a fake success without calling the webhook when submitted too fast", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, startedAt: Date.now() });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      const body = await res.json();
+      expect(body.success).toBe(true);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+
+    it("returns a fake success without calling the webhook when startedAt is missing", async () => {
+      mockWebhookSuccess();
+      const req = buildRequest({ ...VALID_PAYLOAD, startedAt: undefined });
+      const res = await POST(req);
+      expect(res.status).toBe(200);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Server configuration
+  // -----------------------------------------------------------------------
+  describe("server configuration", () => {
+    it("returns 500 and never calls fetch when N8N_FEARX_WEBHOOK_URL is missing", async () => {
+      delete process.env.N8N_FEARX_WEBHOOK_URL;
+      mockWebhookSuccess();
+      const req = buildRequest(VALID_PAYLOAD);
+      const res = await POST(req);
+      expect(res.status).toBe(500);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+
+    it("returns 500 and never calls fetch when N8N_SHARED_SECRET is missing", async () => {
+      delete process.env.N8N_SHARED_SECRET;
+      mockWebhookSuccess();
+      const req = buildRequest(VALID_PAYLOAD);
+      const res = await POST(req);
+      expect(res.status).toBe(500);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
   });
 
   // -----------------------------------------------------------------------
@@ -143,7 +260,7 @@ describe("POST /api/fearx-apply", () => {
       expect(forwarded.story).toBe(VALID_PAYLOAD.story);
     });
 
-    it("makes a POST request to the n8n webhook URL", async () => {
+    it("makes a POST request to the n8n webhook URL with the shared secret header", async () => {
       mockWebhookSuccess();
       const req = buildRequest(VALID_PAYLOAD);
       await POST(req);
@@ -152,6 +269,8 @@ describe("POST /api/fearx-apply", () => {
       expect(url).toContain("n8n.cloud");
       expect(options.method).toBe("POST");
       expect(options.headers["Content-Type"]).toBe("application/json");
+      expect(options.headers["X-Webhook-Secret"]).toBe("test-shared-secret");
+      expect(options.headers["User-Agent"]).toBeTruthy();
     });
   });
 
@@ -186,7 +305,7 @@ describe("POST /api/fearx-apply", () => {
     });
 
     it("handles all three required fields missing simultaneously", async () => {
-      const req = buildRequest({ type: "speaker" });
+      const req = buildRequest({ type: "speaker", startedAt: FRESH_STARTED_AT() });
       const res = await POST(req);
       expect(res.status).toBe(400);
     });
@@ -197,13 +316,6 @@ describe("POST /api/fearx-apply", () => {
         ...VALID_PAYLOAD,
         story: "こんにちは 🎉 <script>alert('xss')</script> & courage",
       });
-      const res = await POST(req);
-      expect(res.status).toBe(200);
-    });
-
-    it("handles extremely long story values", async () => {
-      mockWebhookSuccess();
-      const req = buildRequest({ ...VALID_PAYLOAD, story: "A".repeat(10_000) });
       const res = await POST(req);
       expect(res.status).toBe(200);
     });
