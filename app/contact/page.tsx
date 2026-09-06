@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import NewsletterForm from '../components/NewsletterForm';
+import { trackEvent } from '../lib/analytics';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -25,6 +26,7 @@ export default function ContactPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setStatus('success');
+      trackEvent('contact_form_submit');
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch {
       setStatus('error');

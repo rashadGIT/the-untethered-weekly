@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Marcellus, DM_Sans, Playfair_Display, Caveat } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import SiteFooter from "./components/SiteFooter";
+import RumInit from "./components/RumInit";
 
 const marcellus = Marcellus({ 
   weight: "400",
@@ -45,6 +47,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${marcellus.variable} ${dmSans.variable} ${playfair.variable} ${caveat.variable}`}>
       <body className="font-sans antialiased text-[#161317]">
+        <RumInit />
+        {process.env.NEXT_PUBLIC_UMAMI_SRC && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <Script
+            src={process.env.NEXT_PUBLIC_UMAMI_SRC}
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            strategy="afterInteractive"
+          />
+        )}
+
         {/* Skip link — invisible to mouse users; appears only on first keyboard Tab press */}
         <a
           href="#main-content"

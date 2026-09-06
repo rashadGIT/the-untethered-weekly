@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "./Button";
+import { trackEvent } from "../lib/analytics";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -25,6 +26,7 @@ export default function NewsletterForm() {
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setSuccessMsg(data.message || "");
       setStatus("success");
+      trackEvent("newsletter_signup");
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
       setStatus("error");
