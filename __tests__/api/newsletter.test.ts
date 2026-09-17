@@ -13,6 +13,12 @@
 
 import { POST } from "../../app/api/newsletter/route";
 import { NextRequest } from "next/server";
+import { isRateLimited } from "../../app/api/_lib/rate-limit";
+
+jest.mock("../../app/api/_lib/rate-limit", () => ({
+  ...jest.requireActual("../../app/api/_lib/rate-limit"),
+  isRateLimited: jest.fn(),
+}));
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -55,6 +61,7 @@ describe("POST /api/newsletter", () => {
       N8N_NEWSLETTER_WEBHOOK_URL: "https://rashadbarnett.app.n8n.cloud/webhook/test-newsletter",
       N8N_SHARED_SECRET: "test-shared-secret",
     };
+    (isRateLimited as jest.Mock).mockResolvedValue(false);
   });
 
   afterAll(() => {
@@ -121,6 +128,20 @@ describe("POST /api/newsletter", () => {
       const req = buildRequest({ email: "test@example.com", startedAt: Date.now() });
       const res = await POST(req);
       expect(res.status).toBe(200);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Rate limiting
+  // -----------------------------------------------------------------------
+  describe("rate limiting", () => {
+    it("returns 429 and never calls fetch when the rate limit is exceeded", async () => {
+      (isRateLimited as jest.Mock).mockResolvedValue(true);
+      mockN8nSuccess();
+      const req = buildRequest({ email: "test@example.com", startedAt: FRESH_STARTED_AT() });
+      const res = await POST(req);
+      expect(res.status).toBe(429);
       expect(global.fetch).not.toHaveBeenCalled();
     });
   });

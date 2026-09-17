@@ -13,6 +13,12 @@
 
 import { POST } from "../../app/api/fearx-apply/route";
 import { NextRequest } from "next/server";
+import { isRateLimited } from "../../app/api/_lib/rate-limit";
+
+jest.mock("../../app/api/_lib/rate-limit", () => ({
+  ...jest.requireActual("../../app/api/_lib/rate-limit"),
+  isRateLimited: jest.fn(),
+}));
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -65,6 +71,7 @@ describe("POST /api/fearx-apply", () => {
       N8N_FEARX_WEBHOOK_URL: "https://rashadbarnett.app.n8n.cloud/webhook/test-fearx",
       N8N_SHARED_SECRET: "test-shared-secret",
     };
+    (isRateLimited as jest.Mock).mockResolvedValue(false);
   });
 
   afterAll(() => {
@@ -194,6 +201,20 @@ describe("POST /api/fearx-apply", () => {
       const req = buildRequest({ ...VALID_PAYLOAD, startedAt: undefined });
       const res = await POST(req);
       expect(res.status).toBe(200);
+      expect(global.fetch).not.toHaveBeenCalled();
+    });
+  });
+
+  // -----------------------------------------------------------------------
+  // Rate limiting
+  // -----------------------------------------------------------------------
+  describe("rate limiting", () => {
+    it("returns 429 and never calls fetch when the rate limit is exceeded", async () => {
+      (isRateLimited as jest.Mock).mockResolvedValue(true);
+      mockWebhookSuccess();
+      const req = buildRequest(VALID_PAYLOAD);
+      const res = await POST(req);
+      expect(res.status).toBe(429);
       expect(global.fetch).not.toHaveBeenCalled();
     });
   });

@@ -9,6 +9,7 @@ import {
   logSpamRejection,
   looksLikeGibberishName,
 } from "../_lib/spam-guard";
+import { getClientIp, isRateLimited } from "../_lib/rate-limit";
 
 const ROUTE = "contact";
 const fakeSuccess = () =>
@@ -18,6 +19,13 @@ const fakeSuccess = () =>
   });
 
 export async function POST(request: NextRequest) {
+  if (await isRateLimited(ROUTE, getClientIp(request))) {
+    return NextResponse.json(
+      { error: "Too many submissions. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   const { name, email, phone, message, company, startedAt } = await request.json();
 
   if (isHoneypotTripped(company)) {

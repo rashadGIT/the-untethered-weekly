@@ -9,11 +9,19 @@ import {
   logSpamRejection,
   looksLikeGibberishName,
 } from "../_lib/spam-guard";
+import { getClientIp, isRateLimited } from "../_lib/rate-limit";
 
 const ROUTE = "fearx-apply";
 const fakeSuccess = () => NextResponse.json({ success: true });
 
 export async function POST(request: NextRequest) {
+  if (await isRateLimited(ROUTE, getClientIp(request))) {
+    return NextResponse.json(
+      { error: "Too many submissions. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   const body = await request.json();
   const { type, firstName, email, role, yearsInSales, story, company, startedAt } = body;
 

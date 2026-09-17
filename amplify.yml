@@ -6,7 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - env | grep -e N8N_ >> .env.production
+        - env | grep -e N8N_ -e UPSTASH_ >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next

@@ -7,11 +7,19 @@ import {
   isValidEmailFormat,
   logSpamRejection,
 } from "../_lib/spam-guard";
+import { getClientIp, isRateLimited } from "../_lib/rate-limit";
 
 const ROUTE = "newsletter";
 const fakeSuccess = () => NextResponse.json({ success: true, message: null });
 
 export async function POST(request: NextRequest) {
+  if (await isRateLimited(ROUTE, getClientIp(request))) {
+    return NextResponse.json(
+      { error: "Too many submissions. Please try again shortly." },
+      { status: 429 }
+    );
+  }
+
   const { email, firstName, company, startedAt } = await request.json();
 
   if (isHoneypotTripped(company)) {
