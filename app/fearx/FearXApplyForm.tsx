@@ -13,6 +13,8 @@ export default function FearXApplyForm({ type }: FearXApplyFormProps) {
   const [role, setRole] = useState("");
   const [yearsInSales, setYearsInSales] = useState("");
   const [story, setStory] = useState("");
+  const [company, setCompany] = useState("");
+  const [startedAt] = useState(() => Date.now());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -28,7 +30,7 @@ export default function FearXApplyForm({ type }: FearXApplyFormProps) {
       const res = await fetch("/api/fearx-apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type, firstName, email, role, yearsInSales, story }),
+        body: JSON.stringify({ type, firstName, email, role, yearsInSales, story, company, startedAt }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
@@ -58,6 +60,18 @@ export default function FearXApplyForm({ type }: FearXApplyFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-8 rounded-sm shadow-lg">
+      <div className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+        <label htmlFor={`${type}-company`}>Company</label>
+        <input
+          id={`${type}-company`}
+          type="text"
+          name="company"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
           <label htmlFor={`${type}-firstName`} className="sr-only">First Name</label>
