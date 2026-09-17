@@ -5,9 +5,14 @@ import HeroVideoModal from "../components/HeroVideoModal";
 import FearXApplyForm from "./FearXApplyForm";
 
 export const metadata = {
-  title: "FEARX — Where Women Who Sell Choose Courage Over Comfort | Shannon Muruli",
-  description:
-    "FEARX is a storytelling platform where women who sell step onto the Courage Carpet to share the moment they faced fear, chose courage over comfort, and discovered the impact that decision made in their sales.",
+  title: 'FEARX — Where Women Who Sell Choose Courage Over Comfort | Shannon Muruli',
+  description: 'FEARX is a storytelling platform where women who sell step onto the Courage Carpet to share the moment they faced fear, chose courage over comfort, and discovered the impact that decision made in their sales.',
+  alternates: { canonical: 'https://shannonmuruli.com/fearx' },
+  openGraph: {
+    title: 'FEARX — Where Women Who Sell Choose Courage Over Comfort',
+    description: 'FEARX is a storytelling platform where women who sell step onto the Courage Carpet to share the moment they faced fear and chose courage over comfort.',
+    url: 'https://shannonmuruli.com/fearx',
+  },
 };
 
 export default function FearXPage() {

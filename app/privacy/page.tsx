@@ -1,3 +1,9 @@
+export const metadata = {
+  title: 'Privacy Policy | Shannon Muruli',
+  description: 'Privacy policy for shannonmuruli.com.',
+  robots: { index: false, follow: false },
+};
+
 export default function PrivacyPage() {
   return (
     <section className="section-padding bg-white">

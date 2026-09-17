@@ -2,13 +2,37 @@ import Image from "next/image";
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "About Shannon Muruli | Courage Coach to Women Who Sell",
-  description: "From parking lot sales to regional manager. Learn how Shannon Muruli helps women in sales cultivate courage and untether from their comfort zones.",
+  title: 'About Shannon Muruli | Courage Coach to Women Who Sell',
+  description: 'From parking lot sales to regional manager. Learn how Shannon Muruli helps women in sales cultivate courage and untether from their comfort zones.',
+  alternates: { canonical: 'https://shannonmuruli.com/about' },
+  openGraph: {
+    title: 'About Shannon Muruli | Courage Coach to Women Who Sell',
+    description: 'From parking lot sales to regional manager. Learn how Shannon Muruli helps women in sales cultivate courage.',
+    url: 'https://shannonmuruli.com/about',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Shannon Muruli',
+  jobTitle: 'Courage Coach',
+  description: 'Courage Coach to Women Who Sell. Helps women in sales cultivate courage and untether from their comfort zones.',
+  url: 'https://shannonmuruli.com/about',
+  sameAs: [
+    'https://www.instagram.com/shannonmuruli/',
+    'https://www.facebook.com/shannonmuruli/',
+  ],
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">

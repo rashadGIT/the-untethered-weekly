@@ -2,13 +2,105 @@ import Image from "next/image";
 import Button from "../components/Button";
 
 export const metadata = {
-  title: "Work With Me | Shannon Muruli Coaching",
-  description: "Explore coaching programs for women who sell: Self-Image That Sells, Courage Over Comfort Coaching, and The Sell More Soirée.",
+  title: 'Work With Me | Shannon Muruli Coaching',
+  description: 'Explore coaching programs for women who sell: Self-Image That Sells, Courage Over Comfort Coaching, and The Sell More Soirée.',
+  alternates: { canonical: 'https://shannonmuruli.com/work-with-me' },
+  openGraph: {
+    title: 'Work With Me | Shannon Muruli Coaching',
+    description: 'Explore coaching programs for women who sell: Self-Image That Sells, Courage Over Comfort Coaching, and The Sell More Soirée.',
+    url: 'https://shannonmuruli.com/work-with-me',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      serviceType: 'Sales Coaching',
+      provider: { '@type': 'Person', name: 'Shannon Muruli' },
+      areaServed: 'Online',
+      audience: { '@type': 'Audience', audienceType: 'Women who sell' },
+      url: 'https://shannonmuruli.com/work-with-me',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Coaching Programs',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Self-Image That Sells',
+              description: 'Foundational coaching program for women who sell, starting with self-image rather than strategy.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Courage Over Comfort Coaching',
+              description: 'One-on-one coaching for women who sell to untether from fear-based behaviors and choose courage.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'The Sell More Soirée',
+              description: 'A live event for women who sell to cultivate courage together.',
+            },
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How is this different from traditional sales training?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "I don't start with strategy. I start with self-image. Most sales training teaches tactics without addressing the internal narratives that keep you from executing those tactics. We fix the root cause: your self-image as a seller.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: "What if I'm naturally shy or introverted?",
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "You're not a shy seller. You're in environments that activate your shyness. I teach you how to differentiate between environmental-based shyness and inherent personality—and how to operate from courage regardless.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does coaching take?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "That depends on your goals and commitment level. Some clients see shifts in weeks. Others work with me for months. We'll discuss your specific timeline during our initial conversation.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer payment plans?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Let's talk about your situation during our initial consultation. I'm committed to making this work accessible to women who are serious about growth.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export default function WorkWithMePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="section-padding bg-white text-center">
         <div className="container-narrow pt-2 md:pt-0">
