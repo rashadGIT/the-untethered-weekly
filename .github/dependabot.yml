@@ -33,6 +33,13 @@ updates:
       - dependency-name: typescript
         update-types: [version-update:semver-major]
     groups:
+      # react and react-dom must stay on the exact same version (runtime mismatch error otherwise)
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
       dev-tooling:
         patterns:
           - "eslint*"
