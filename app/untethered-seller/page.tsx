@@ -40,7 +40,7 @@ const days: Day[] = [
     number: 4,
     title: "The Untethering Process: Act Differently",
     description: "Take courageous action that stretches you beyond your comfort zone and creates new evidence. This is where the real shift begins.",
-    audioSrc: "/assets/audio/untethered-seller/day-4.mp3",
+    audioSrc: "/assets/audio/untethered-seller/day-4.m4a",
     pdfSrc: "/assets/pdfs/untethered-seller/day-4-one-pager.pdf",
   },
   {
@@ -79,8 +79,8 @@ export default function UntetheredSellerPage() {
     }
 
     audio.src = day.audioSrc;
-    audio.play();
     setPlayingDay(day.number);
+    audio.play()?.catch(() => setPlayingDay(null));
   }
 
   if (!checked) return null;
