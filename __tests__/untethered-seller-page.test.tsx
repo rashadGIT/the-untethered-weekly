@@ -43,6 +43,17 @@ describe("UntetheredSellerPage audio player", () => {
     expect(screen.getByRole("button", { name: "Pause Day 4 audio" })).toBeInTheDocument();
   });
 
+  it.each([1, 2, 3, 4, 5])("wires Day %i to its audio file and one-pager PDF", async (n) => {
+    const user = userEvent.setup();
+    render(<UntetheredSellerPage />);
+
+    await user.click(await screen.findByRole("button", { name: `Play Day ${n} audio` }));
+
+    expect(getAudio().src).toMatch(new RegExp(`/assets/audio/untethered-seller/day-${n}\\.m4a$`));
+    const pdfLinks = screen.getAllByRole("link", { name: /download your one pager/i });
+    expect(pdfLinks[n - 1]).toHaveAttribute("href", `/assets/docs/untethered-seller/day-${n}-one-pager.pdf`);
+  });
+
   it("pauses when the playing day is clicked again", async () => {
     const user = userEvent.setup();
     render(<UntetheredSellerPage />);
