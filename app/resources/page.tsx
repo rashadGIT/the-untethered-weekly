@@ -31,6 +31,7 @@ export default function ResourcesPage() {
                 src="/assets/images/home/lead-magnet-mockup copy - white  with Shannon.png"
                 alt="Free Untethered Seller Audio Training"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain"
               />
             </div>

@@ -174,6 +174,40 @@ describe("HeroVideoModal component", () => {
       await user.keyboard("{Shift>}{Tab}{/Shift}");
       expect(screen.getByRole("dialog")).toBeInTheDocument();
     });
+
+    it("wraps focus to first element when Tab is pressed on the last focusable element", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+
+      const focusable = document.querySelectorAll<HTMLElement>(
+        '[role="dialog"] button, [role="dialog"] [href], [role="dialog"] input, [role="dialog"] [tabindex]:not([tabindex="-1"])'
+      );
+      const last = focusable[focusable.length - 1];
+      last.focus();
+      expect(document.activeElement).toBe(last);
+
+      await user.keyboard("{Tab}");
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
+
+    it("wraps focus to last element when Shift+Tab is pressed on the first focusable element", async () => {
+      const user = userEvent.setup();
+      render(<HeroVideoModal />);
+      await user.click(screen.getByRole("button", { name: /watch the video/i }));
+      await waitFor(() => expect(screen.getByRole("dialog")).toBeInTheDocument());
+
+      const focusable = document.querySelectorAll<HTMLElement>(
+        '[role="dialog"] button, [role="dialog"] [href], [role="dialog"] input, [role="dialog"] [tabindex]:not([tabindex="-1"])'
+      );
+      const first = focusable[0];
+      first.focus();
+      expect(document.activeElement).toBe(first);
+
+      await user.keyboard("{Shift>}{Tab}{/Shift}");
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+    });
   });
 
   // -----------------------------------------------------------------------

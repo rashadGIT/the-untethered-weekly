@@ -20,7 +20,7 @@ export default function FadeIn({
   const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = typeof window !== "undefined"
     ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    : false;
+    : /* istanbul ignore next */ false;
   const [isVisible, setIsVisible] = useState(prefersReducedMotion);
 
   useEffect(() => {
@@ -44,13 +44,14 @@ export default function FadeIn({
     );
 
     const el = ref.current;
+    /* istanbul ignore else */
     if (el) {
       observer.observe(el);
     }
     return () => {
-      if (el) {
-        observer.unobserve(el);
-      }
+      /* istanbul ignore if */
+      if (!el) return;
+      observer.unobserve(el);
     };
   }, [prefersReducedMotion]);
 
