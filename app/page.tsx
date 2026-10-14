@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Button from "./components/Button";
 import FadeIn from "./components/FadeIn";
+import StartSellingModal from "./components/StartSellingModal";
 // Full previous homepage preserved here; swap the import below to restore it.
 // import LegacyHomePage from "./components/LegacyHomePage";
 
@@ -52,13 +52,9 @@ export default function Home() {
               </p>
             </FadeIn>
             <FadeIn delay={0.8} direction="up">
-              <Button
-                href="/work-with-me"
-                variant="outline"
-                className="!border-[#a08216] !text-[#a08216] hover:!bg-[#a08216] hover:!text-white !px-10 !py-4 !text-[13px] !tracking-[0.2em] !rounded-none ml-6 md:ml-10"
-              >
+              <StartSellingModal className="inline-flex items-center justify-center font-bold uppercase tracking-[0.2em] transition-all duration-300 border-2 border-[#a08216] text-[#a08216] hover:bg-[#a08216] hover:text-white px-10 py-4 text-[13px] ml-6 md:ml-10">
                 Start Selling More
-              </Button>
+              </StartSellingModal>
             </FadeIn>
           </div>
         </div>
