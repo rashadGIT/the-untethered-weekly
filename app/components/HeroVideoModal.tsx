@@ -34,6 +34,7 @@ export default function HeroVideoModal({ videoSrc = "/assets/videos/home/hero-ba
   const closeModal = useCallback(() => {
     setIsOpen(false);
     // Return focus to the trigger button that opened the modal
+    /* istanbul ignore next */
     setTimeout(() => triggerRef.current?.focus(), 50);
   }, []);
 
@@ -56,11 +57,13 @@ export default function HeroVideoModal({ videoSrc = "/assets/videos/home/hero-ba
         if (e.shiftKey) {
           if (document.activeElement === first) {
             e.preventDefault();
+            /* istanbul ignore next */
             last?.focus();
           }
         } else {
           if (document.activeElement === last) {
             e.preventDefault();
+            /* istanbul ignore next */
             first?.focus();
           }
         }

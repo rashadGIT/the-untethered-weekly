@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, within, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { usePathname } from "next/navigation";
 import Navigation from "../../app/components/Navigation";
@@ -145,6 +145,25 @@ describe("Navigation component", () => {
       render(<Navigation />);
       await user.click(screen.getByRole("button", { name: /open menu/i }));
       expect(document.getElementById("mobile-menu")).toBeInTheDocument();
+      await user.keyboard("{Escape}");
+      expect(document.getElementById("mobile-menu")).not.toBeInTheDocument();
+    });
+
+    it("returns focus to the hamburger button after closing with Escape", async () => {
+      const user = userEvent.setup();
+      render(<Navigation />);
+      const hamburger = screen.getByRole("button", { name: /open menu/i });
+      await user.click(hamburger);
+      await user.keyboard("{Escape}");
+      await waitFor(() =>
+        expect(document.getElementById("mobile-menu")).not.toBeInTheDocument()
+      );
+      expect(document.activeElement).toBe(screen.getByRole("button", { name: /open menu/i }));
+    });
+
+    it("does not close the menu when Escape is pressed while menu is already closed", async () => {
+      const user = userEvent.setup();
+      render(<Navigation />);
       await user.keyboard("{Escape}");
       expect(document.getElementById("mobile-menu")).not.toBeInTheDocument();
     });
