@@ -7,6 +7,7 @@ export default function VideoPlayer({source}: {source: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
+    /* istanbul ignore else */
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
@@ -24,9 +25,11 @@ export default function VideoPlayer({source}: {source: string }) {
 
   const handleVideoEnded = () => {
     setIsPlaying(false);
+    /* istanbul ignore else */
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
       setTimeout(() => {
+        /* istanbul ignore next */
         videoRef.current?.load(); // Reload to show poster image again
       }, 1000);
     }

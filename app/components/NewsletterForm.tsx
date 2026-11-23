@@ -6,6 +6,8 @@ import Button from "./Button";
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [company, setCompany] = useState("");
+  const [startedAt] = useState(() => Date.now());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
@@ -19,7 +21,7 @@ export default function NewsletterForm() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, firstName }),
+        body: JSON.stringify({ email, firstName, company, startedAt }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
@@ -45,6 +47,18 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto mb-6">
+      <div className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="newsletter-company">Company</label>
+        <input
+          id="newsletter-company"
+          type="text"
+          name="company"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <label htmlFor="newsletter-email" className="sr-only">
         Email address
       </label>
